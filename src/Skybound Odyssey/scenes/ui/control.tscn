@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba3vq1it61vn3"]
+
+[ext_resource type="Script" uid="uid://n4jkc1cmcxlt" path="res://scripts/ui/control.gd" id="1_yo0lp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yo0lp")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1725.0
+offset_top = 273.0
+offset_right = 1921.0
+offset_bottom = 415.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1747.0
+offset_top = 295.0
+offset_right = 1908.0
+offset_bottom = 468.0
+text = "星体编号：0012
+光谱型：O型
+光度：2.6
+大小：1.8"

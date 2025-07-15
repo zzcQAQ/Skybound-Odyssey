@@ -1,0 +1,141 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwm3l0aeeri3x"]
+
+[ext_resource type="Script" uid="uid://c5evwercmrg56" path="res://scripts/ui/home.gd" id="1_cps5c"]
+[ext_resource type="PackedScene" uid="uid://mib2gs63qtwr" path="res://scenes/back_ground.tscn" id="2_1wv05"]
+[ext_resource type="Texture2D" uid="uid://d6om5gbg35s3" path="res://sprites/background/title.png" id="2_sdvdx"]
+[ext_resource type="PackedScene" uid="uid://bypn83t4bxdss" path="res://scenes/sun.tscn" id="3_1wv05"]
+
+[sub_resource type="Environment" id="Environment_1wv05"]
+background_mode = 3
+glow_enabled = true
+glow_strength = 1.26
+glow_blend_mode = 1
+glow_hdr_threshold = 0.9
+
+[node name="home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cps5c")
+
+[node name="homePage" type="Node2D" parent="."]
+
+[node name="title" type="Sprite2D" parent="homePage"]
+position = Vector2(200, 200)
+scale = Vector2(0.391111, 0.391111)
+texture = ExtResource("2_sdvdx")
+centered = false
+
+[node name="buttons" type="Node2D" parent="homePage"]
+position = Vector2(1500, 300)
+
+[node name="continue" type="Button" parent="homePage/buttons"]
+offset_right = 150.0
+offset_bottom = 50.0
+text = "continue"
+
+[node name="loadSave" type="Button" parent="homePage/buttons"]
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 110.0
+text = "load save"
+
+[node name="newGame" type="Button" parent="homePage/buttons"]
+offset_top = 120.0
+offset_right = 150.0
+offset_bottom = 170.0
+text = "new game"
+
+[node name="settings" type="Button" parent="homePage/buttons"]
+offset_top = 180.0
+offset_right = 150.0
+offset_bottom = 230.0
+text = "settings"
+
+[node name="quit" type="Button" parent="homePage/buttons"]
+offset_top = 240.0
+offset_right = 150.0
+offset_bottom = 290.0
+text = "quit"
+
+[node name="factionSelect" type="Node2D" parent="."]
+
+[node name="title" type="Node2D" parent="factionSelect"]
+position = Vector2(-900, 200)
+
+[node name="Label" type="Label" parent="factionSelect/title"]
+offset_left = -6.10352e-05
+offset_top = 1.52588e-05
+offset_right = 153.0
+offset_bottom = 23.0
+scale = Vector2(3.5, 3.5)
+tooltip_text = "choose your faction"
+text = "choose your faction"
+
+[node name="buttons" type="Node2D" parent="factionSelect"]
+position = Vector2(1997, 302)
+
+[node name="human" type="Button" parent="factionSelect/buttons"]
+offset_right = 150.0
+offset_bottom = 50.0
+text = "human"
+
+[node name="flesh" type="Button" parent="factionSelect/buttons"]
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 110.0
+text = "flesh"
+
+[node name="back" type="Button" parent="factionSelect/buttons"]
+offset_top = 120.0
+offset_right = 150.0
+offset_bottom = 170.0
+text = "back"
+
+[node name="Confirm" type="Button" parent="factionSelect/buttons"]
+offset_top = 180.0
+offset_right = 150.0
+offset_bottom = 230.0
+text = "Confirm"
+
+[node name="settings" type="Node2D" parent="."]
+
+[node name="title" type="Node2D" parent="settings"]
+position = Vector2(-900, 200)
+
+[node name="Label" type="Label" parent="settings/title"]
+offset_left = -6.10352e-05
+offset_top = 1.52588e-05
+offset_right = 153.0
+offset_bottom = 23.0
+scale = Vector2(3.5, 3.5)
+tooltip_text = "choose your faction"
+text = "settings"
+
+[node name="buttons" type="Node2D" parent="settings"]
+position = Vector2(1997, 300)
+
+[node name="back" type="Button" parent="settings/buttons"]
+offset_top = 62.0
+offset_right = 150.0
+offset_bottom = 112.0
+text = "back"
+
+[node name="backGround" parent="." instance=ExtResource("2_1wv05")]
+position = Vector2(67, 62)
+
+[node name="Sun" parent="backGround" instance=ExtResource("3_1wv05")]
+z_index = 1
+position = Vector2(468, 679)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="backGround/Sun"]
+environment = SubResource("Environment_1wv05")
+
+[connection signal="pressed" from="homePage/buttons/newGame" to="." method="NewGame"]
+[connection signal="pressed" from="homePage/buttons/settings" to="." method="Settings"]
+[connection signal="pressed" from="homePage/buttons/quit" to="." method="Quit"]
+[connection signal="pressed" from="factionSelect/buttons/back" to="." method="Back"]
+[connection signal="pressed" from="settings/buttons/back" to="." method="Back"]

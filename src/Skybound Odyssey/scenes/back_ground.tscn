@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=4 uid="uid://mib2gs63qtwr"]
+
+[ext_resource type="Texture2D" uid="uid://1a1ctafk7ehl" path="res://sprites/background/nebula.png" id="1_8lwin"]
+[ext_resource type="Texture2D" uid="uid://brva1kiyee6ty" path="res://sprites/background/backGroundStars.png" id="2_wme33"]
+
+[sub_resource type="GDScript" id="GDScript_8lwin"]
+script/source = "extends Node2D
+"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y664p"]
+texture = ExtResource("2_wme33")
+texture_region_size = Vector2i(426, 427)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gjtue"]
+sources/0 = SubResource("TileSetAtlasSource_y664p")
+
+[node name="backGround" type="Node2D"]
+script = SubResource("GDScript_8lwin")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="nebula" type="Parallax2D" parent="CanvasLayer"]
+scroll_scale = Vector2(1.1, 1.1)
+repeat_size = Vector2(4095, 4095)
+repeat_times = 6
+
+[node name="nebula" type="Sprite2D" parent="CanvasLayer/nebula"]
+texture = ExtResource("1_8lwin")
+centered = false
+
+[node name="TileMapLayer" type="TileMapLayer" parent="CanvasLayer/nebula"]
+scale = Vector2(0.06, 0.06)
+tile_map_data = PackedByteArray("AAApAYYBAAAAAAAAAAAJAk0BAAAAAAAAAAAaAXcAAAAAAAAAAAAQAA0BAAAAAAAAAACiAuABAAAAAAAAAAC0A/0AAAAAAAAAAAAHBPEBAAAAAAAAAAApAuQDAAABAAAAAABYAFIAAAABAAAAAADPAV4AAAABAAAAAABDA2EAAAABAAAAAADeA2IDAAABAAAAAABiAMQBAAABAAAAAAC9AeAAAAABAAAAAADBAhUBAAABAAAAAAA6A+8DAAABAAAAAABjAXIDAAABAAAAAAAuAC0EAAACAAAAAAB2AKMDAAACAAAAAAAdAcsDAAACAAAAAAD3AbQCAAACAAAAAACMARsCAAACAAAAAACmAIIBAAACAAAAAABLAAsBAAACAAAAAABJA0kDAAACAAAAAAD1A/4DAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_gjtue")
+
+[node name="distantStars" type="Parallax2D" parent="."]
+visible = false
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1024, 1024)
+repeat_times = 16
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1024, 1024)

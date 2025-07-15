@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=3 uid="uid://bypn83t4bxdss"]
+
+[ext_resource type="Texture2D" uid="uid://3glkx7vphtkd" path="res://sprites/star/OTypeStar.png" id="1_cojbh"]
+[ext_resource type="Script" uid="uid://ba43w0ed1foi" path="res://scripts/units/sun.gd" id="1_fdjia"]
+[ext_resource type="Script" uid="uid://fxrtyt5jms8e" path="res://scripts/units/blue_giant.gd" id="2_t1pnj"]
+[ext_resource type="Texture2D" uid="uid://b1mrk5kn2mcau" path="res://sprites/star/MTypeStar.png" id="4_arhad"]
+[ext_resource type="Texture2D" uid="uid://w1e74h1vm26m" path="res://sprites/star/GTypeStar.png" id="4_pkgqr"]
+[ext_resource type="Texture2D" uid="uid://d1d4q0v2ni8ux" path="res://sprites/star/planet.png" id="4_t1pnj"]
+[ext_resource type="Texture2D" uid="uid://bt71e0d6708bf" path="res://sprites/star/star-outline.png" id="4_vtvjq"]
+[ext_resource type="Script" uid="uid://cqltbydeau4um" path="res://scripts/units/planet.gd" id="5_i8fpp"]
+[ext_resource type="Texture2D" uid="uid://vxonwigqqhsb" path="res://sprites/planet/planet-outline.png" id="7_tcere"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6gpmc"]
+radius = 32.0156
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8fpp"]
+radius = 16.0312
+
+[node name="Sun" type="Node2D"]
+script = ExtResource("1_fdjia")
+
+[node name="GiantStar" type="Area2D" parent="."]
+script = ExtResource("2_t1pnj")
+
+[node name="outline" type="Sprite2D" parent="GiantStar"]
+texture = ExtResource("4_vtvjq")
+
+[node name="Sprite" type="Sprite2D" parent="GiantStar"]
+
+[node name="M" type="Sprite2D" parent="GiantStar/Sprite"]
+texture = ExtResource("4_arhad")
+
+[node name="G" type="Sprite2D" parent="GiantStar/Sprite"]
+visible = false
+texture = ExtResource("4_pkgqr")
+
+[node name="O" type="Sprite2D" parent="GiantStar/Sprite"]
+visible = false
+texture = ExtResource("1_cojbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GiantStar"]
+shape = SubResource("CircleShape2D_6gpmc")
+
+[node name="planet" type="Area2D" parent="."]
+script = ExtResource("5_i8fpp")
+
+[node name="outline" type="Sprite2D" parent="planet"]
+texture = ExtResource("7_tcere")
+
+[node name="Sprite" type="Sprite2D" parent="planet"]
+rotation = 3.14159
+texture = ExtResource("4_t1pnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="planet"]
+shape = SubResource("CircleShape2D_i8fpp")

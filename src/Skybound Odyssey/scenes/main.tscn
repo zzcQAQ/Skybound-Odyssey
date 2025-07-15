@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0rlhcraao3l3"]
+
+[ext_resource type="Script" uid="uid://dep0netc0tred" path="res://scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://mib2gs63qtwr" path="res://scenes/back_ground.tscn" id="2_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bypn83t4bxdss" path="res://scenes/sun.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://ba3vq1it61vn3" path="res://scenes/ui/control.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://43cavt3frd6v" path="res://scenes/ui/ui.tscn" id="4_o6xl0"]
+[ext_resource type="Script" uid="uid://bhan07y0snix4" path="res://scripts/ui/camera_2d.gd" id="5_tbgi4"]
+
+[sub_resource type="Environment" id="Environment_sugp2"]
+background_mode = 3
+glow_enabled = true
+glow_strength = 1.26
+glow_blend_mode = 1
+glow_hdr_threshold = 0.9
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_0wfyh")
+
+[node name="backGround" parent="." instance=ExtResource("2_o6xl0")]
+z_index = -1
+script = null
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 2
+zoom = Vector2(1.2, 1.2)
+script = ExtResource("5_tbgi4")
+
+[node name="Suns" type="Node" parent="."]
+
+[node name="Sun" parent="Suns" instance=ExtResource("3_sugp2")]
+
+[node name="Sun2" parent="Suns" instance=ExtResource("3_sugp2")]
+position = Vector2(-2280, 962)
+
+[node name="Sun3" parent="Suns" instance=ExtResource("3_sugp2")]
+position = Vector2(1505, 1415)
+
+[node name="Sun4" parent="Suns" instance=ExtResource("3_sugp2")]
+position = Vector2(-5730, 1126)
+
+[node name="Sun5" parent="Suns" instance=ExtResource("3_sugp2")]
+position = Vector2(-2585, -1812)
+
+[node name="Sun6" parent="Suns" instance=ExtResource("3_sugp2")]
+position = Vector2(-3284, 3239)
+
+[node name="Sun7" parent="Suns" instance=ExtResource("3_sugp2")]
+position = Vector2(945, 3958)
+
+[node name="Sun8" parent="Suns" instance=ExtResource("3_sugp2")]
+position = Vector2(4176, 2323)
+
+[node name="Sun9" parent="Suns" instance=ExtResource("3_sugp2")]
+position = Vector2(1763, -1263)
+
+[node name="Sun10" parent="Suns" instance=ExtResource("3_sugp2")]
+position = Vector2(4844, -492)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sugp2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_o6xl0")]
+z_index = 3
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]

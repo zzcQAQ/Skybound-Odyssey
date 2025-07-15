@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0rlhcraao3l3"]
+
+[ext_resource type="Script" uid="uid://dep0netc0tred" path="res://scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://tv88tl1nqhng" path="res://sprites/universe.jpg" id="1_o5qli"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wfyh"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(0, 0, 38400, 21600)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_0wfyh")
+
+[node name="backGrounds" type="Node" parent="."]
+
+[node name="backGround1" type="Sprite2D" parent="backGrounds"]
+texture_repeat = 2
+texture = SubResource("AtlasTexture_0wfyh")
+
+[node name="backGround2" type="Sprite2D" parent="backGrounds"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
