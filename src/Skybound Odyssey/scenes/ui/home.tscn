@@ -32,10 +32,10 @@ centered = false
 [node name="buttons" type="Node2D" parent="homePage"]
 position = Vector2(1500, 300)
 
-[node name="continue" type="Button" parent="homePage/buttons"]
+[node name="Campaign Mode" type="Button" parent="homePage/buttons"]
 offset_right = 150.0
 offset_bottom = 50.0
-text = "continue"
+text = "Campaign Mode"
 
 [node name="loadSave" type="Button" parent="homePage/buttons"]
 offset_top = 60.0
@@ -101,6 +101,26 @@ offset_right = 150.0
 offset_bottom = 230.0
 text = "Confirm"
 
+[node name="preview" type="Node2D" parent="factionSelect"]
+
+[node name="human" type="Node2D" parent="factionSelect/preview"]
+
+[node name="Label" type="Label" parent="factionSelect/preview/human"]
+offset_left = -900.0
+offset_top = 422.0
+offset_right = -787.0
+offset_bottom = 445.0
+text = "human faction"
+
+[node name="flesh" type="Node2D" parent="factionSelect/preview"]
+
+[node name="Label" type="Label" parent="factionSelect/preview/flesh"]
+offset_left = -900.0
+offset_top = 422.0
+offset_right = -787.0
+offset_bottom = 445.0
+text = "flesh faction"
+
 [node name="settings" type="Node2D" parent="."]
 
 [node name="title" type="Node2D" parent="settings"]
@@ -118,6 +138,12 @@ text = "settings"
 [node name="buttons" type="Node2D" parent="settings"]
 position = Vector2(1997, 300)
 
+[node name="glow" type="CheckButton" parent="settings/buttons"]
+offset_right = 150.0
+offset_bottom = 50.0
+text = "glow"
+alignment = 1
+
 [node name="back" type="Button" parent="settings/buttons"]
 offset_top = 62.0
 offset_right = 150.0
@@ -125,17 +151,20 @@ offset_bottom = 112.0
 text = "back"
 
 [node name="backGround" parent="." instance=ExtResource("2_1wv05")]
-position = Vector2(67, 62)
 
 [node name="Sun" parent="backGround" instance=ExtResource("3_1wv05")]
 z_index = 1
-position = Vector2(468, 679)
+position = Vector2(505, 742)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="backGround/Sun"]
 environment = SubResource("Environment_1wv05")
 
+[connection signal="pressed" from="homePage/buttons/Campaign Mode" to="." method="CampaignMode"]
 [connection signal="pressed" from="homePage/buttons/newGame" to="." method="NewGame"]
 [connection signal="pressed" from="homePage/buttons/settings" to="." method="Settings"]
 [connection signal="pressed" from="homePage/buttons/quit" to="." method="Quit"]
+[connection signal="pressed" from="factionSelect/buttons/human" to="." method="Human"]
+[connection signal="pressed" from="factionSelect/buttons/flesh" to="." method="Flesh"]
 [connection signal="pressed" from="factionSelect/buttons/back" to="." method="Back"]
+[connection signal="pressed" from="factionSelect/buttons/Confirm" to="." method="Confirm"]
 [connection signal="pressed" from="settings/buttons/back" to="." method="Back"]

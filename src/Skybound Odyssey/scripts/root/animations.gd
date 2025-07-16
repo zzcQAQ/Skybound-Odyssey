@@ -30,5 +30,8 @@ func UIchange(from: Node2D, to: Node2D):
 	UImove(buttons1, buttonHidePos, buttonStandardPos, 0.3)
 	UImove(title1, titleHidePos, titleStandardPos, 0.3)
 
-	
-	
+func UIhide(ui: Node2D):
+	var title = ui.get_node("title")
+	var buttons = ui.get_node("buttons")
+	UImove(buttons, buttonStandardPos, buttonHidePos, 0.3)
+	UImove(title, titleStandardPos, titleHidePos, 0.3)

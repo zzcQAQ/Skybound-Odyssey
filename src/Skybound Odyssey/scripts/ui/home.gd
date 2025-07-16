@@ -5,8 +5,17 @@ var next_scene = preload("res://scenes/main.tscn")
 @onready var currentPage = $homePage
 
 @onready var homePage = $homePage
+
 @onready var factionSelect = $factionSelect
+@onready var human = $factionSelect/preview/human
+@onready var flesh = $factionSelect/preview/flesh
+
 @onready var settings = $settings
+
+# homePage
+func CampaignMode() -> void:
+	Animations.UIchange(homePage, factionSelect)
+	currentPage = $factionSelect
 
 func NewGame() -> void:
 	Animations.UIchange(homePage, factionSelect)
@@ -16,13 +25,28 @@ func Settings() -> void:
 	Animations.UIchange(homePage, settings)
 	currentPage = $settings
 
-func Back() -> void:
-	Animations.UIchange(currentPage, homePage)
-
 func Quit() -> void:
 	get_tree().quit()
 
+# factionSelect
+func Human() -> void:
+	Animations.UImove(human, human.position, Vector2(200, 200), 0.3)
+	Animations.UImove(flesh, flesh.position, Vector2(-900, 200), 0.3)
+	GameManager.faction = 1
 
-	#GameManager.isPlaying = true
-	#self.visible = false
-	#get_tree().change_scene_to_packed(next_scene)
+func Flesh() -> void:
+	Animations.UImove(flesh, flesh.position, Vector2(200, 200), 0.3)
+	Animations.UImove(human, human.position, Vector2(-900, 200), 0.3)
+	GameManager.faction = 2
+
+func Confirm() -> void:
+	if GameManager.faction != 0 :
+		GameManager.isPlaying = true
+		Animations.UIhide(factionSelect)
+		await get_tree().create_timer(0.3).timeout
+		get_tree().change_scene_to_packed(next_scene)
+
+# all
+func Back() -> void:
+	GameManager.faction = 0
+	Animations.UIchange(currentPage, homePage)
