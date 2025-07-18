@@ -1,6 +1,6 @@
 extends Control
 
-var next_scene = preload("res://scenes/ui/sector_Select.tscn")
+var next_scene = preload("res://scenes/main.tscn")
 
 @onready var currentPage = $homePage
 
@@ -50,8 +50,8 @@ func Confirm() -> void:
 
 # all
 func Back() -> void:
-	if GameManager.faction != 0 :
-		Animations.UImove(human, human.position,Vector2(-900, 350), 0.3)
-		Animations.UImove(flesh, flesh.position, Vector2(-900, 350), 0.3)
+    if GameManger.faction != 0 :
+    	Animations.UImove(human, human.position, Vector2(-900, 350), 0.3)
+    	Animations.UImove(flesh, flesh.position, Vector2(-900, 350), 0.3)
 	GameManager.faction = 0
 	Animations.UIchange(currentPage, homePage)

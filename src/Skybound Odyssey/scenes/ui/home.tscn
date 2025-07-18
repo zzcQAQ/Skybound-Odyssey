@@ -104,21 +104,19 @@ text = "Confirm"
 [node name="preview" type="Node2D" parent="factionSelect"]
 
 [node name="human" type="Node2D" parent="factionSelect/preview"]
+position = Vector2(-900, 350)
 
 [node name="Label" type="Label" parent="factionSelect/preview/human"]
-offset_left = -900.0
-offset_top = 422.0
-offset_right = -787.0
-offset_bottom = 445.0
+offset_right = 113.0
+offset_bottom = 23.0
 text = "human faction"
 
 [node name="flesh" type="Node2D" parent="factionSelect/preview"]
+position = Vector2(-900, 350)
 
 [node name="Label" type="Label" parent="factionSelect/preview/flesh"]
-offset_left = -900.0
-offset_top = 422.0
-offset_right = -787.0
-offset_bottom = 445.0
+offset_right = 113.0
+offset_bottom = 23.0
 text = "flesh faction"
 
 [node name="settings" type="Node2D" parent="."]
