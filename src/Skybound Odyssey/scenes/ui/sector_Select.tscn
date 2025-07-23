@@ -1,7 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://bstujibkmyllp"]
+[gd_scene load_steps=4 format=3 uid="uid://bstujibkmyllp"]
 
 [ext_resource type="PackedScene" uid="uid://mib2gs63qtwr" path="res://scenes/back_ground.tscn" id="1_we5p3"]
+[ext_resource type="Texture2D" uid="uid://brva1kiyee6ty" path="res://sprites/background/backGroundStars.png" id="2_420im"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f87ot"]
+atlas = ExtResource("2_420im")
+region = Rect2(0, 0, 427, 427)
 
 [node name="sectorSelect" type="Node2D"]
 
 [node name="backGround" parent="." instance=ExtResource("1_we5p3")]
+
+[node name="sector0" type="Node2D" parent="."]
+position = Vector2(257, 266)
+
+[node name="Button" type="Button" parent="sector0"]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+scale = Vector2(8, 8)
+pivot_offset = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="sector0"]
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_f87ot")

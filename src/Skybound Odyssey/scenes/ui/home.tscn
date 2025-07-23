@@ -21,52 +21,54 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cps5c")
 
-[node name="homePage" type="Node2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="title" type="Sprite2D" parent="homePage"]
+[node name="homePage" type="Node2D" parent="CanvasLayer"]
+
+[node name="title" type="Sprite2D" parent="CanvasLayer/homePage"]
 position = Vector2(200, 200)
 scale = Vector2(0.391111, 0.391111)
 texture = ExtResource("2_sdvdx")
 centered = false
 
-[node name="buttons" type="Node2D" parent="homePage"]
+[node name="buttons" type="Node2D" parent="CanvasLayer/homePage"]
 position = Vector2(1500, 300)
 
-[node name="Campaign Mode" type="Button" parent="homePage/buttons"]
+[node name="Campaign Mode" type="Button" parent="CanvasLayer/homePage/buttons"]
 offset_right = 150.0
 offset_bottom = 50.0
 text = "Campaign Mode"
 
-[node name="loadSave" type="Button" parent="homePage/buttons"]
+[node name="loadSave" type="Button" parent="CanvasLayer/homePage/buttons"]
 offset_top = 60.0
 offset_right = 150.0
 offset_bottom = 110.0
 text = "load save"
 
-[node name="newGame" type="Button" parent="homePage/buttons"]
+[node name="newGame" type="Button" parent="CanvasLayer/homePage/buttons"]
 offset_top = 120.0
 offset_right = 150.0
 offset_bottom = 170.0
 text = "new game"
 
-[node name="settings" type="Button" parent="homePage/buttons"]
+[node name="settings" type="Button" parent="CanvasLayer/homePage/buttons"]
 offset_top = 180.0
 offset_right = 150.0
 offset_bottom = 230.0
 text = "settings"
 
-[node name="quit" type="Button" parent="homePage/buttons"]
+[node name="quit" type="Button" parent="CanvasLayer/homePage/buttons"]
 offset_top = 240.0
 offset_right = 150.0
 offset_bottom = 290.0
 text = "quit"
 
-[node name="factionSelect" type="Node2D" parent="."]
+[node name="factionSelect" type="Node2D" parent="CanvasLayer"]
 
-[node name="title" type="Node2D" parent="factionSelect"]
+[node name="title" type="Node2D" parent="CanvasLayer/factionSelect"]
 position = Vector2(-900, 200)
 
-[node name="Label" type="Label" parent="factionSelect/title"]
+[node name="Label" type="Label" parent="CanvasLayer/factionSelect/title"]
 offset_left = -6.10352e-05
 offset_top = 1.52588e-05
 offset_right = 153.0
@@ -75,56 +77,56 @@ scale = Vector2(3.5, 3.5)
 tooltip_text = "choose your faction"
 text = "choose your faction"
 
-[node name="buttons" type="Node2D" parent="factionSelect"]
+[node name="buttons" type="Node2D" parent="CanvasLayer/factionSelect"]
 position = Vector2(1997, 302)
 
-[node name="human" type="Button" parent="factionSelect/buttons"]
+[node name="human" type="Button" parent="CanvasLayer/factionSelect/buttons"]
 offset_right = 150.0
 offset_bottom = 50.0
 text = "human"
 
-[node name="flesh" type="Button" parent="factionSelect/buttons"]
+[node name="flesh" type="Button" parent="CanvasLayer/factionSelect/buttons"]
 offset_top = 60.0
 offset_right = 150.0
 offset_bottom = 110.0
 text = "flesh"
 
-[node name="back" type="Button" parent="factionSelect/buttons"]
+[node name="back" type="Button" parent="CanvasLayer/factionSelect/buttons"]
 offset_top = 120.0
 offset_right = 150.0
 offset_bottom = 170.0
 text = "back"
 
-[node name="Confirm" type="Button" parent="factionSelect/buttons"]
+[node name="Confirm" type="Button" parent="CanvasLayer/factionSelect/buttons"]
 offset_top = 180.0
 offset_right = 150.0
 offset_bottom = 230.0
 text = "Confirm"
 
-[node name="preview" type="Node2D" parent="factionSelect"]
+[node name="preview" type="Node2D" parent="CanvasLayer/factionSelect"]
 
-[node name="human" type="Node2D" parent="factionSelect/preview"]
+[node name="human" type="Node2D" parent="CanvasLayer/factionSelect/preview"]
 position = Vector2(-900, 350)
 
-[node name="Label" type="Label" parent="factionSelect/preview/human"]
+[node name="Label" type="Label" parent="CanvasLayer/factionSelect/preview/human"]
 offset_right = 113.0
 offset_bottom = 23.0
 text = "human faction"
 
-[node name="flesh" type="Node2D" parent="factionSelect/preview"]
+[node name="flesh" type="Node2D" parent="CanvasLayer/factionSelect/preview"]
 position = Vector2(-900, 350)
 
-[node name="Label" type="Label" parent="factionSelect/preview/flesh"]
+[node name="Label" type="Label" parent="CanvasLayer/factionSelect/preview/flesh"]
 offset_right = 113.0
 offset_bottom = 23.0
 text = "flesh faction"
 
-[node name="settings" type="Node2D" parent="."]
+[node name="settings" type="Node2D" parent="CanvasLayer"]
 
-[node name="title" type="Node2D" parent="settings"]
+[node name="title" type="Node2D" parent="CanvasLayer/settings"]
 position = Vector2(-900, 200)
 
-[node name="Label" type="Label" parent="settings/title"]
+[node name="Label" type="Label" parent="CanvasLayer/settings/title"]
 offset_left = -6.10352e-05
 offset_top = 1.52588e-05
 offset_right = 153.0
@@ -133,36 +135,40 @@ scale = Vector2(3.5, 3.5)
 tooltip_text = "choose your faction"
 text = "settings"
 
-[node name="buttons" type="Node2D" parent="settings"]
+[node name="buttons" type="Node2D" parent="CanvasLayer/settings"]
 position = Vector2(1997, 300)
 
-[node name="glow" type="CheckButton" parent="settings/buttons"]
+[node name="glow" type="CheckButton" parent="CanvasLayer/settings/buttons"]
 offset_right = 150.0
 offset_bottom = 50.0
 text = "glow"
 alignment = 1
 
-[node name="back" type="Button" parent="settings/buttons"]
+[node name="back" type="Button" parent="CanvasLayer/settings/buttons"]
 offset_top = 62.0
 offset_right = 150.0
 offset_bottom = 112.0
 text = "back"
 
 [node name="backGround" parent="." instance=ExtResource("2_1wv05")]
+position = Vector2(960, 540)
 
 [node name="Sun" parent="backGround" instance=ExtResource("3_1wv05")]
 z_index = 1
-position = Vector2(505, 742)
+position = Vector2(-423, 235)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="backGround/Sun"]
 environment = SubResource("Environment_1wv05")
 
-[connection signal="pressed" from="homePage/buttons/Campaign Mode" to="." method="CampaignMode"]
-[connection signal="pressed" from="homePage/buttons/newGame" to="." method="NewGame"]
-[connection signal="pressed" from="homePage/buttons/settings" to="." method="Settings"]
-[connection signal="pressed" from="homePage/buttons/quit" to="." method="Quit"]
-[connection signal="pressed" from="factionSelect/buttons/human" to="." method="Human"]
-[connection signal="pressed" from="factionSelect/buttons/flesh" to="." method="Flesh"]
-[connection signal="pressed" from="factionSelect/buttons/back" to="." method="Back"]
-[connection signal="pressed" from="factionSelect/buttons/Confirm" to="." method="Confirm"]
-[connection signal="pressed" from="settings/buttons/back" to="." method="Back"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+
+[connection signal="pressed" from="CanvasLayer/homePage/buttons/Campaign Mode" to="." method="CampaignMode"]
+[connection signal="pressed" from="CanvasLayer/homePage/buttons/newGame" to="." method="NewGame"]
+[connection signal="pressed" from="CanvasLayer/homePage/buttons/settings" to="." method="Settings"]
+[connection signal="pressed" from="CanvasLayer/homePage/buttons/quit" to="." method="Quit"]
+[connection signal="pressed" from="CanvasLayer/factionSelect/buttons/human" to="." method="Human"]
+[connection signal="pressed" from="CanvasLayer/factionSelect/buttons/flesh" to="." method="Flesh"]
+[connection signal="pressed" from="CanvasLayer/factionSelect/buttons/back" to="." method="Back"]
+[connection signal="pressed" from="CanvasLayer/factionSelect/buttons/Confirm" to="." method="Confirm"]
+[connection signal="pressed" from="CanvasLayer/settings/buttons/back" to="." method="Back"]
