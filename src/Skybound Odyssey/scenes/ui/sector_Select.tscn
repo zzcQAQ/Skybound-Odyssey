@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bstujibkmyllp"]
+[gd_scene load_steps=5 format=3 uid="uid://bstujibkmyllp"]
 
+[ext_resource type="Script" uid="uid://btgj1648yb85d" path="res://scripts/ui/sector_select.gd" id="1_f87ot"]
 [ext_resource type="PackedScene" uid="uid://mib2gs63qtwr" path="res://scenes/back_ground.tscn" id="1_we5p3"]
 [ext_resource type="Texture2D" uid="uid://brva1kiyee6ty" path="res://sprites/background/backGroundStars.png" id="2_420im"]
 
@@ -8,11 +9,13 @@ atlas = ExtResource("2_420im")
 region = Rect2(0, 0, 427, 427)
 
 [node name="sectorSelect" type="Node2D"]
+script = ExtResource("1_f87ot")
 
 [node name="backGround" parent="." instance=ExtResource("1_we5p3")]
 
 [node name="sector0" type="Node2D" parent="."]
 position = Vector2(257, 266)
+scale = Vector2(0.8, 0.8)
 
 [node name="Button" type="Button" parent="sector0"]
 offset_left = -4.0
@@ -21,7 +24,104 @@ offset_right = 4.0
 offset_bottom = 4.0
 scale = Vector2(8, 8)
 pivot_offset = Vector2(4, 4)
+flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="sector0"]
 scale = Vector2(0.3, 0.3)
 texture = SubResource("AtlasTexture_f87ot")
+
+[node name="sector1" type="Node2D" parent="."]
+position = Vector2(743, 352)
+
+[node name="Button" type="Button" parent="sector1"]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+scale = Vector2(8, 8)
+pivot_offset = Vector2(4, 4)
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="sector1"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_420im")
+region_enabled = true
+region_rect = Rect2(427, 0, 427, 427)
+
+[node name="sector2" type="Node2D" parent="."]
+position = Vector2(1145, 200)
+scale = Vector2(1.2, 1.2)
+
+[node name="Button" type="Button" parent="sector2"]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+scale = Vector2(8, 8)
+pivot_offset = Vector2(4, 4)
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="sector2"]
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_f87ot")
+
+[node name="sector3" type="Node2D" parent="."]
+position = Vector2(1680, 478)
+scale = Vector2(1.1, 1.1)
+
+[node name="Button" type="Button" parent="sector3"]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+scale = Vector2(8, 8)
+pivot_offset = Vector2(4, 4)
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="sector3"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_420im")
+region_enabled = true
+region_rect = Rect2(854, 0, 424, 427)
+
+[node name="sector4" type="Node2D" parent="."]
+position = Vector2(1267, 708)
+scale = Vector2(1.1, 1.1)
+
+[node name="Button" type="Button" parent="sector4"]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+scale = Vector2(8, 8)
+pivot_offset = Vector2(4, 4)
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="sector4"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_420im")
+region_enabled = true
+region_rect = Rect2(854, 0, 424, 427)
+
+[node name="sector5" type="Node2D" parent="."]
+position = Vector2(473, 770)
+scale = Vector2(1.1, 1.1)
+
+[node name="Button" type="Button" parent="sector5"]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+scale = Vector2(8, 8)
+pivot_offset = Vector2(4, 4)
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="sector5"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_420im")
+region_enabled = true
+region_rect = Rect2(854, 0, 424, 427)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+zoom = Vector2(10, 10)

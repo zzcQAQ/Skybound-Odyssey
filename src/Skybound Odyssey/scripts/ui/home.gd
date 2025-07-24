@@ -1,6 +1,7 @@
 extends Control
 
-var next_scene = preload("res://scenes/ui/sector_Select.tscn")
+var sector_Select = preload("res://scenes/ui/sector_Select.tscn")
+var mainScene = preload("res://scenes/main.tscn")
 
 @onready var currentPage = $CanvasLayer/homePage
 
@@ -17,15 +18,21 @@ var next_scene = preload("res://scenes/ui/sector_Select.tscn")
 # homePage
 func CampaignMode() -> void:
 	Animations.UIchange(homePage, factionSelect)
-	currentPage = $factionSelect
+	currentPage = $CanvasLayer/factionSelect
+
+func Continue() -> void:
+	Animations.UIhide(homePage)
+	await get_tree().create_timer(0.3).timeout
+	get_tree().change_scene_to_packed(mainScene)
+	GameManager.isPlaying = true
 
 func NewGame() -> void:
 	Animations.UIchange(homePage, factionSelect)
-	currentPage = $factionSelect
+	currentPage = $CanvasLayer/factionSelect
 
 func Settings() -> void:
 	Animations.UIchange(homePage, settings)
-	currentPage = $settings
+	currentPage = $CanvasLayer/settings
 
 func Quit() -> void:
 	get_tree().quit()
@@ -48,14 +55,12 @@ func Confirm() -> void:
 		Animations.UIhide(factionSelect)
 		Animations.UImove(human, human.position, Vector2(-900, 350), 0.3)
 		Animations.UImove(flesh, flesh.position, Vector2(-900, 350), 0.3)
-		var tween = create_tween()
-		tween.tween_property(camera, "zoom", Vector2(0, 0), 0.3)
-		tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+		ChangeScene()
 		await get_tree().create_timer(0.3).timeout
 		homePage.visible = 0
 		factionSelect.visible = 0
 		settings.visible = 0
-		get_tree().change_scene_to_packed(next_scene)
+		get_tree().change_scene_to_packed(sector_Select)
 
 # all
 func Back() -> void:
@@ -64,3 +69,9 @@ func Back() -> void:
 		Animations.UImove(flesh, flesh.position, Vector2(-900, 350), 0.3)
 	GameManager.faction = 0
 	Animations.UIchange(currentPage, homePage)
+
+func ChangeScene():
+	var tween = create_tween()
+	tween.tween_property(camera, "zoom", Vector2(0, 0), 0.3)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	

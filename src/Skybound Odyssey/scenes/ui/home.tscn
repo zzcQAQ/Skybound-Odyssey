@@ -39,11 +39,11 @@ offset_right = 150.0
 offset_bottom = 50.0
 text = "Campaign Mode"
 
-[node name="loadSave" type="Button" parent="CanvasLayer/homePage/buttons"]
+[node name="continue" type="Button" parent="CanvasLayer/homePage/buttons"]
 offset_top = 60.0
 offset_right = 150.0
 offset_bottom = 110.0
-text = "load save"
+text = "continue"
 
 [node name="newGame" type="Button" parent="CanvasLayer/homePage/buttons"]
 offset_top = 120.0
@@ -164,6 +164,7 @@ environment = SubResource("Environment_1wv05")
 position = Vector2(960, 540)
 
 [connection signal="pressed" from="CanvasLayer/homePage/buttons/Campaign Mode" to="." method="CampaignMode"]
+[connection signal="pressed" from="CanvasLayer/homePage/buttons/continue" to="." method="Continue"]
 [connection signal="pressed" from="CanvasLayer/homePage/buttons/newGame" to="." method="NewGame"]
 [connection signal="pressed" from="CanvasLayer/homePage/buttons/settings" to="." method="Settings"]
 [connection signal="pressed" from="CanvasLayer/homePage/buttons/quit" to="." method="Quit"]

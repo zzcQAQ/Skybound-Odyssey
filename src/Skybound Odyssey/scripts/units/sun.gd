@@ -1,4 +1,7 @@
-extends Node2D
+class_name sun extends Node2D
+
+var size: float
+var luminosity: float
 
 @export var a = randf_range(1, 3)
 var b = randf_range(0, 2 * PI)
