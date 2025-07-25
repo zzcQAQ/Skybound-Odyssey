@@ -21,6 +21,7 @@ GameManager="*res://scripts/root/gameManager.gd"
 CelestialBody="*res://scripts/root/celestialBody.gd"
 Animations="*res://scripts/root/animations.gd"
 Sector="*res://scripts/units/sector.gd"
+Seed="*res://scripts/root/seed.gd"
 
 [display]
 

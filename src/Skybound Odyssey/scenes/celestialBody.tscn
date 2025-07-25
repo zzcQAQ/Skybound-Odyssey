@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bypn83t4bxdss"]
+
+[ext_resource type="Script" uid="uid://ibgljnu1rr01" path="res://scripts/root/celestialBody.gd" id="1_vgkyu"]
+[ext_resource type="Script" uid="uid://ba43w0ed1foi" path="res://scripts/units/GiantStar.gd" id="2_vgkyu"]
+[ext_resource type="Texture2D" uid="uid://bt71e0d6708bf" path="res://sprites/units/star/star-outline.png" id="4_vtvjq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6gpmc"]
+radius = 32.0156
+
+[node name="celestialBody" type="Node2D"]
+script = ExtResource("1_vgkyu")
+
+[node name="GiantStar" type="Area2D" parent="."]
+script = ExtResource("2_vgkyu")
+
+[node name="outline" type="Sprite2D" parent="GiantStar"]
+texture = ExtResource("4_vtvjq")
+
+[node name="Sprite2D" type="Sprite2D" parent="GiantStar"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GiantStar"]
+shape = SubResource("CircleShape2D_6gpmc")

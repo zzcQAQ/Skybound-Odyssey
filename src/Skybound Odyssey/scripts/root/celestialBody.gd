@@ -1,12 +1,9 @@
-extends Area2D
-
-class_name celestialBody
+class_name celestialBody extends Node2D
 
 @onready var outline = $outline
-@onready var sprite = $Sprite
 @onready var CollisionShape = $CollisionShape2D
 
-@export var shown = false
+@export var showOutline = false
 
 func _input(event):
 
@@ -27,7 +24,17 @@ func _input(event):
 		
 		if hit_self:
 			get_tree().current_scene.show_control()
-			shown = true
+			showOutline = true
 		else:
 			get_tree().current_scene.hide_control()
-			shown = false
+			showOutline = false
+
+func _process(delta):
+	
+	self.rotate(0.1 * delta)
+	
+	if outline != null:
+		if showOutline == false:
+			outline.scale = outline.scale.lerp(Vector2(0.8, 0.8), delta * 10)
+		else:
+			outline.scale = outline.scale.lerp(Vector2(1, 1), delta * 10)

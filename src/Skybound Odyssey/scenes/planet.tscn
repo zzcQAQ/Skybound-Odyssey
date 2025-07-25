@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b450yju7gvnw2"]
 
-[ext_resource type="Texture2D" uid="uid://d1d4q0v2ni8ux" path="res://sprites/star/planet.png" id="1_cktii"]
+[ext_resource type="Texture2D" uid="uid://d1d4q0v2ni8ux" path="res://sprites/units/star/planet.png" id="1_cktii"]
 
 [node name="planet" type="Node2D"]
 

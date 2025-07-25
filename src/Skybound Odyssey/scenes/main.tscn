@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dep0netc0tred" path="res://scripts/root/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://mib2gs63qtwr" path="res://scenes/back_ground.tscn" id="2_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://bypn83t4bxdss" path="res://scenes/sun.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bypn83t4bxdss" path="res://scenes/celestialBody.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://ba3vq1it61vn3" path="res://scenes/ui/control.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://43cavt3frd6v" path="res://scenes/ui/ui.tscn" id="4_o6xl0"]
 [ext_resource type="Script" uid="uid://bhan07y0snix4" path="res://scripts/ui/camera_2d.gd" id="5_tbgi4"]
@@ -28,33 +28,33 @@ script = ExtResource("5_tbgi4")
 
 [node name="Suns" type="Node" parent="."]
 
-[node name="Sun" parent="Suns" instance=ExtResource("3_sugp2")]
+[node name="celestialBody" parent="Suns" instance=ExtResource("3_sugp2")]
 
-[node name="Sun2" parent="Suns" instance=ExtResource("3_sugp2")]
+[node name="celestialBody2" parent="Suns" instance=ExtResource("3_sugp2")]
 position = Vector2(-2280, 962)
 
-[node name="Sun3" parent="Suns" instance=ExtResource("3_sugp2")]
+[node name="celestialBody3" parent="Suns" instance=ExtResource("3_sugp2")]
 position = Vector2(1505, 1415)
 
-[node name="Sun4" parent="Suns" instance=ExtResource("3_sugp2")]
+[node name="celestialBody4" parent="Suns" instance=ExtResource("3_sugp2")]
 position = Vector2(-5730, 1126)
 
-[node name="Sun5" parent="Suns" instance=ExtResource("3_sugp2")]
+[node name="celestialBody5" parent="Suns" instance=ExtResource("3_sugp2")]
 position = Vector2(-2585, -1812)
 
-[node name="Sun6" parent="Suns" instance=ExtResource("3_sugp2")]
+[node name="celestialBody6" parent="Suns" instance=ExtResource("3_sugp2")]
 position = Vector2(-3284, 3239)
 
-[node name="Sun7" parent="Suns" instance=ExtResource("3_sugp2")]
+[node name="celestialBody7" parent="Suns" instance=ExtResource("3_sugp2")]
 position = Vector2(945, 3958)
 
-[node name="Sun8" parent="Suns" instance=ExtResource("3_sugp2")]
+[node name="celestialBody8" parent="Suns" instance=ExtResource("3_sugp2")]
 position = Vector2(4176, 2323)
 
-[node name="Sun9" parent="Suns" instance=ExtResource("3_sugp2")]
+[node name="celestialBody9" parent="Suns" instance=ExtResource("3_sugp2")]
 position = Vector2(1763, -1263)
 
-[node name="Sun10" parent="Suns" instance=ExtResource("3_sugp2")]
+[node name="celestialBody10" parent="Suns" instance=ExtResource("3_sugp2")]
 position = Vector2(4844, -492)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
