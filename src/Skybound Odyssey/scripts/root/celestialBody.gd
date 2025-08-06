@@ -4,6 +4,10 @@ class_name celestialBody extends Node2D
 @onready var CollisionShape = $CollisionShape2D
 
 @export var showOutline = false
+var rng = RandomNumberGenerator.new()
+
+func _ready():
+	rng.seed = 1
 
 func _input(event):
 
