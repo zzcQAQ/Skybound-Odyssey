@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bypn83t4bxdss"]
+[gd_scene load_steps=6 format=3 uid="uid://bypn83t4bxdss"]
 
-[ext_resource type="Script" uid="uid://ibgljnu1rr01" path="res://scripts/root/celestialBody.gd" id="1_vgkyu"]
+[ext_resource type="Script" uid="uid://ibgljnu1rr01" path="res://scripts/units/celestialBody.gd" id="1_vgkyu"]
 [ext_resource type="Script" uid="uid://ba43w0ed1foi" path="res://scripts/units/GiantStar.gd" id="2_vgkyu"]
+[ext_resource type="PackedScene" uid="uid://b450yju7gvnw2" path="res://scenes/planet.tscn" id="4_j6e2w"]
 [ext_resource type="Texture2D" uid="uid://bt71e0d6708bf" path="res://sprites/units/star/star-outline.png" id="4_vtvjq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6gpmc"]
@@ -20,3 +21,5 @@ texture = ExtResource("4_vtvjq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GiantStar"]
 shape = SubResource("CircleShape2D_6gpmc")
+
+[node name="planet" parent="." instance=ExtResource("4_j6e2w")]

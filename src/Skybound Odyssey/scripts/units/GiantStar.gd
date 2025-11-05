@@ -1,8 +1,8 @@
 class_name GiantStar extends celestialBody
 
-@export var size = Seed.size
+@export var size: float = 1
 @export var luminosity = 0.01
-@export var rotateSpeed = Seed.rotateSpeed
+@export var rotateSpeed = Seed.rotateSpeed * 0.1
 
 var MType = preload("res://sprites/units/star/MType.png")
 var GType = preload("res://sprites/units/star/GType.png")
@@ -19,3 +19,8 @@ func _ready():
 		sprite.texture = GType
 	elif luminosity >= 2 and luminosity <= 3:
 		sprite.texture = OType
+
+#func _process(delta: float) -> void:
+	#for planet in get_children():
+		#if planet.has_method("orbit_update"):
+			#planet.orbit_update(delta)

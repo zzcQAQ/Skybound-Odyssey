@@ -27,6 +27,7 @@ layer = -1
 scroll_scale = Vector2(1.1, 1.1)
 repeat_size = Vector2(4095, 4095)
 repeat_times = 6
+ignore_camera_scroll = true
 
 [node name="nebula" type="Sprite2D" parent="CanvasLayer/nebula"]
 texture = ExtResource("1_8lwin")

@@ -35,6 +35,7 @@ centered = false
 position = Vector2(1500, 300)
 
 [node name="Campaign Mode" type="Button" parent="CanvasLayer/homePage/buttons"]
+visible = false
 offset_right = 150.0
 offset_bottom = 50.0
 text = "Campaign Mode"
@@ -46,12 +47,14 @@ offset_bottom = 110.0
 text = "continue"
 
 [node name="newGame" type="Button" parent="CanvasLayer/homePage/buttons"]
+visible = false
 offset_top = 120.0
 offset_right = 150.0
 offset_bottom = 170.0
 text = "new game"
 
 [node name="settings" type="Button" parent="CanvasLayer/homePage/buttons"]
+visible = false
 offset_top = 180.0
 offset_right = 150.0
 offset_bottom = 230.0

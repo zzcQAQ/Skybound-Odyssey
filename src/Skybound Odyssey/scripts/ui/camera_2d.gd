@@ -1,11 +1,14 @@
 extends Camera2D
 
 var isDrag = false
-var startPosition = Vector2.ZERO
-var startCamPos = Vector2.ZERO
+var start_mouse_pos = Vector2.ZERO
+var start_cam_pos = Vector2.ZERO
 var scaleNum = 1.0
 var scaleNumNow = scaleNum
+var target_position = Vector2.ZERO
 
+func _ready():
+	target_position = position
 
 func _input(event):
 	
@@ -21,17 +24,18 @@ func _input(event):
 		if event.button_index == 2:
 			if event.is_pressed():
 				isDrag = true
-				startPosition = event.position
-				startCamPos = self.position
+				start_mouse_pos = event.position
+				start_cam_pos = self.position
 				scaleNumNow = scaleNum
 			else:
 				isDrag = false
-				startPosition = Vector2.ZERO
+				start_mouse_pos = Vector2.ZERO
 
 	if event is InputEventMouseMotion and isDrag:
-		var delta_pos = (startPosition - event.position) / scaleNumNow
-		self.position = startCamPos + delta_pos
+		var delta_pos = (start_mouse_pos - event.position) / scaleNumNow
+		target_position = start_cam_pos + delta_pos
 		
 
 func _process(delta):
 	self.zoom = lerp(self.zoom, Vector2(scaleNum, scaleNum), 16 * delta)
+	position = position.lerp(target_position, 20 * delta)
