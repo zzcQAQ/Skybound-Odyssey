@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt71e0d6708bf"
-path="res://.godot/imported/star-outline.png-fad5139b4e1d2904a27033b660f95e1c.ctex"
+uid="uid://d1d4q0v2ni8ux"
+path="res://.godot/imported/planet.png-686250c15dac238054fc7907e9055e06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/units/star/star-outline.png"
-dest_files=["res://.godot/imported/star-outline.png-fad5139b4e1d2904a27033b660f95e1c.ctex"]
+source_file="res://sprites/units/planet/planet.png"
+dest_files=["res://.godot/imported/planet.png-686250c15dac238054fc7907e9055e06.ctex"]
 
 [params]
 

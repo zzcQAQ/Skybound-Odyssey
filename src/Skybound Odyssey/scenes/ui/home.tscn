@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c5evwercmrg56" path="res://scripts/ui/home.gd" id="1_cps5c"]
 [ext_resource type="PackedScene" uid="uid://mib2gs63qtwr" path="res://scenes/back_ground.tscn" id="2_1wv05"]
 [ext_resource type="Texture2D" uid="uid://d6om5gbg35s3" path="res://sprites/background/title.png" id="2_sdvdx"]
-[ext_resource type="PackedScene" uid="uid://bypn83t4bxdss" path="res://scenes/celestialBody.tscn" id="3_1wv05"]
+[ext_resource type="PackedScene" uid="uid://hajoe6cslyb3" path="res://scenes/SolarSystem/solar_system.tscn" id="3_1wv05"]
 
 [sub_resource type="Environment" id="Environment_1wv05"]
 background_mode = 3

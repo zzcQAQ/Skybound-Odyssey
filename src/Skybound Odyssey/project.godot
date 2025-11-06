@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://scripts/root/gameManager.gd"
-CelestialBody="*res://scripts/units/celestialBody.gd"
+CelestialBody="*res://scripts/root/celestialBody/celestialBody.gd"
 Animations="*res://scripts/root/animations.gd"
 Sector="*res://scripts/units/sector.gd"
 Seed="*res://scripts/root/seed.gd"

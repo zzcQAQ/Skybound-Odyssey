@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc2elq8woy7dt"]
+
+[ext_resource type="Script" uid="uid://701j0ab5bydm" path="res://scripts/root/SolarSystem/orbit.gd" id="1_xwlna"]
+
+[node name="orbit" type="Node2D"]
+script = ExtResource("1_xwlna")

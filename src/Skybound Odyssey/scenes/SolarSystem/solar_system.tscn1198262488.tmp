@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://hajoe6cslyb3"]
+
+[ext_resource type="Script" uid="uid://fbxt8vtxl3d6" path="res://scripts/root/SolarSystem/SolarSystem.gd" id="1_5aqdx"]
+[ext_resource type="PackedScene" uid="uid://i0un1dfsjesc" path="res://scenes/SolarSystem/giant_star.tscn" id="1_b1hyh"]
+[ext_resource type="PackedScene" uid="uid://cc2elq8woy7dt" path="res://scenes/SolarSystem/orbit.tscn" id="2_5aqdx"]
+
+[node name="SolarSystem" type="Node2D"]
+script = ExtResource("1_5aqdx")
+
+[node name="GiantStar" parent="." instance=ExtResource("1_b1hyh")]
+
+[node name="PlanetOrbits" type="Node2D" parent="."]
+
+[node name="orbit" parent="PlanetOrbits" instance=ExtResource("2_5aqdx")]
