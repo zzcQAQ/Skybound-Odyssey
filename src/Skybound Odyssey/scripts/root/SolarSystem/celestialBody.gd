@@ -3,9 +3,8 @@ class_name celestialBody extends Node2D
 #加载贴图
 @onready var outline = $outline
 @onready var CollisionShape = $CollisionShape2D
-
-@export var showOutline = false
-@export var lerp_scale = Vector2(0.1, 0.1)
+@onready var show_UI = false
+@export var lerp_scale = Vector2(0.9, 0.9)
 
 var rng = RandomNumberGenerator.new()
 
@@ -30,16 +29,13 @@ func _input(event):
 		)
 		
 		if hit_self:
-			get_tree().current_scene.show_control()
-			showOutline = true
+			show_UI = true
 		else:
-			get_tree().current_scene.hide_control()
-			showOutline = false
+			show_UI = false
 
-func _process(delta):
-	
+func _process(delta: float) -> void:
 	if outline != null:
-		if showOutline == false:
+		if show_UI == false:
 			outline.scale = outline.scale.lerp(lerp_scale, delta * 10)
 		else:
 			outline.scale = outline.scale.lerp(Vector2(1, 1), delta * 10)

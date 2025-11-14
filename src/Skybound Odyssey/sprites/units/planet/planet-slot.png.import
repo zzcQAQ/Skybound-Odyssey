@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3glkx7vphtkd"
-path="res://.godot/imported/OType.png-6d3d53491d08cd5352d1f50c577954db.ctex"
+uid="uid://cqqu6n4s1uy1n"
+path="res://.godot/imported/planet-slot.png-9e1e93af3d80c31aaaf2fbfe274fdf64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/units/star/OType.png"
-dest_files=["res://.godot/imported/OType.png-6d3d53491d08cd5352d1f50c577954db.ctex"]
+source_file="res://sprites/units/planet/planet-slot.png"
+dest_files=["res://.godot/imported/planet-slot.png-9e1e93af3d80c31aaaf2fbfe274fdf64.ctex"]
 
 [params]
 

@@ -5,6 +5,7 @@ extends Node2D
 @export var orbit_gap: float = 150.0
 @export var planet_count: int = 4
 @export var orbit_radius: float = 200.0
+@export var clockwise: bool = randi_range(0, 1)
 
 @onready var PlanetOrbits = $PlanetOrbits
 
@@ -23,3 +24,4 @@ func _generate_planets():
 		orbit.add_child(planet)
 		orbit.set_radius(min_orbit_radius + orbit_gap * i)
 		orbit.orbit_speed = randf() * 10 / orbit_radius
+		orbit.clockwise = clockwise

@@ -19,7 +19,9 @@ func _process(delta):
 	
 #初始化
 func _ready():
+	
 	lerp_scale = Vector2(0.9, 0.9)
+	
 	rng.seed = hash(get_parent().name)
 	luminosity = rng.randf_range(0.5, 3.0)
 	luminosity = snapped(luminosity, 0.01)
