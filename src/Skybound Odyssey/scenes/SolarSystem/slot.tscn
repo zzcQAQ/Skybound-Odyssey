@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxrucl1vcqhfg"]
 
 [ext_resource type="Script" uid="uid://cn151f830j07w" path="res://scripts/root/SolarSystem/slot.gd" id="1_3halt"]
-[ext_resource type="Texture2D" uid="uid://cqqu6n4s1uy1n" path="res://sprites/units/planet/planet-slot.png" id="1_kp2i7"]
+[ext_resource type="Texture2D" uid="uid://cqqu6n4s1uy1n" path="res://sprites/units/planets/planet-slot.png" id="1_kp2i7"]
 
 [node name="slot" type="Area2D"]
 script = ExtResource("1_3halt")

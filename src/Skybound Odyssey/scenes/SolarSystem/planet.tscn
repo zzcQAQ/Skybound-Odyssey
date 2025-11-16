@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://c84741wwjs0xb"]
 
 [ext_resource type="Script" uid="uid://cn60ak78pvcdu" path="res://scripts/root/SolarSystem/planet.gd" id="1_o08el"]
-[ext_resource type="Texture2D" uid="uid://d1d4q0v2ni8ux" path="res://sprites/units/planet/planet.png" id="1_pcju1"]
-[ext_resource type="Texture2D" uid="uid://vxonwigqqhsb" path="res://sprites/units/planet/planet-outline.png" id="2_o08el"]
-[ext_resource type="Texture2D" uid="uid://e4usgwaqjcns" path="res://sprites/units/planet/planetshadow.png" id="4_xfsdl"]
-[ext_resource type="Texture2D" uid="uid://bgsulna1aq7v1" path="res://sprites/units/planet/planet-light.png" id="5_e8i2p"]
+[ext_resource type="Texture2D" uid="uid://d1d4q0v2ni8ux" path="res://sprites/units/planets/planet-body.png" id="1_pcju1"]
+[ext_resource type="Texture2D" uid="uid://vxonwigqqhsb" path="res://sprites/units/planets/planet-outline.png" id="2_o08el"]
+[ext_resource type="Texture2D" uid="uid://e4usgwaqjcns" path="res://sprites/units/planets/planetshadow.png" id="4_xfsdl"]
+[ext_resource type="Texture2D" uid="uid://bgsulna1aq7v1" path="res://sprites/units/planets/planet-light.png" id="5_e8i2p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o08el"]
 radius = 16.0

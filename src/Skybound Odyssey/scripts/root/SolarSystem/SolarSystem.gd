@@ -3,11 +3,16 @@ extends Node2D
 #生成行星轨道
 @export var min_orbit_radius: float = 200.0
 @export var orbit_gap: float = 150.0
-@export var planet_count: int = 4
 @export var orbit_radius: float = 200.0
 @export var clockwise: bool = randi_range(0, 1)
 
 @onready var PlanetOrbits = $PlanetOrbits
+
+var rng = SeedManager.get_rng(0)
+
+@export var planet_count = rng.randi_range(3, 8)
+@export var star_size = rng.randf_range(1.0, 2.0)
+@export var star_rotate_speed = rng.randf_range(0.01, 0.2)
 
 func _ready():
 	_generate_planets()

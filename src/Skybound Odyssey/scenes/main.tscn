@@ -41,3 +41,9 @@ z_index = 3
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="SolarSystem" parent="Node2D" instance=ExtResource("6_tefeu")]
+
+[node name="SolarSystem2" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(3669, 1084)
+
+[node name="SolarSystem3" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(5242, -3413)

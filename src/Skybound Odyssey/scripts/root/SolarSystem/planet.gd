@@ -35,15 +35,16 @@ var _elapsed_time: float = 0.0
 var update_interval: float = 1.0
 
 func _ready():
+	
 	lerp_scale = Vector2(0.7, 0.7)
 	
 	base.rotate(rotate_rand)
 	light.rotate(rotate_rand)
 	
-	_update_slots(slot_count)
+	_update_slot_count(slot_count)
 
 #更新建筑槽
-func _update_slots(count: int) -> void:
+func _update_slot_count(count: int) -> void:
 	angle_step = TAU / count
 	for i in range(count):
 		var slot = slot_scene.instantiate()
@@ -53,19 +54,26 @@ func _update_slots(count: int) -> void:
 		slot.modulate.a = 0.0
 		slot.scale = Vector2(0.5, 0.5)
 
-func _show_slot(count: int) -> void:
-	var tween = create_tween()
+#好难的动画，但是真好看
+func _update_slot_movement(count: int, shown: bool) -> void:
+	
+	var target_scale: Vector2
+	var target_alpha: float
+	
+	if shown:
+		target_scale = Vector2(1.0, 1.0)
+		target_alpha = 1.0
+	else:
+		target_scale = Vector2(0.7, 0.7)
+		target_alpha = 0.0
+	
 	for i in range(min(count, $slots.get_child_count())):
 		var slot = $slots.get_child(i)
-		tween.tween_property(slot, "modulate:a", 1.0, 0.3)
-		tween.tween_property(slot, "scale", Vector2(1.0, 1.0), 0.3)
-
-func _hide_slot(count: int) -> void:
-	var tween = create_tween()
-	for i in range(min(count, $slots.get_child_count())):
-		var slot = $slots.get_child(i)
-		tween.tween_property(slot, "modulate:a", 0.0, 0.3)
-		tween.tween_property(slot, "scale", Vector2(0.5, 0.5), 0.3)
+		var delay = i * 0.05
+		var t1 = create_tween()
+		t1.tween_property(slot, "modulate:a", target_alpha, 0.1).set_delay(delay)
+		var t2 = create_tween()
+		t2.tween_property(slot, "scale", target_scale, 0.1).set_delay(delay)
 
 #行星属性更新
 func _process(delta: float) -> void:
@@ -73,9 +81,9 @@ func _process(delta: float) -> void:
 	#建筑槽
 	super._process(delta)
 	if show_UI == false:
-		_hide_slot(slot_count)
+		_update_slot_movement(slot_count, false)
 	else:
-		_show_slot(slot_count)
+		_update_slot_movement(slot_count, true)
 	
 	#自转
 	base.rotate(rotate_speed * delta)
