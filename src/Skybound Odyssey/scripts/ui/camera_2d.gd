@@ -15,7 +15,7 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index in [4, 5]:
 			if event.button_index == 4:
-				if scaleNum >= 3: return
+				if scaleNum >= 5: return
 				scaleNum *= 1.1
 			else:
 				if scaleNum <= 0.2: return

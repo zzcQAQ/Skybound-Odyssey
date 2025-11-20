@@ -1,6 +1,6 @@
 extends Node
 
-@export var world_seed: int = 123456
+@export var world_seed: int = 114514
 
 func set_seed(seed: int):
 	world_seed = seed

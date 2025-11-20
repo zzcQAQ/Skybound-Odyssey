@@ -37,13 +37,51 @@ visible = false
 z_index = 3
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 23)
 
 [node name="SolarSystem" parent="Node2D" instance=ExtResource("6_tefeu")]
 
 [node name="SolarSystem2" parent="Node2D" instance=ExtResource("6_tefeu")]
-position = Vector2(3669, 1084)
+position = Vector2(1395, 2)
 
 [node name="SolarSystem3" parent="Node2D" instance=ExtResource("6_tefeu")]
-position = Vector2(5242, -3413)
+position = Vector2(2754, 34)
+
+[node name="SolarSystem4" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(4096, 48)
+
+[node name="SolarSystem5" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(5437, 51)
+
+[node name="SolarSystem6" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(0, 1324)
+
+[node name="SolarSystem7" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(1371, 1284)
+
+[node name="SolarSystem8" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(2809, 1278)
+
+[node name="SolarSystem9" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(4119, 1285)
+
+[node name="SolarSystem10" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(5451, 1302)
+
+[node name="SolarSystem11" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(10, 2461)
+
+[node name="SolarSystem12" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(1362, 2469)
+
+[node name="SolarSystem13" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(2759, 2481)
+
+[node name="SolarSystem14" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(4144, 2498)
+
+[node name="SolarSystem15" parent="Node2D" instance=ExtResource("6_tefeu")]
+position = Vector2(5458, 2504)
