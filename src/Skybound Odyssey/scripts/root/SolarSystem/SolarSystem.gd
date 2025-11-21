@@ -20,11 +20,11 @@ func _ready():
 	#恶臭种子
 	rng.seed = hash(name) % 114514 * base_rng.randi()
 	
+	star_size = rng.randf_range(1, 2)
+	luminosity = rng.randf_range(0.2, 1.5) * star_size
+	
 	get_planet_count()
 	_generate_planets()
-	
-	star_size = rng.randf_range(1, 2)
-	luminosity = rng.randf_range(0.5, 3)
 	
 	giant_star.star_setup(star_size, luminosity)
 

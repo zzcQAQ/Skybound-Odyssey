@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://43cavt3frd6v"]
+[gd_scene load_steps=4 format=3 uid="uid://cqn7101tyv52c"]
 
 [ext_resource type="Texture2D" uid="uid://ylm8ldnlsc5t" path="res://sprites/items/material.png" id="1_u7n8c"]
 [ext_resource type="Texture2D" uid="uid://dn5oia080u7v5" path="res://sprites/items/power.png" id="2_f5cxw"]

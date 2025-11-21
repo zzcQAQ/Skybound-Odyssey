@@ -18,7 +18,7 @@ func _input(event):
 				if scaleNum >= 5: return
 				scaleNum *= 1.1
 			else:
-				if scaleNum <= 0.2: return
+				if scaleNum <= 0.1: return
 				scaleNum *= 0.9
 
 		if event.button_index == 2:

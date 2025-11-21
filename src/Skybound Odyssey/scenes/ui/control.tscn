@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba3vq1it61vn3"]
+[gd_scene load_steps=2 format=3 uid="uid://cvjbcfet5alfs"]
 
-[ext_resource type="Script" uid="uid://n4jkc1cmcxlt" path="res://scripts/ui/control.gd" id="1_yo0lp"]
+[sub_resource type="GDScript" id="GDScript_gxf21"]
+script/source = "extends Control
+"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_yo0lp")
+script = SubResource("GDScript_gxf21")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0

@@ -11,28 +11,14 @@ var GType = preload("res://sprites/units/star/GType.png")
 var OType = preload("res://sprites/units/star/OType.png")
 @onready var sprite = $Sprite2D
 
-#初始化
-func _ready():
-	
-	#rng.seed = hash(get_parent().name)
-	#luminosity = rng.randf_range(0.5, 3.0)
-	#luminosity = snapped(luminosity, 0.01)
-	sprite.texture = MType
-	#if luminosity >= 0 and luminosity < 1:
-		#sprite.texture = MType
-	#elif luminosity >= 1 and luminosity < 2:
-		#sprite.texture = GType
-	#elif luminosity >= 2 and luminosity <= 3:
-		#sprite.texture = OType
-
 #接收恒星初始化
 func star_setup(s, l):
 	size = s
 	luminosity = l
 	scale = Vector2(s, s)
-	if luminosity <= 1:
+	if l <= 1:
 		sprite.texture = MType
-	elif luminosity <= 2:
+	elif l <= 2:
 		sprite.texture = GType
 	else: sprite.texture = OType
 
