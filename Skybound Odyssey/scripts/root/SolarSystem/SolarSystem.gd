@@ -61,5 +61,5 @@ func _generate_planets():
 		orbit.add_child(load_planet)
 
 		orbit.set_radius(r)
-		orbit.orbit_speed = rng.randf_range(0.02, 0.3) / r
+		orbit.orbit_speed = rng.randf_range(1, 5) / r
 		orbit.clockwise = clockwise
