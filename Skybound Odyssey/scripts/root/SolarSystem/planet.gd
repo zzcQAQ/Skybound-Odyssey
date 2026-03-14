@@ -1,4 +1,5 @@
-class_name planet extends celestialBody
+class_name Planet
+extends CelestialBody
 
 var planet_name: String = "Unnamed Planet"
 var faction: String = "Human"
@@ -36,7 +37,7 @@ var update_interval: float = 1.0
 
 func _ready():
 	
-	lerp_scale = Vector2(0.7, 0.7)
+	self.lerp_scale = Vector2(0.7, 0.7)
 	
 	base.rotate(rotate_rand)
 	light.rotate(rotate_rand)
@@ -80,7 +81,7 @@ func _process(delta: float) -> void:
 	
 	#建筑槽
 	super._process(delta)
-	if show_UI == false:
+	if self.show_UI == false:
 		_update_slot_movement(slot_count, false)
 	else:
 		_update_slot_movement(slot_count, true)

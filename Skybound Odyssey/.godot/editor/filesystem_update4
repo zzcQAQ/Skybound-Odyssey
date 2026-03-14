@@ -1,0 +1,8 @@
+res://scenes/SolarSystem/planet.tscn
+res://scripts/root/SolarSystem/planet.gd
+res://scripts/root/seedManager.gd
+res://scripts/root/SolarSystem/SolarSystem.gd
+res://scenes/SolarSystem/giant_star.tscn
+res://scenes/ui/control.tscn
+res://scripts/root/SolarSystem/celestialBody.gd
+res://scripts/root/SolarSystem/giantStar.gd

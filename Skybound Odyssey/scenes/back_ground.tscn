@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://mib2gs63qtwr"]
+[gd_scene format=4 uid="uid://mib2gs63qtwr"]
 
-[ext_resource type="Texture2D" uid="uid://1a1ctafk7ehl" path="res://sprites/background/nebula.png" id="1_8lwin"]
-[ext_resource type="Texture2D" uid="uid://brva1kiyee6ty" path="res://sprites/background/backGroundStars.png" id="2_wme33"]
+[ext_resource type="Texture2D" uid="uid://1a1ctafk7ehl" path="res://accests/sprites/background/nebula.png" id="1_8lwin"]
+[ext_resource type="Texture2D" uid="uid://brva1kiyee6ty" path="res://accests/sprites/background/backGroundStars.png" id="2_wme33"]
+
 
 [sub_resource type="GDScript" id="GDScript_8lwin"]
 script/source = "extends Node2D

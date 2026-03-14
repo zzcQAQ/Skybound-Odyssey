@@ -1,4 +1,5 @@
-class_name celestialBody extends Node2D
+class_name CelestialBody
+extends Node2D
 
 #加载贴图
 @onready var outline = $outline

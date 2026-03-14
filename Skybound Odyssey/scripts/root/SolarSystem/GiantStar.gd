@@ -1,4 +1,5 @@
-class_name GiantStar extends celestialBody
+class_name GiantStar 
+extends CelestialBody
 
 #恒星属性
 @export var size: float = 1
@@ -6,9 +7,9 @@ class_name GiantStar extends celestialBody
 @export var luminosity:float = 1
 
 #加载贴图
-var MType = preload("res://sprites/units/star/MType.png")
-var GType = preload("res://sprites/units/star/GType.png")
-var OType = preload("res://sprites/units/star/OType.png")
+var MType = preload("res://accests/sprites/units/star/MType.png")
+var GType = preload("res://accests/sprites/units/star/GType.png")
+var OType = preload("res://accests/sprites/units/star/OType.png")
 @onready var sprite = $Sprite2D
 
 #接收恒星初始化

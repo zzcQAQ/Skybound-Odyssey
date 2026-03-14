@@ -14,7 +14,7 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 
-var base_rng = SeedManager.get_rng(0)
+var base_rng =SeedManager.get_rng(0)
 
 func _ready():
 	#恶臭种子
