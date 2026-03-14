@@ -1,5 +1,5 @@
 class_name GiantStar 
-extends CelestialBody
+extends CelestialBody 
 
 #恒星属性
 @export var size: float = 1
