@@ -38,4 +38,4 @@ func _input(event):
 
 func _process(delta):
 	self.zoom = lerp(self.zoom, Vector2(scaleNum, scaleNum), 16 * delta)
-	position = position.lerp(target_position, 20 * delta)
+	position = target_position

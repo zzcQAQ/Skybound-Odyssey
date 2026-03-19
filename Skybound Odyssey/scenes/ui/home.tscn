@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d6om5gbg35s3" path="res://accests/sprites/background/title.png" id="2_sdvdx"]
 [ext_resource type="PackedScene" uid="uid://hajoe6cslyb3" path="res://scenes/SolarSystem/solar_system.tscn" id="3_1wv05"]
 
-[sub_resource type="Environment" id="Environment_1wv05"]
+[sub_resource type="Environment" id="Environment_sdvdx"]
 background_mode = 3
 glow_enabled = true
 glow_strength = 1.26
@@ -25,8 +25,8 @@ script = ExtResource("1_cps5c")
 [node name="homePage" type="Node2D" parent="CanvasLayer" unique_id=1433431355]
 
 [node name="title" type="Sprite2D" parent="CanvasLayer/homePage" unique_id=681158923]
-position = Vector2(200, 200)
-scale = Vector2(0.391111, 0.391111)
+position = Vector2(222, 191)
+scale = Vector2(0.45999998, 0.45999998)
 texture = ExtResource("2_sdvdx")
 centered = false
 
@@ -159,11 +159,11 @@ position = Vector2(960, 540)
 z_index = 1
 position = Vector2(-423, 235)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="backGround/Sun" unique_id=547207818]
-environment = SubResource("Environment_1wv05")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1865871818]
 position = Vector2(960, 540)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1236856713]
+environment = SubResource("Environment_sdvdx")
 
 [connection signal="pressed" from="CanvasLayer/homePage/buttons/Campaign Mode" to="." method="CampaignMode"]
 [connection signal="pressed" from="CanvasLayer/homePage/buttons/continue" to="." method="Continue"]
