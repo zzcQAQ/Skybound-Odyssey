@@ -26,3 +26,7 @@ func star_setup(s, l):
 func _process(delta):
 	super._process(delta)
 	self.rotate(rotateSpeed * delta)
+
+#描边半径
+func get_outline_radius():
+	return size * 70

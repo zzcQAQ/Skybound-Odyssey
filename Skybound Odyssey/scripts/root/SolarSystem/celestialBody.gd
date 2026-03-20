@@ -2,7 +2,6 @@ class_name CelestialBody
 extends Node2D
 
 #加载贴图
-@onready var outline = $outline
 @onready var CollisionShape = $CollisionShape2D
 @onready var show_UI = false
 @export var lerp_scale = Vector2(0.9, 0.9)
@@ -35,11 +34,4 @@ func _input(event):
 			show_UI = false
 
 func _process(delta: float) -> void:
-	if outline != null:
-		if show_UI == false:
-			
-			outline.scale = outline.scale.lerp(lerp_scale, delta * 10)
-			
-		else:
-			
-			outline.scale = outline.scale.lerp(Vector2(1, 1), delta * 10)
+	pass

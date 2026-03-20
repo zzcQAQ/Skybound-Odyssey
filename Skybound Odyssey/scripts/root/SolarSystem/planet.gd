@@ -35,6 +35,9 @@ var faction: String = "Human"
 var _elapsed_time: float = 0.0
 var update_interval: float = 1.0
 
+func get_outline_radius():
+	return 21
+
 func _ready():
 	
 	self.lerp_scale = Vector2(0.7, 0.7)
