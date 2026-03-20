@@ -39,6 +39,7 @@ func _process(delta: float) -> void:
 		if show_UI == false:
 			
 			outline.scale = outline.scale.lerp(lerp_scale, delta * 10)
+			
 		else:
 			
 			outline.scale = outline.scale.lerp(Vector2(1, 1), delta * 10)

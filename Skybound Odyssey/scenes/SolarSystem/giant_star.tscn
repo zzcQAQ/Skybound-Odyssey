@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://i0un1dfsjesc"]
 
-[ext_resource type="Script" uid="uid://bq5mrvyiqwb4s" path="res://scripts/root/SolarSystem/giant_star.gd" id="1_n714w"]
+[ext_resource type="Script" uid="uid://bq5mrvyiqwb4s" path="res://scripts/root/SolarSystem/GiantStar.gd" id="1_n714w"]
 [ext_resource type="Texture2D" uid="uid://bt71e0d6708bf" path="res://accests/sprites/units/star/star-outline.png" id="2_sjdv7"]
 [ext_resource type="Texture2D" uid="uid://begn8wbp32h1i" path="res://accests/sprites/units/star/MType.png" id="3_aykb7"]
 
