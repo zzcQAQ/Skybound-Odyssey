@@ -3,6 +3,7 @@ extends CelestialBody
 
 #恒星属性
 @export var size: float = 1
+@export var radius = 64
 @export var rotateSpeed = 0.1
 @export var luminosity:float = 1
 
@@ -15,6 +16,9 @@ var OType = preload("res://accests/sprites/units/star/OType.png")
 #接收恒星初始化
 func star_setup(s, l):
 	size = s
+	
+	radius = radius * s
+	
 	luminosity = l
 	scale = Vector2(s, s)
 	if l <= 1:
@@ -25,8 +29,4 @@ func star_setup(s, l):
 
 func _process(delta):
 	super._process(delta)
-	self.rotate(rotateSpeed * delta)
-
-#描边半径
-func get_outline_radius():
-	return size * 70
+	sprite.rotate(rotateSpeed * delta)

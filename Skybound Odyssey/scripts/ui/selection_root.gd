@@ -1,12 +1,13 @@
 extends Node2D
 
-@export var radius = 70
+@export var radius = 1
 @export var rotate_speed = 0.1
 
 @onready var arrow_scene = $SelectArrow
 
-
 func _ready():
+	
+	radius = get_parent().radius + 5
 	
 	arrow_scene.visible = false
 
@@ -22,5 +23,7 @@ func _ready():
 		arrow.rotation = angle  # 指向中心
 
 
+
 func _process(delta):
+	
 	rotation += rotate_speed * delta
