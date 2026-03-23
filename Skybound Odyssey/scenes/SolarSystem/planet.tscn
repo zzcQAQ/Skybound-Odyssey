@@ -27,4 +27,5 @@ shape = SubResource("CircleShape2D_o08el")
 [node name="slots" type="Node2D" parent="." unique_id=601763893]
 
 [node name="OutLine" type="Line2D" parent="." unique_id=990313676]
+visible = false
 script = ExtResource("6_bl71q")

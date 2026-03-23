@@ -30,8 +30,13 @@ func _input(event):
 		
 		if hit_self:
 			show_UI = true
+			pass
 		else:
 			show_UI = false
+			pass
 
+func show_outline():
+	pass
+	
 func _process(delta: float) -> void:
 	pass
