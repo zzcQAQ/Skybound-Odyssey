@@ -2,7 +2,7 @@ extends Node2D
 
 #生成行星轨道
 @export var orbit_radius: float = 50
-@export var orbit_gap: float = 150
+@export var orbit_gap: float = 100
 @export var clockwise: bool = true
 @export var planet_count = 4
 

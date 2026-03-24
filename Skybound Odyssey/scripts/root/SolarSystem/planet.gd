@@ -8,6 +8,8 @@ var faction: String = "Human"
 @onready var base = $base
 @onready var light = $light
 
+@export var radius = 16
+
 #建筑格子
 @onready var packed_slot = $slots
 @export var slot_scene = preload("res://scenes/SolarSystem/slot.tscn")
@@ -39,6 +41,8 @@ func get_outline_radius():
 	return 21
 
 func _ready():
+	
+	selection_root.visible = false
 	
 	self.lerp_scale = Vector2(0.7, 0.7)
 	

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0mmjcuux80o2"]
+
+[ext_resource type="Script" uid="uid://ch4j4ketk4wqi" path="res://scripts/ui/selection_root.gd" id="1_2gwc5"]
+
+[node name="SelectionRoot" type="Node2D" unique_id=711258706]
+script = ExtResource("1_2gwc5")
+
+[node name="SelectArrow" type="Polygon2D" parent="." unique_id=1606852333]
+position = Vector2(2.2737368e-13, -2.3841858e-07)
+scale = Vector2(0.5312498, 0.5312498)
+color = Color(0, 0.9166665, 1, 1)
+polygon = PackedVector2Array(1.5258789e-05, -9.536743e-07, 32.000015, -16, 24.000015, -9.536743e-07, 32.000015, 15.999999)
+uv = PackedVector2Array(-183.99998, -8, -151.99998, -24, -159.99998, -8, -151.99998, 8)

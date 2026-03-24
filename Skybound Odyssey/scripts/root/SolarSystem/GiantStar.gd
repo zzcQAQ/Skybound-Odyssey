@@ -12,15 +12,20 @@ var MType = preload("res://accests/sprites/units/star/MType.png")
 var GType = preload("res://accests/sprites/units/star/GType.png")
 var OType = preload("res://accests/sprites/units/star/OType.png")
 @onready var sprite = $Sprite2D
+@onready var collision = $CollisionShape2D
 
 #接收恒星初始化
 func star_setup(s, l):
 	size = s
 	
 	radius = radius * s
+	selection_root.update_radius(radius)
 	
 	luminosity = l
-	scale = Vector2(s, s)
+	
+	sprite.scale = Vector2(s, s)
+	collision.scale = Vector2(s, s)
+	
 	if l <= 1:
 		sprite.texture = MType
 	elif l <= 2:
@@ -28,5 +33,5 @@ func star_setup(s, l):
 	else: sprite.texture = OType
 
 func _process(delta):
-	super._process(delta)
+	#super._process(delta)
 	sprite.rotate(rotateSpeed * delta)

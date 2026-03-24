@@ -6,9 +6,13 @@ extends Node2D
 @onready var show_UI = false
 @export var lerp_scale = Vector2(0.9, 0.9)
 
+@onready var selection_root = $SelectionRoot
+
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	selection_root.visible = false
+	
 	rng.seed = 1
 
 func _input(event):
@@ -29,14 +33,14 @@ func _input(event):
 		)
 		
 		if hit_self:
+			
 			show_UI = true
-			pass
+			selection_root.visible = true
+			
 		else:
 			show_UI = false
-			pass
+			selection_root.visible = false
 
-func show_outline():
-	pass
 	
 func _process(delta: float) -> void:
 	pass

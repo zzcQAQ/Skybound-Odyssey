@@ -2,35 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bq5mrvyiqwb4s" path="res://scripts/root/SolarSystem/GiantStar.gd" id="1_n714w"]
 [ext_resource type="Texture2D" uid="uid://begn8wbp32h1i" path="res://accests/sprites/units/star/MType.png" id="3_aykb7"]
-[ext_resource type="Script" uid="uid://ch4j4ketk4wqi" path="res://scripts/ui/selection_root.gd" id="4_jj0jk"]
-
-[sub_resource type="GDScript" id="GDScript_aykb7"]
-script/source = "extends Line2D
-
-@export var radius: float = 21.0     # 半径
-@export var base_width: float = 3.0    # 宽
-@export var color: Color = Color(0.0, 0.85, 1.0, 1.0)
-@export var segments: int = 64       # 细分精度
-
-func _ready():
-	var p = get_parent()
-	default_color = color
-	build_circle()
-
-
-func _process(delta):
-	var cam = get_viewport().get_camera_2d()
-	if cam:
-		width = base_width / cam.zoom.x
-
-func build_circle():
-	var pts = []
-	for i in range(segments + 1):
-		var angle = TAU * i / segments
-		var p = Vector2(cos(angle), sin(angle)) * radius
-		pts.append(p)
-	points = pts
-"
+[ext_resource type="PackedScene" uid="uid://b0mmjcuux80o2" path="res://scenes/SolarSystem/selection_root.tscn" id="3_y6gtg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y6gtg"]
 radius = 64.0
@@ -38,21 +10,10 @@ radius = 64.0
 [node name="GiantStar" type="Area2D" unique_id=2113266849]
 script = ExtResource("1_n714w")
 
-[node name="Line2D" type="Line2D" parent="." unique_id=279721627]
-visible = false
-script = SubResource("GDScript_aykb7")
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=421789871]
 texture = ExtResource("3_aykb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1275838356]
 shape = SubResource("CircleShape2D_y6gtg")
 
-[node name="SelectionRoot" type="Node2D" parent="." unique_id=1879793737]
-script = ExtResource("4_jj0jk")
-
-[node name="SelectArrow" type="Polygon2D" parent="SelectionRoot" unique_id=2098766060]
-scale = Vector2(0.31249985, 0.31249985)
-color = Color(0, 0.9166665, 1, 1)
-polygon = PackedVector2Array(1.5258789e-05, -9.536743e-07, 32.000015, -16, 24.000015, -9.536743e-07, 32.000015, 15.999999)
-uv = PackedVector2Array(-183.99998, -8, -151.99998, -24, -159.99998, -8, -151.99998, 8)
+[node name="SelectionRoot" parent="." unique_id=711258706 instance=ExtResource("3_y6gtg")]
