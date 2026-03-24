@@ -34,13 +34,10 @@ func _input(event):
 		
 		if hit_self:
 			
-			show_UI = true
-			selection_root.visible = true
+			if show_UI == false:
+				show_UI = true
+				selection_root.show_arrow()
 			
 		else:
 			show_UI = false
-			selection_root.visible = false
-
-	
-func _process(delta: float) -> void:
-	pass
+			selection_root.hide_arrow()

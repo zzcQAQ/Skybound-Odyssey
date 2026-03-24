@@ -8,8 +8,14 @@ extends Node2D
 
 var arrows = []
 
+#动画缩放
+var anim_scale := 1.0
+
+var tween: Tween
+
+# =====生成箭头=====
+
 func _ready():
-	
 	arrow_scene.queue_free()
 
 	# 创建4个箭头
@@ -19,7 +25,6 @@ func _ready():
 		arrows.append(arrow)
 
 		var angle = i * PI / 2
-
 		arrow.position = Vector2(radius, 0).rotated(angle)
 		arrow.rotation = angle
 
@@ -34,8 +39,8 @@ func _process(delta):
 	if camera:
 		var z = camera.zoom.x
 
-		# 保持大小不变
-		scale = Vector2.ONE / z
+		#最终scale
+		scale = Vector2.ONE * (anim_scale / z)
 
 		# 更新箭头位置
 		for i in range(arrows.size()):
@@ -45,3 +50,37 @@ func _process(delta):
 			var display_radius = radius * z
 
 			arrow.position = Vector2(display_radius, 0).rotated(angle)
+
+
+# =====动画=====
+
+
+func show_arrow():
+
+	if tween:
+		tween.kill()
+
+	anim_scale = 1.2
+	modulate.a = 0.0
+	visible = true
+
+	tween = create_tween()
+	tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+	tween.parallel().tween_property(self, "anim_scale", 1.0, 0.3)
+	tween.parallel().tween_property(self, "modulate:a", 1.0, 0.3)
+
+
+func hide_arrow():
+
+	if tween:
+		tween.kill()
+
+	tween = create_tween()
+	tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+
+	tween.parallel().tween_property(self, "anim_scale", 0.7, 0.3)
+	tween.parallel().tween_property(self, "modulate:a", 0.0, 0.3)
+
+	#动画结束后隐藏
+	tween.tween_callback(func(): visible = false)
