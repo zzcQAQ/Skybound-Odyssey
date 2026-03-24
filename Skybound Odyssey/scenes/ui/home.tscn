@@ -155,15 +155,14 @@ text = "back"
 [node name="backGround" parent="." unique_id=878166922 instance=ExtResource("2_1wv05")]
 position = Vector2(960, 540)
 
-[node name="Sun" parent="backGround" unique_id=684114382 instance=ExtResource("3_1wv05")]
-z_index = 1
-position = Vector2(-423, 235)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1865871818]
 position = Vector2(960, 540)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1236856713]
 environment = SubResource("Environment_sdvdx")
+
+[node name="SolarSystem" parent="." unique_id=1176847484 instance=ExtResource("3_1wv05")]
+position = Vector2(574, 763)
 
 [connection signal="pressed" from="CanvasLayer/homePage/buttons/Campaign Mode" to="." method="CampaignMode"]
 [connection signal="pressed" from="CanvasLayer/homePage/buttons/continue" to="." method="Continue"]

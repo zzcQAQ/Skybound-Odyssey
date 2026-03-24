@@ -14,6 +14,10 @@ var mainScene = preload("res://scenes/main.tscn")
 @onready var settings = $CanvasLayer/settings
 
 @onready var camera = $Camera2D
+@onready var solar_system = $SolarSystem
+
+func _ready():
+	solar_system.rng = RandomNumberGenerator.new()
 
 # homePage
 func CampaignMode() -> void:

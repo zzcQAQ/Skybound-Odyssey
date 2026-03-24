@@ -52,7 +52,7 @@ func _generate_planets():
 		if radii[i] - radii[i-1] < min_gap:
 			radii[i] = radii[i-1] + min_gap
 
-	#实体化行星
+	#实例化行星
 	for r in radii:
 		var orbit = preload("res://scenes/SolarSystem/orbit.tscn").instantiate()
 		var load_planet = preload("res://scenes/SolarSystem/planet.tscn").instantiate()
