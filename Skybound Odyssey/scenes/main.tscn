@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0rlhcraao3l3"]
 
 [ext_resource type="PackedScene" uid="uid://mib2gs63qtwr" path="res://scenes/back_ground.tscn" id="2_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://cqn7101tyv52c" path="res://scenes/ui/ui.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://bhan07y0snix4" path="res://scripts/ui/camera_2d.gd" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://hajoe6cslyb3" path="res://scenes/SolarSystem/solar_system.tscn" id="6_tefeu"]
 
@@ -28,6 +29,8 @@ environment = SubResource("Environment_sugp2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=650917478]
 layer = 0
+
+[node name="UI" parent="CanvasLayer" unique_id=1116135926 instance=ExtResource("4_jyhfs")]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=891424732]
 position = Vector2(0, 23)
