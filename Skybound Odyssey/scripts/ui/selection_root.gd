@@ -54,7 +54,6 @@ func _process(delta):
 
 # =====动画=====
 
-
 func show_arrow():
 
 	if tween:

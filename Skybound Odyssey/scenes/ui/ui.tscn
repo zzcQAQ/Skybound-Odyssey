@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://cqn7101tyv52c"]
 
 [ext_resource type="Texture2D" uid="uid://dtpoiwhyhqjur" path="res://accests/sprites/ui/uiframe.png" id="1_u7n8c"]
+[ext_resource type="Script" uid="uid://dmkcetde1mcny" path="res://scripts/ui/nine_patch_rect.gd" id="2_f5cxw"]
+
+[sub_resource type="Environment" id="Environment_u7n8c"]
+glow_enabled = true
+glow_normalized = true
+glow_strength = 2.0
+glow_bloom = 1.0
 
 [node name="UI" type="Control" unique_id=1116135926]
 layout_mode = 3
@@ -12,12 +19,18 @@ grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1676295867]
 layout_mode = 0
-offset_left = 1472.0
+offset_left = 1408.0
 offset_top = 64.0
 offset_right = 1856.0
 offset_bottom = 1016.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("1_u7n8c")
-patch_margin_left = 64
-patch_margin_top = 64
-patch_margin_right = 64
-patch_margin_bottom = 64
+region_rect = Rect2(0, 0, 96, 96)
+patch_margin_left = 58
+patch_margin_top = 58
+patch_margin_right = 58
+patch_margin_bottom = 58
+script = ExtResource("2_f5cxw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=570678936]
+environment = SubResource("Environment_u7n8c")
