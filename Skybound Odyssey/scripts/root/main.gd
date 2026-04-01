@@ -1,12 +1,9 @@
 extends Node2D
 
-@onready var control = $CanvasLayer/Control
+@onready var ninePatchRect = $CanvasLayer/UI/NinePatchRect
 
-func _ready() -> void:
-	control.visible = false
+func open_UI():
+	ninePatchRect.open_UI()
 
-func show_control():
-	control.visible = true
-
-func hide_control():
-	control.visible = false
+func close_UI():
+	ninePatchRect.close_UI()

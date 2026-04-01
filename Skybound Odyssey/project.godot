@@ -25,6 +25,7 @@ GameManager="*res://scripts/root/gameManager.gd"
 Animations="*res://scripts/root/animations.gd"
 Sector="*res://scripts/units/sector.gd"
 SeedManager="*uid://ji5xdc4ntetq"
+Global="*uid://bh30o8xpyuuob"
 
 [display]
 

@@ -10,6 +10,8 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 
+signal request_open_ui
+
 func _ready():
 	selection_root.visible = false
 	
@@ -37,7 +39,9 @@ func _input(event):
 			if show_UI == false:
 				show_UI = true
 				selection_root.show_arrow()
+				Global.emit_signal("planet_selected", self)
 			
 		else:
 			show_UI = false
 			selection_root.hide_arrow()
+			Global.emit_signal("planet_deselected", self)
