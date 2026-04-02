@@ -20,8 +20,6 @@ z_index = -1
 script = null
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=46029540]
-z_index = 2
-zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 script = ExtResource("5_tbgi4")

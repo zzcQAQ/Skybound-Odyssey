@@ -20,12 +20,10 @@ grow_vertical = 2
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1676295867]
 layout_mode = 0
 offset_left = 1408.0
-offset_top = 64.0
-offset_right = 1856.0
-offset_bottom = 1016.0
-pivot_offset_ratio = Vector2(0.5, 0.5)
+offset_right = 1984.0
+offset_bottom = 1080.0
 texture = ExtResource("1_u7n8c")
-region_rect = Rect2(0, 0, 96, 96)
+region_rect = Rect2(0, 0, 128, 128)
 patch_margin_left = 58
 patch_margin_top = 58
 patch_margin_right = 58

@@ -36,12 +36,17 @@ func _input(event):
 		
 		if hit_self:
 			
+			send_selected_signal()
+			
 			if show_UI == false:
 				show_UI = true
 				selection_root.show_arrow()
-				Global.emit_signal("planet_selected", self)
+				
 			
 		else:
 			show_UI = false
 			selection_root.hide_arrow()
-			Global.emit_signal("planet_deselected", self)
+			Global.emit_signal("deselected", self)
+
+func send_selected_signal():
+	pass

@@ -47,6 +47,9 @@ func _ready():
 	base.rotate(rotate_rand)
 	light.rotate(rotate_rand)
 
+func send_selected_signal():
+	Global.emit_signal("planet_selected", self)
+
 #更新建筑槽
 func _update_slot_count(count: int) -> void:
 	angle_step = TAU / count
