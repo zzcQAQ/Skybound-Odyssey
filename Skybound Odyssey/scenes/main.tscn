@@ -35,4 +35,4 @@ layer = 0
 [node name="Node2D" type="Node2D" parent="." unique_id=891424732]
 position = Vector2(0, 23)
 
-[node name="SolarSystem2" parent="Node2D" unique_id=673866124 instance=ExtResource("6_tefeu")]
+[node name="SolarSystem" parent="Node2D" unique_id=673866124 instance=ExtResource("6_tefeu")]
