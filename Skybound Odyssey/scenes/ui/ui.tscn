@@ -13,7 +13,7 @@ grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1676295867]
 layout_mode = 0
-offset_left = 1408.0
+offset_left = 1472.0
 offset_right = 1984.0
 offset_bottom = 1080.0
 texture = ExtResource("1_u7n8c")
@@ -23,3 +23,55 @@ patch_margin_top = 58
 patch_margin_right = 58
 patch_margin_bottom = 58
 script = ExtResource("2_f5cxw")
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=383700769]
+layout_mode = 0
+offset_right = 448.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 64
+
+[node name="DataList" type="VBoxContainer" parent="NinePatchRect/MarginContainer" unique_id=1953336517]
+layout_mode = 2
+
+[node name="GiantStarPannel" type="VBoxContainer" parent="NinePatchRect/MarginContainer/DataList" unique_id=293275548]
+layout_mode = 2
+
+[node name="PopulationLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=1901258172]
+layout_mode = 2
+
+[node name="MaterialsLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=1290978687]
+layout_mode = 2
+
+[node name="HabitabilityLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=1771336825]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=629082223]
+layout_mode = 2
+text = "Earth"
+
+[node name="IdLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=137565169]
+layout_mode = 2
+text = "id: S0-P1"
+
+[node name="PlanetPanel" type="VBoxContainer" parent="NinePatchRect/MarginContainer/DataList" unique_id=1492053920]
+layout_mode = 2
+
+[node name="PopulationLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1819195229]
+layout_mode = 2
+
+[node name="MaterialsLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1573381095]
+layout_mode = 2
+
+[node name="HabitabilityLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=615628273]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1990570440]
+layout_mode = 2
+text = "Earth"
+
+[node name="IdLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1065624150]
+layout_mode = 2
+text = "id: S0-P1"

@@ -49,8 +49,10 @@ func _physics_process(delta: float) -> void:
 	#更新行星数据
 	update_data(delta)
 
-#	========行星数据更新与调用========
-func get_planet_data() -> Dictionary:
+
+	#========行星数据更新与调用========#
+
+func get_planet_data() -> Dictionary: #数据字典，好像没啥用
 	return {
 		"population": population,
 		"materials": materials,
@@ -63,7 +65,7 @@ func get_planet_data() -> Dictionary:
 		"habitability_rate": habitability_rate
 	}
 
-func update_data(delta: float) -> void:
+func update_data(delta: float) -> void: #更新数据
 	update_population(delta)
 	update_materials(delta)
 	update_habitability(delta)
