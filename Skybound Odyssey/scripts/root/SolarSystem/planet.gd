@@ -44,26 +44,31 @@ func _process(delta: float) -> void:
 	base.rotate(rotate_rand * delta)
 	light.rotate(rotate_rand * delta)
 
-func _physics_process(delta: float) -> void:
-	
-	#更新行星数据
-	update_data(delta)
-
 
 	#========行星数据更新与调用========#
 
-func get_planet_data() -> Dictionary: #数据字典，好像没啥用
-	return {
-		"population": population,
-		"materials": materials,
-		"power_generation": power_generation,
-		"power_consumption": power_consumption,
-		"habitability": habitability,
-		"population_rate": population_rate,
-		"materials_production_rate": materials_production_rate,
-		"materials_consumption_rate": materials_consumption_rate,
-		"habitability_rate": habitability_rate
-	}
+#func get_planet_data() -> Dictionary: #数据字典，好像没啥用
+	#return {
+		#"population": population,
+		#"materials": materials,
+		#"power_generation": power_generation,
+		#"power_consumption": power_consumption,
+		#"habitability": habitability,
+		#"population_rate": population_rate,
+		#"materials_production_rate": materials_production_rate,
+		#"materials_consumption_rate": materials_consumption_rate,
+		#"habitability_rate": habitability_rate
+	#}
+
+var update_interval := 1.0 / 10.0  #一秒10刀
+var update_timer := 0.0
+
+func _physics_process(delta: float) -> void:
+	update_timer += delta
+	
+	if update_timer >= update_interval:
+		update_data(update_timer)  #真实累计时间
+		update_timer = 0.0
 
 func update_data(delta: float) -> void: #更新数据
 	update_population(delta)
