@@ -22,13 +22,16 @@ func _ready() -> void:
 	Global.deselected.connect(_on_deselected)
 
 #分类选择
-func _on_selected_giant_star(_body):
+func _on_selected_giant_star(body):
 	current_selected = 1
+	current_selected_body = body
+	update_display(current_selected)
 	open_UI()
 
 func _on_selected_planet(body):
 	current_selected = 2
 	current_selected_body = body
+	update_display(current_selected)
 	open_UI()
 
 func _on_deselected(_body):
@@ -36,7 +39,7 @@ func _on_deselected(_body):
 	close_UI()
 
 var ui_timer := 0.0
-var ui_interval := 1.0 / 10.0 #一秒15刀
+var ui_interval := 1.0 / 1.0 #一秒10刀
 
 func _process(delta):
 	if current_selected == 0:
@@ -53,10 +56,15 @@ func update_display(a):
 	if a == 1:
 		planet_panel.visible = false
 		giant_star_panel.visible = true
+		giant_star_panel.get_node("RadiusLabel").text = "Radius: " + str(int(current_selected_body.radius))
+		giant_star_panel.get_node("LuminosityLabel").text = "Luminosity: " + str("%.2f" % current_selected_body.luminosity)
 	if a == 2:
 		giant_star_panel.visible = false
 		planet_panel.visible = true
+		#planet_panel.get_node("IdLabel").text = "ID: " + str(current_selected_body.name)
 		planet_panel.get_node("PopulationLabel").text = "Population: " + str(current_selected_body.population)
+		planet_panel.get_node("MaterialsLabel").text = "Materials: " + str(current_selected_body.materials)
+		planet_panel.get_node("HabitabilityLabel").text = "Habitability: " + str(current_selected_body.habitability)
 
 #UI动画
 func open_UI():

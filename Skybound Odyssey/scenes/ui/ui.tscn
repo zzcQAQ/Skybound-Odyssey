@@ -44,12 +44,17 @@ layout_mode = 2
 text = "GiantStar"
 
 [node name="IdLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=78661247]
-visible = false
 layout_mode = 2
 text = "id: S0-P1"
 
 [node name="BlankLine" type="Control" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=248879863]
 custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="RadiusLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=1517563006]
+layout_mode = 2
+
+[node name="LuminosityLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=962839838]
 layout_mode = 2
 
 [node name="PlanetPanel" type="VBoxContainer" parent="NinePatchRect/MarginContainer/DataList" unique_id=1492053920]
@@ -60,7 +65,6 @@ layout_mode = 2
 text = "Earth"
 
 [node name="IdLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1065624150]
-visible = false
 layout_mode = 2
 text = "id: S0-P1"
 

@@ -2,10 +2,11 @@ class_name GiantStar
 extends CelestialBody 
 
 #恒星属性
-@export var size: float = 1
+#@export var size: float = 1
 @export var radius = 64
+@export var luminosity: float = 1
+
 @export var rotateSpeed = 0.1
-@export var luminosity:float = 1
 
 #加载贴图
 var MType = preload("res://accests/sprites/units/star/MType.png")
@@ -19,7 +20,7 @@ func send_selected_signal():
 
 #接收恒星初始化
 func star_setup(s, l):
-	size = s
+	#size = s
 	
 	radius = radius * s
 	selection_root.update_radius(radius)
