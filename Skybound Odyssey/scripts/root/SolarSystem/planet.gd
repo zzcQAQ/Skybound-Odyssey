@@ -16,12 +16,16 @@ var faction = 0
 @export var rotate_rand: float = randf() * 2 * PI * 0.05
 
 #行星属性
+#planet.planet_setup(r, orbit_speed, clockwise)
 @export var population: float = 0.1
 @export var materials: float = 100
 @export var power_generation: float = 0
 @export var power_consumption: float = 0
 @export var habitability: float = 80
 @export var have_water: bool = true
+@export var orbit_radius: float = 1
+@export var orbit_speed: float = 1
+@export var clockwise: bool = true
 
 #属性增量(每秒)
 @export var population_rate: float = 0
@@ -62,6 +66,11 @@ func _process(delta: float) -> void:
 
 var update_interval := 1.0 / 10.0  #一秒10刀
 var update_timer := 0.0
+
+func planet_setup(radius, speed, cw):
+	orbit_radius = radius
+	orbit_speed = speed
+	clockwise = cw
 
 func _physics_process(delta: float) -> void:
 	update_timer += delta

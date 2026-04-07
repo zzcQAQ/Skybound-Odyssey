@@ -14,7 +14,7 @@ var mainScene = preload("res://scenes/main.tscn")
 @onready var settings = $CanvasLayer/settings
 
 @onready var camera = $Camera2D
-@onready var solar_system = $SolarSystem
+@onready var solar_system = $SolarSystem0
 
 func _ready():
 	solar_system.rng = RandomNumberGenerator.new()

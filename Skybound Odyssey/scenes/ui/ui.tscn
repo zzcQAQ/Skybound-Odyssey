@@ -72,6 +72,16 @@ text = "id: S0-P1"
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
+[node name="OrbitRadiusLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1669565660]
+layout_mode = 2
+
+[node name="OrbitSpeedLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1027363078]
+layout_mode = 2
+
+[node name="BlankLine2" type="Control" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=564253665]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
 [node name="PopulationLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1819195229]
 layout_mode = 2
 

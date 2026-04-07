@@ -35,10 +35,19 @@ layer = 0
 [node name="Node2D" type="Node2D" parent="." unique_id=891424732]
 position = Vector2(0, 23)
 
-[node name="SolarSystem" parent="Node2D" unique_id=673866124 instance=ExtResource("6_tefeu")]
+[node name="SolarSystem0" parent="Node2D" unique_id=673866124 instance=ExtResource("6_tefeu")]
 
-[node name="SolarSystem2" parent="Node2D" unique_id=1176847484 instance=ExtResource("6_tefeu")]
-position = Vector2(1146, -10)
+[node name="SolarSystem1" parent="Node2D" unique_id=1176847484 instance=ExtResource("6_tefeu")]
+position = Vector2(1773, -20)
 
-[node name="SolarSystem4" parent="Node2D" unique_id=820171748 instance=ExtResource("6_tefeu")]
-position = Vector2(2285, -10)
+[node name="SolarSystem2" parent="Node2D" unique_id=820171748 instance=ExtResource("6_tefeu")]
+position = Vector2(3720, -14)
+
+[node name="SolarSystem3" parent="Node2D" unique_id=950350730 instance=ExtResource("6_tefeu")]
+position = Vector2(910, 1618)
+
+[node name="SolarSystem4" parent="Node2D" unique_id=1633791699 instance=ExtResource("6_tefeu")]
+position = Vector2(2810, 1618)
+
+[node name="SolarSystem5" parent="Node2D" unique_id=224388551 instance=ExtResource("6_tefeu")]
+position = Vector2(1777, 3121)
