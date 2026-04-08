@@ -44,6 +44,7 @@ layout_mode = 2
 text = "GiantStar"
 
 [node name="IdLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=78661247]
+visible = false
 layout_mode = 2
 text = "id: S0-P1"
 
@@ -66,7 +67,7 @@ text = "Earth"
 
 [node name="IdLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1065624150]
 layout_mode = 2
-text = "id: S0-P1"
+text = "id: S2-P1"
 
 [node name="BlankLine" type="Control" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=122454778]
 custom_minimum_size = Vector2(0, 16)
@@ -75,7 +76,7 @@ layout_mode = 2
 [node name="OrbitRadiusLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1669565660]
 layout_mode = 2
 
-[node name="OrbitSpeedLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1027363078]
+[node name="OrbitPeriodLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1027363078]
 layout_mode = 2
 
 [node name="BlankLine2" type="Control" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=564253665]

@@ -1,9 +1,9 @@
 extends Node2D
 
 #生成行星轨道
-@export var orbit_radius: float = 50
+@export var orbit_radius: float
 @export var orbit_gap: float = 100
-@export var orbit_speed: float = 1
+@export var orbit_period: float # 公转周期 秒/圈
 @export var clockwise: bool = true
 @export var planet_count = 1
 
@@ -72,13 +72,13 @@ func _generate_planets():
 		var orbit = preload("res://scenes/SolarSystem/orbit.tscn").instantiate()
 		var planet = preload("res://scenes/SolarSystem/planet.tscn").instantiate()
 		
-		orbit_speed = rng.randf_range(1, 5) / r
-		
 		PlanetOrbits.add_child(orbit)
 		orbit.add_child(planet)
-
+		
+		orbit_period = rng.randf_range(240, 900)
+		
 		orbit.set_radius(r)
-		orbit.orbit_speed = rng.randf_range(1, 5) / r
+		orbit.orbit_period = orbit_period
 		orbit.clockwise = clockwise
-		planet.planet_setup(r, orbit_speed, clockwise)
+		planet.planet_setup(r, orbit_period, clockwise)
 		# planet节点类 转至gd脚本

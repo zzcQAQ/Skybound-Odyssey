@@ -1,9 +1,10 @@
 extends Node2D
 
 #公转信息
-@export var orbit_speed: float = 1
+@export var orbit_speed: float
+@export var orbit_period: float
 @export var clockwise: bool
-var orbit_radius: float = 200
+var orbit_radius: float
 
 func set_radius(radius):
 	# 设置初始位置
@@ -21,4 +22,4 @@ func _draw():
 
 func _process(delta: float) -> void:
 	var dir := 1.0 if clockwise else -1.0
-	rotate(dir * orbit_speed * delta)
+	rotate(2 * PI / orbit_period * dir * delta)

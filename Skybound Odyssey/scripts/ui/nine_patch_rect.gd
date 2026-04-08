@@ -56,14 +56,14 @@ func update_display(a):
 	if a == 1:
 		planet_panel.visible = false
 		giant_star_panel.visible = true
-		giant_star_panel.get_node("RadiusLabel").text = "Radius: " + str(int(current_selected_body.radius))
-		giant_star_panel.get_node("LuminosityLabel").text = "Luminosity: " + str("%.2f" % current_selected_body.luminosity)
+		giant_star_panel.get_node("RadiusLabel").text = "Radius: " + str("%.2f R☉" % (current_selected_body.radius / 72))
+		giant_star_panel.get_node("LuminosityLabel").text = "Luminosity: " + str("%.2f L☉" % current_selected_body.luminosity)
 	if a == 2:
 		giant_star_panel.visible = false
 		planet_panel.visible = true
 		#planet_panel.get_node("IdLabel").text = "ID: " + str(current_selected_body.name)
-		planet_panel.get_node("OrbitRadiusLabel").text = "OrbitRadius: " + str(current_selected_body.orbit_radius)
-		planet_panel.get_node("OrbitSpeedLabel").text = "OrbitSpeed: " + str(current_selected_body.orbit_speed)
+		planet_panel.get_node("OrbitRadiusLabel").text = "OrbitRadius: " + str("%.2f AU" % current_selected_body.distance_AU)
+		planet_panel.get_node("OrbitPeriodLabel").text = "OrbitPeriod: " + str("%.0f d" % current_selected_body.orbit_period)
 		planet_panel.get_node("PopulationLabel").text = "Population: " + str(current_selected_body.population)
 		planet_panel.get_node("MaterialsLabel").text = "Materials: " + str(current_selected_body.materials)
 		planet_panel.get_node("HabitabilityLabel").text = "Habitability: " + str(current_selected_body.habitability)

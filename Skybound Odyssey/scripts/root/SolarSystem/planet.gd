@@ -23,8 +23,9 @@ var faction = 0
 @export var power_consumption: float = 0
 @export var habitability: float = 80
 @export var have_water: bool = true
-@export var orbit_radius: float = 1
-@export var orbit_speed: float = 1
+@export var orbit_radius: float
+@export var distance_AU: float
+@export var orbit_period: float
 @export var clockwise: bool = true
 
 #属性增量(每秒)
@@ -67,9 +68,10 @@ func _process(delta: float) -> void:
 var update_interval := 1.0 / 10.0  #一秒10刀
 var update_timer := 0.0
 
-func planet_setup(radius, speed, cw):
+func planet_setup(radius, period, cw):
 	orbit_radius = radius
-	orbit_speed = speed
+	distance_AU = radius / 300
+	orbit_period = period
 	clockwise = cw
 
 func _physics_process(delta: float) -> void:
