@@ -39,7 +39,7 @@ func _on_deselected(_body):
 	close_UI()
 
 var ui_timer := 0.0
-var ui_interval := 1.0 / 1.0 #一秒10刀
+var ui_interval := 1.0 / 1.0 #一秒1刀
 
 func _process(delta):
 	if current_selected == 0:

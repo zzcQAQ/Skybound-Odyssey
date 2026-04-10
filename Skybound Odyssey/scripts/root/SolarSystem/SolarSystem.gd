@@ -1,17 +1,20 @@
 extends Node2D
 
-#生成行星轨道
+# 生成行星轨道
 @export var orbit_radius: float
-@export var orbit_gap: float = 100
+@export var min_gap: float = 100
 @export var orbit_period: float # 公转周期 秒/圈
 @export var clockwise: bool = true
 @export var planet_count = 1
 
-@export var luminosity = 1
-@export var star_size = 1.5
+# 生成恒星的数值
+@export var luminosity: float
+@export var star_size: float
+
+@onready var giant_star = $GiantStar
 
 @onready var PlanetOrbits = $PlanetOrbits
-@onready var giant_star = $GiantStar
+
 
 #行星数量概率 0~8
 var weights = [5, 10, 20, 30, 40, 25, 12, 5, 1]
@@ -24,13 +27,19 @@ func _ready():
 	#恶臭种子
 	rng.seed = hash(name) % 114514 * base_rng.randi()
 	
+	get_planet_count()
+	
+	_generate_giant_star()
+	_generate_planets()
+
+
+# 生成恒星
+func _generate_giant_star():
 	star_size = rng.randf_range(1, 2)
 	luminosity = rng.randf_range(0.2, 1.5) * star_size
 	
-	get_planet_count()
-	_generate_planets()
-	
 	giant_star.star_setup(star_size, luminosity)
+
 
 #随机行星数量函数
 func get_planet_count():
@@ -50,9 +59,8 @@ func get_planet_count():
 #行星与轨道部分
 func _generate_planets():
 	var radii: Array = []
-	var min_gap = 100
 	var min_orbit = 100 * star_size
-	var max_orbit = 800
+	var max_orbit = 900
 
 	#随机生成轨道半径数组
 	for i in range(planet_count):
@@ -80,5 +88,4 @@ func _generate_planets():
 		orbit.set_radius(r)
 		orbit.orbit_period = orbit_period
 		orbit.clockwise = clockwise
-		planet.planet_setup(r, orbit_period, clockwise)
-		# planet节点类 转至gd脚本
+		planet.planet_setup(r, orbit_period, clockwise, giant_star)

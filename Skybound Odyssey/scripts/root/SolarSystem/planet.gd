@@ -16,7 +16,6 @@ var faction = 0
 @export var rotate_rand: float = randf() * 2 * PI * 0.05
 
 #行星属性
-#planet.planet_setup(r, orbit_speed, clockwise)
 @export var population: float = 0.1
 @export var materials: float = 100
 @export var power_generation: float = 0
@@ -27,6 +26,9 @@ var faction = 0
 @export var distance_AU: float
 @export var orbit_period: float
 @export var clockwise: bool = true
+
+#获取父级恒星
+@export var star_luminosity: float
 
 #属性增量(每秒)
 @export var population_rate: float = 0
@@ -68,11 +70,13 @@ func _process(delta: float) -> void:
 var update_interval := 1.0 / 10.0  #一秒10刀
 var update_timer := 0.0
 
-func planet_setup(radius, period, cw):
+@warning_ignore("shadowed_variable")
+func planet_setup(radius, period, cw, s):
 	orbit_radius = radius
 	distance_AU = radius / 300
 	orbit_period = period
 	clockwise = cw
+	star_luminosity = s.luminosity #恒星光度，算气温用的
 
 func _physics_process(delta: float) -> void:
 	update_timer += delta
