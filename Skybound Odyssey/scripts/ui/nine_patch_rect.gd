@@ -67,7 +67,7 @@ func update_display(a):
 		planet_panel.get_node("PopulationLabel").text = "Population: " + str(current_selected_body.population)
 		planet_panel.get_node("MaterialsLabel").text = "Materials: " + str(current_selected_body.materials)
 		planet_panel.get_node("HabitabilityLabel").text = "Habitability: " + str(current_selected_body.habitability)
-		planet_panel.get_node("TemperatureLabel").text = "temperature: " + str(current_selected_body.temperature)
+		planet_panel.get_node("TemperatureLabel").text = "temperature: " + str("%.0f K" % (current_selected_body.temperature))
 #UI动画
 func open_UI():
 	if tween:

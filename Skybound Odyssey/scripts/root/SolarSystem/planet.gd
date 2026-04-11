@@ -100,7 +100,5 @@ func update_habitability(delta: float) -> void:
 	habitability += habitability_rate * delta
 	habitability = clamp(habitability, 0.0, 100.0)
 
-func update_temperature(): #温度不对，重新算
-	pass
-	
-	
+func update_temperature():
+	temperature = 278 * star_luminosity * pow((2 / orbit_AU), 2)
