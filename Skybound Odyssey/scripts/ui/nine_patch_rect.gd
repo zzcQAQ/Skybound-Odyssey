@@ -66,7 +66,13 @@ func update_display(a):
 		planet_panel.get_node("OrbitPeriodLabel").text = "OrbitPeriod: " + str("%.0f d" % current_selected_body.orbit_period)
 		planet_panel.get_node("PopulationLabel").text = "Population: " + str(current_selected_body.population)
 		planet_panel.get_node("MaterialsLabel").text = "Materials: " + str(current_selected_body.materials)
-		planet_panel.get_node("HabitabilityLabel").text = "Habitability: " + str(current_selected_body.habitability)
+		planet_panel.get_node("HabitabilityLabel").text = "Habitability: " + str("%.2f " % current_selected_body.habitability) + "%"
+		if current_selected_body.habitability_rate > 0:
+			planet_panel.get_node("HabitabilityContainer/HabitabilityRateLabel").text = "HabitabilityRate: +" + str("%.2f " % current_selected_body.habitability_rate) + "%"
+			planet_panel.get_node("HabitabilityContainer/HabitabilityRateLabel").add_theme_color_override("font_color", Color(0.0, 1.0, 0.0, 1.0))
+		else:
+			planet_panel.get_node("HabitabilityContainer/HabitabilityRateLabel").text = "HabitabilityRate: " + str("%.2f " % current_selected_body.habitability_rate) + "%"
+			planet_panel.get_node("HabitabilityContainer/HabitabilityRateLabel").add_theme_color_override("font_color", Color(1.0, 0.0, 0.0, 1.0))
 		planet_panel.get_node("TemperatureLabel").text = "temperature: " + str("%.0f K" % (current_selected_body.temperature))
 #UI动画
 func open_UI():

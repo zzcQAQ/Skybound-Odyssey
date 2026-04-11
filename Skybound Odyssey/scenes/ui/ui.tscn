@@ -92,5 +92,14 @@ layout_mode = 2
 [node name="HabitabilityLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=615628273]
 layout_mode = 2
 
+[node name="HabitabilityContainer" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=758760262]
+layout_mode = 2
+
+[node name="HabitabilityRateLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel/HabitabilityContainer" unique_id=2120076348]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 400.0
+offset_bottom = 23.0
+
 [node name="TemperatureLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=309437230]
 layout_mode = 2
