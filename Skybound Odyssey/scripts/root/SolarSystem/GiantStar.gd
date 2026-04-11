@@ -2,6 +2,7 @@ class_name GiantStar
 extends CelestialBody 
 
 #恒星属性
+@export var size: float
 @export var radius: float
 @export var luminosity: float
 
@@ -20,6 +21,7 @@ func send_selected_signal():
 #接收恒星初始化
 func star_setup(s, l):
 	#半径
+	size = s
 	radius = 64 * s
 	selection_root.update_radius(radius)
 	

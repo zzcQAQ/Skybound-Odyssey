@@ -91,3 +91,6 @@ layout_mode = 2
 
 [node name="HabitabilityLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=615628273]
 layout_mode = 2
+
+[node name="TemperatureLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=309437230]
+layout_mode = 2

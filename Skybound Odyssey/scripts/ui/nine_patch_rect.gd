@@ -62,12 +62,12 @@ func update_display(a):
 		giant_star_panel.visible = false
 		planet_panel.visible = true
 		#planet_panel.get_node("IdLabel").text = "ID: " + str(current_selected_body.name)
-		planet_panel.get_node("OrbitRadiusLabel").text = "OrbitRadius: " + str("%.2f AU" % current_selected_body.distance_AU)
+		planet_panel.get_node("OrbitRadiusLabel").text = "OrbitRadius: " + str("%.2f AU" % current_selected_body.orbit_AU)
 		planet_panel.get_node("OrbitPeriodLabel").text = "OrbitPeriod: " + str("%.0f d" % current_selected_body.orbit_period)
 		planet_panel.get_node("PopulationLabel").text = "Population: " + str(current_selected_body.population)
 		planet_panel.get_node("MaterialsLabel").text = "Materials: " + str(current_selected_body.materials)
 		planet_panel.get_node("HabitabilityLabel").text = "Habitability: " + str(current_selected_body.habitability)
-
+		planet_panel.get_node("TemperatureLabel").text = "temperature: " + str(current_selected_body.temperature)
 #UI动画
 func open_UI():
 	if tween:
