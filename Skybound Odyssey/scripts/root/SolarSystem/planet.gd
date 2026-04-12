@@ -22,7 +22,7 @@ var 一: int = 10
 @export var materials: float = 100
 @export var power_generation: float = 0
 @export var power_consumption: float = 0
-@export var habitability: float = 80
+@export var habitability: float = 50
 @export var temperature: float #开氏温度
 
 @export var have_water: bool = true
@@ -97,8 +97,8 @@ func update_materials(delta: float) -> void:
 		materials = 0
 	
 func update_habitability(delta: float) -> void:
-	habitability_rate = -pow((temperature - 288.0) / 30.0, 2) + 5.0
-	habitability += habitability_rate * delta
+	habitability_rate = -pow((temperature - 288.0) / 20.0, 2) + 10.0
+	habitability = 50 + habitability_rate
 	habitability = clamp(habitability, 0.0, 100.0)
 
 func update_temperature():

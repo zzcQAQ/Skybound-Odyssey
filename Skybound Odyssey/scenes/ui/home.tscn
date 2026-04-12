@@ -8,8 +8,8 @@
 [sub_resource type="Environment" id="Environment_sdvdx"]
 background_mode = 3
 glow_enabled = true
-glow_strength = 1.26
-glow_hdr_threshold = 0.9
+glow_intensity = 1.0
+glow_strength = 1.25
 
 [node name="home" type="Control" unique_id=1349073246]
 layout_mode = 3
