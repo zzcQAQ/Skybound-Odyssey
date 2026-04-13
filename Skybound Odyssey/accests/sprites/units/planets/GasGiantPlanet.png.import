@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1d4q0v2ni8ux"
-path="res://.godot/imported/planet.png-f09c065782cff9dbbb2406435adf6fe4.ctex"
+uid="uid://bdgvmd632esgj"
+path="res://.godot/imported/GasGiantPlanet.png-3403e6fd4e80b49f6da3955d6a436d2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://accests/sprites/units/planet/planet.png"
-dest_files=["res://.godot/imported/planet.png-f09c065782cff9dbbb2406435adf6fe4.ctex"]
+source_file="res://accests/sprites/units/planets/GasGiantPlanet.png"
+dest_files=["res://.godot/imported/GasGiantPlanet.png-3403e6fd4e80b49f6da3955d6a436d2b.ctex"]
 
 [params]
 

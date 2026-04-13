@@ -97,8 +97,8 @@ func update_materials(delta: float) -> void:
 		materials = 0
 	
 func update_habitability(delta: float) -> void:
-	habitability_rate = -pow((temperature - 288.0) / 20.0, 2) + 10.0
-	habitability = 50 + habitability_rate
+	habitability_rate = -pow((temperature - 288.0) / 10.0, 2) + 50.0
+	habitability = 0 + habitability_rate
 	habitability = clamp(habitability, 0.0, 100.0)
 
 func update_temperature():
