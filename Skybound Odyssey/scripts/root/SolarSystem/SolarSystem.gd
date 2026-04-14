@@ -66,7 +66,7 @@ func _generate_planets():
 	#实例化行星
 	for r in radii:
 		var orbit = preload("res://scenes/SolarSystem/orbit.tscn").instantiate()
-		var planet = preload("res://scenes/SolarSystem/planet.tscn").instantiate()
+		var planet = preload("res://scenes/SolarSystem/TerrestrialPlanet.tscn").instantiate()
 		
 		PlanetOrbits.add_child(orbit)
 		orbit.add_child(planet)

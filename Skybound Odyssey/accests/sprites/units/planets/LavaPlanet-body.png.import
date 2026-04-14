@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d078ixqsruujt"
-path="res://.godot/imported/MoltenPlanet-body.png-6650300a2285058548a48eb9cc00b9fa.ctex"
+path="res://.godot/imported/LavaPlanet-body.png-f064e964a583f90a2f25ffa725372b26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://accests/sprites/units/planets/MoltenPlanet-body.png"
-dest_files=["res://.godot/imported/MoltenPlanet-body.png-6650300a2285058548a48eb9cc00b9fa.ctex"]
+source_file="res://accests/sprites/units/planets/LavaPlanet-body.png"
+dest_files=["res://.godot/imported/LavaPlanet-body.png-f064e964a583f90a2f25ffa725372b26.ctex"]
 
 [params]
 

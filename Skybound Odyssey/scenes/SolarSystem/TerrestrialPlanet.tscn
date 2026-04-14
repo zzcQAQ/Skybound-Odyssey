@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c84741wwjs0xb"]
+
+[ext_resource type="Script" uid="uid://cn60ak78pvcdu" path="res://scripts/root/SolarSystem/planets/TerrestrialPlanet.gd" id="1_1m5nj"]
+[ext_resource type="Texture2D" uid="uid://d1d4q0v2ni8ux" path="res://accests/sprites/units/planets/planet-body.png" id="2_vf2y6"]
+[ext_resource type="Texture2D" uid="uid://e4usgwaqjcns" path="res://accests/sprites/units/planets/planetshadow.png" id="3_76lc4"]
+[ext_resource type="Texture2D" uid="uid://d078ixqsruujt" path="res://accests/sprites/units/planets/LavaPlanet-body.png" id="3_vf2y6"]
+[ext_resource type="Texture2D" uid="uid://bgsulna1aq7v1" path="res://accests/sprites/units/planets/planet-light.png" id="4_xw0ye"]
+[ext_resource type="PackedScene" uid="uid://b0mmjcuux80o2" path="res://scenes/SolarSystem/selection_root.tscn" id="5_dgrw7"]
+[ext_resource type="Texture2D" uid="uid://h75fhc28u13v" path="res://accests/sprites/units/planets/MoltenPlanet-light.png" id="6_76lc4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o08el"]
+radius = 16.0
+
+[node name="TerrestrialPlanet" type="Area2D" unique_id=833933044]
+script = ExtResource("1_1m5nj")
+
+[node name="BaseSprites" type="Node2D" parent="." unique_id=659769839]
+
+[node name="base" type="Sprite2D" parent="BaseSprites" unique_id=172677775]
+texture = ExtResource("2_vf2y6")
+
+[node name="LavaPlanet" type="Sprite2D" parent="BaseSprites" unique_id=2054936768]
+texture = ExtResource("3_vf2y6")
+
+[node name="shadow" type="Sprite2D" parent="." unique_id=567828161]
+texture = ExtResource("3_76lc4")
+
+[node name="LightSprites" type="Node2D" parent="." unique_id=1007735805]
+
+[node name="BaseLight" type="Sprite2D" parent="LightSprites" unique_id=289999885]
+texture = ExtResource("4_xw0ye")
+
+[node name="MoltenPlanetLight" type="Sprite2D" parent="LightSprites" unique_id=2029331147]
+texture = ExtResource("6_76lc4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1290081411]
+shape = SubResource("CircleShape2D_o08el")
+
+[node name="slots" type="Node2D" parent="." unique_id=601763893]
+
+[node name="SelectionRoot" parent="." unique_id=711258706 instance=ExtResource("5_dgrw7")]

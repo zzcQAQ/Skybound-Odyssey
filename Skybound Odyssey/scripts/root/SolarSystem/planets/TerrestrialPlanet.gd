@@ -1,14 +1,10 @@
-class_name Planet
+class_name TerrestrialPlanet
 extends CelestialBody
 
 var planet_name: String = "Unnamed Planet"
 var faction = 0
 
-#加载贴图
-@onready var base = $base
-@onready var light = $light
 
-var 一: int = 10
 
 #用于选中箭头
 @export var radius = 16
@@ -45,16 +41,14 @@ func _ready():
 	#隐藏箭头
 	selection_root.visible = false
 	
-	#自转动画
+	update_sprite()
 	
 
 #显示UI
 func send_selected_signal():
 	Global.emit_signal("planet_selected", self)
 
-func _process(delta: float) -> void:
-	base.rotate(rotate_rand * delta)
-	light.rotate(rotate_rand * delta)
+
 
 #初始化行星
 func planet_setup(radius, period, cw, s):
@@ -64,6 +58,41 @@ func planet_setup(radius, period, cw, s):
 	clockwise = cw
 	star_luminosity = s.luminosity #恒星光度，算气温用的
 	star_size = s.size
+	
+	update_temperature()
+
+
+	#========行星贴图匹配========#
+	
+#加载贴图
+@onready var base_sprites = $BaseSprites
+@onready var base_sprite: String
+@onready var light_sprites = $LightSprites
+@onready var light_sprite: String
+
+#贴图匹配
+func update_sprite():
+	
+	if temperature > 1000:
+		base_sprite = "LavaPlanet"
+		light_sprite = "MoltenPlanetLight"
+	else:
+		base_sprite = "base"
+		light_sprite = "BaseLight"
+	
+	for child in base_sprites.get_children():
+		child.visible = false
+	base_sprites.get_node(base_sprite).visible = true
+	
+	for child in light_sprites.get_children():
+		child.visible = false
+	light_sprites.get_node(light_sprite).visible = true
+
+#自转
+func _process(delta: float) -> void:
+	base_sprites.rotate(rotate_rand * delta)
+	light_sprites.rotate(rotate_rand * delta)
+
 
 	#========行星数据更新与调用========#
 
@@ -81,7 +110,7 @@ func update_data(delta: float) -> void: #更新数据
 	update_population(delta)
 	update_materials(delta)
 	update_habitability(delta)
-	update_temperature()
+	#update_temperature()
 
 func update_power(delta:float) -> void: #power比较特殊，不在一起更新
 	pass
@@ -102,4 +131,5 @@ func update_habitability(delta: float) -> void:
 	habitability = clamp(habitability, 0.0, 100.0)
 
 func update_temperature():
-	temperature = 278 * star_luminosity * pow((2 / orbit_AU), 2)
+	temperature = 278 * star_luminosity * pow((2 / orbit_AU), 1.5)
+	update_sprite()
