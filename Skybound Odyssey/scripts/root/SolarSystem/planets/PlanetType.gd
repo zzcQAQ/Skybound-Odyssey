@@ -1,10 +1,8 @@
-class_name TerrestrialPlanet
+class_name PlanetType
 extends CelestialBody
 
 var planet_name: String = "Unnamed Planet"
 var faction = 0
-
-
 
 #用于选中箭头
 @export var radius = 16
@@ -47,7 +45,6 @@ func _ready():
 #显示UI
 func send_selected_signal():
 	Global.emit_signal("planet_selected", self)
-
 
 
 #初始化行星
