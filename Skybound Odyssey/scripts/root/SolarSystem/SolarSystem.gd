@@ -76,4 +76,7 @@ func _generate_planets():
 		orbit.set_radius(r)
 		orbit.orbit_period = orbit_period
 		orbit.clockwise = clockwise
-		planet.planet_setup(r, orbit_period, clockwise, giant_star)
+		
+		var have_water = rng.randf() < 0.3
+		
+		planet.planet_setup(r, orbit_period, clockwise, giant_star, have_water)

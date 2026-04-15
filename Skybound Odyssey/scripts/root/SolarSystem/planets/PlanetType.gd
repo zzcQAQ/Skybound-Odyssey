@@ -16,10 +16,13 @@ var faction = 0
 @export var materials: float = 100
 @export var power_generation: float = 0
 @export var power_consumption: float = 0
-@export var habitability: float = 50
 @export var temperature: float #开氏温度
+#宜居度
+@export var habitability: float = 50
+@export var habitability_temp: float = 0
 
-@export var have_water: bool = true
+
+@export var have_water: bool
 @export var orbit_radius: float
 @export var orbit_AU: float
 @export var orbit_period: float
@@ -33,14 +36,11 @@ var faction = 0
 @export var population_rate: float = 0
 @export var materials_production_rate: float = 0
 @export var materials_consumption_rate: float = 0
-@export var habitability_rate: float = 0
+
 
 func _ready():
 	#隐藏箭头
 	selection_root.visible = false
-	
-	update_sprite()
-	
 
 #显示UI
 func send_selected_signal():
@@ -48,16 +48,19 @@ func send_selected_signal():
 
 
 #初始化行星
-func planet_setup(radius, period, cw, s):
+func planet_setup(radius, period, cw, s, h_w):
 	orbit_radius = radius
 	orbit_AU = radius / 200
 	orbit_period = period
 	clockwise = cw
 	star_luminosity = s.luminosity #恒星光度，算气温用的
 	star_size = s.size
+	have_water = h_w
 	
 	update_temperature()
-
+	update_water()
+	update_habitability()
+	update_sprite()
 
 	#========行星贴图匹配========#
 	
@@ -74,6 +77,10 @@ func update_sprite():
 		base_sprite = "LavaPlanet"
 		light_sprite = "MoltenPlanetLight"
 	else:
+		base_sprite = "BarrenPlanet"
+		light_sprite = "NoSprite"
+	
+	if habitability >= 50 and have_water:
 		base_sprite = "base"
 		light_sprite = "BaseLight"
 	
@@ -83,7 +90,8 @@ func update_sprite():
 	
 	for child in light_sprites.get_children():
 		child.visible = false
-	light_sprites.get_node(light_sprite).visible = true
+	if light_sprite != "NoSprite":
+		light_sprites.get_node(light_sprite).visible = true
 
 #自转
 func _process(delta: float) -> void:
@@ -106,7 +114,7 @@ func _physics_process(delta: float) -> void:
 func update_data(delta: float) -> void: #更新数据
 	update_population(delta)
 	update_materials(delta)
-	update_habitability(delta)
+	#update_habitability(delta)
 	#update_temperature()
 
 func update_power(delta:float) -> void: #power比较特殊，不在一起更新
@@ -122,11 +130,17 @@ func update_materials(delta: float) -> void:
 	if materials < 0:
 		materials = 0
 	
-func update_habitability(delta: float) -> void:
-	habitability_rate = -pow((temperature - 288.0) / 10.0, 2) + 50.0
-	habitability = 0 + habitability_rate
+func update_habitability():
+	habitability_temp = -pow((temperature - 288.0) / 10.0, 2) + 50.0
+	habitability = 0 + habitability_temp
+	if have_water:
+		habitability += 30
 	habitability = clamp(habitability, 0.0, 100.0)
 
 func update_temperature():
 	temperature = 278 * star_luminosity * pow((2 / orbit_AU), 1.5)
 	update_sprite()
+
+func update_water():
+	if temperature >= 1000:
+		have_water = false

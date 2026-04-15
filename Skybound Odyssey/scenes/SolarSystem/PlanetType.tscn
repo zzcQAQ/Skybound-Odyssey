@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cn60ak78pvcdu" path="res://scripts/root/SolarSystem/planets/PlanetType.gd" id="1_wsebg"]
 [ext_resource type="Texture2D" uid="uid://d1d4q0v2ni8ux" path="res://accests/sprites/units/planets/planet-body.png" id="2_0bpx1"]
+[ext_resource type="Texture2D" uid="uid://c68nmdvul3wet" path="res://accests/sprites/units/planets/BarrenPlanet.png" id="3_0bpx1"]
 [ext_resource type="Texture2D" uid="uid://d078ixqsruujt" path="res://accests/sprites/units/planets/LavaPlanet-body.png" id="3_80ml5"]
 [ext_resource type="Texture2D" uid="uid://e4usgwaqjcns" path="res://accests/sprites/units/planets/planetshadow.png" id="4_08xn7"]
 [ext_resource type="Texture2D" uid="uid://bgsulna1aq7v1" path="res://accests/sprites/units/planets/planet-light.png" id="5_3r71h"]
@@ -18,6 +19,9 @@ script = ExtResource("1_wsebg")
 
 [node name="base" type="Sprite2D" parent="BaseSprites" unique_id=172677775]
 texture = ExtResource("2_0bpx1")
+
+[node name="BarrenPlanet" type="Sprite2D" parent="BaseSprites" unique_id=671449537]
+texture = ExtResource("3_0bpx1")
 
 [node name="LavaPlanet" type="Sprite2D" parent="BaseSprites" unique_id=2054936768]
 texture = ExtResource("3_80ml5")
