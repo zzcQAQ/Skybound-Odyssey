@@ -17,9 +17,6 @@ var star_size: float
 @onready var giant_star = $GiantStar
 @onready var PlanetOrbits = $PlanetOrbits
 
-
-#行星数量概率 0~8
-
 var rng = RandomNumberGenerator.new()
 
 var base_rng =SeedManager.get_rng(0)
