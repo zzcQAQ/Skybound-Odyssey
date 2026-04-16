@@ -73,16 +73,20 @@ func planet_setup(radius, period, cw, s, h_w):
 #贴图匹配
 func update_sprite():
 	
-	if temperature > 1000:
+	if temperature > 1000: #熔岩
 		base_sprite = "LavaPlanet"
 		light_sprite = "MoltenPlanetLight"
 	else:
-		base_sprite = "BarrenPlanet"
+		base_sprite = "BarrenPlanet" #岩石
 		light_sprite = "NoSprite"
 	
-	if habitability >= 50 and have_water:
+	if habitability >= 50 and have_water: #宜居
 		base_sprite = "base"
 		light_sprite = "BaseLight"
+	
+	if temperature <= 178 and have_water: #冻土
+		base_sprite = "FrozenPlanet"
+		light_sprite = "NoSprite"
 	
 	for child in base_sprites.get_children():
 		child.visible = false

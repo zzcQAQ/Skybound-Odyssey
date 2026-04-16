@@ -92,14 +92,18 @@ layout_mode = 2
 [node name="HabitabilityLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=615628273]
 layout_mode = 2
 
-[node name="HabitabilityContainer" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=758760262]
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=2022764869]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="HabitabilityContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel/MarginContainer" unique_id=263747403]
 layout_mode = 2
 
-[node name="HabitabilityRateLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel/HabitabilityContainer" unique_id=2120076348]
-layout_mode = 0
-offset_left = 16.0
-offset_right = 400.0
-offset_bottom = 23.0
+[node name="HabitabilityRateLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel/MarginContainer/HabitabilityContainer" unique_id=2120076348]
+layout_mode = 2
+
+[node name="HaveWaterLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel/MarginContainer/HabitabilityContainer" unique_id=2107814554]
+layout_mode = 2
 
 [node name="TemperatureLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=309437230]
 layout_mode = 2
