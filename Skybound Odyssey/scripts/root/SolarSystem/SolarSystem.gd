@@ -1,18 +1,20 @@
 extends Node2D
 
-# 生成行星轨道
-@export var orbit_radius: float
-@export var min_gap: float = 75
-@export var orbit_period: float # 公转周期 秒/圈
-@export var clockwise: bool = true
-@export var planet_count = 1
+#生成行星数据
+var orbit_radius: float
+var min_gap: float = 75
+var orbit_period: float # 公转周期 秒/圈
+var star_angle: float
+var clockwise: bool = true
+var planet_count = 1
+var have_water: bool
 
-# 生成恒星的数值
-@export var luminosity: float
-@export var star_size: float
+#生成恒星的数值
+var luminosity: float
+var star_size: float
 
+#子节点
 @onready var giant_star = $GiantStar
-
 @onready var PlanetOrbits = $PlanetOrbits
 
 
@@ -32,7 +34,7 @@ func _ready():
 	_generate_planets()
 
 
-# 生成恒星
+#=====生成恒星=====
 func _generate_giant_star():
 	star_size = rng.randf_range(0.5, 2)
 	luminosity = rng.randf_range(1, 1.5) * star_size
@@ -40,11 +42,13 @@ func _generate_giant_star():
 	giant_star.star_setup(star_size, luminosity)
 
 
-#随机行星数量函数
+#=====生成行星=====
+
+#随机行星数量
 func get_planet_count():
 	planet_count = int(rng.randf_range(0, 4.1 * star_size))
 
-#行星与轨道部分
+#生成行星轨道半径
 func _generate_planets():
 	var radii: Array = []
 	var min_orbit = 100 * star_size
@@ -67,16 +71,16 @@ func _generate_planets():
 	for r in radii:
 		var orbit = preload("res://scenes/SolarSystem/orbit.tscn").instantiate()
 		var planet = preload("res://scenes/SolarSystem/PlanetType.tscn").instantiate()
-		
 		PlanetOrbits.add_child(orbit)
 		orbit.add_child(planet)
 		
 		orbit_period = rng.randf_range(240, 900)
+		have_water = rng.randf() < 0.3
+		clockwise = rng.randf() < 0.9
+		star_angle = rng.randf() * TAU
 		
-		orbit.set_radius(r)
+		orbit.set_radius(r, star_angle)
 		orbit.orbit_period = orbit_period
 		orbit.clockwise = clockwise
-		
-		var have_water = rng.randf() < 0.3
 		
 		planet.planet_setup(r, orbit_period, clockwise, giant_star, have_water)

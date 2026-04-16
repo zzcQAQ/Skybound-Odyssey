@@ -6,13 +6,13 @@ extends Node2D
 @export var clockwise: bool
 var orbit_radius: float
 
-func set_radius(radius):
+func set_radius(radius, s_a):
 	# 设置初始位置
 	if get_child_count() > 0:
 		@warning_ignore("shadowed_global_identifier")
 		var planet = get_child(0)
 		planet.position = Vector2(radius, 0)
-		rotate(randf() * 2 * PI)
+		rotate(s_a)
 		orbit_radius = radius
 
 #绘制轨道

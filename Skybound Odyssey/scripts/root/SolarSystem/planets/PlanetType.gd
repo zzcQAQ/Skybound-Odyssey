@@ -48,13 +48,13 @@ func send_selected_signal():
 
 
 #初始化行星
-func planet_setup(radius, period, cw, s, h_w):
+func planet_setup(radius, period, clockwise, star, h_w):
 	orbit_radius = radius
 	orbit_AU = radius / 200
 	orbit_period = period
-	clockwise = cw
-	star_luminosity = s.luminosity #恒星光度，算气温用的
-	star_size = s.size
+	clockwise = clockwise
+	star_luminosity = star.luminosity #恒星光度，算气温用的
+	star_size = star.size
 	have_water = h_w
 	
 	update_temperature()
