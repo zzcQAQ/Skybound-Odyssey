@@ -9,7 +9,7 @@ var clockwise: bool = true
 var planet_count = 1
 var have_water: bool
 
-#生成恒星的数值
+#生成恒星数值
 var luminosity: float
 var star_size: float
 
@@ -19,7 +19,7 @@ var star_size: float
 
 var rng = RandomNumberGenerator.new()
 
-var base_rng =SeedManager.get_rng(0)
+var base_rng = SeedManager.get_rng(0)
 
 func _ready():
 	#恶臭种子

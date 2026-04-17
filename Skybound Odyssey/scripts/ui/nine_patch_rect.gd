@@ -74,6 +74,7 @@ func update_display(a):
 			planet_panel.get_node("MarginContainer/HabitabilityContainer/HabitabilityRateLabel").text = "temperature: " + str("%.2f " % current_selected_body.habitability_temp) + "%"
 			planet_panel.get_node("MarginContainer/HabitabilityContainer/HabitabilityRateLabel").add_theme_color_override("font_color", Color(1.0, 0.0, 0.0, 1.0))
 		if current_selected_body.have_water == true:
+			planet_panel.get_node("MarginContainer/HabitabilityContainer/HaveWaterLabel").visible = true
 			planet_panel.get_node("MarginContainer/HabitabilityContainer/HaveWaterLabel").text = "Have Water: +30%"
 			planet_panel.get_node("MarginContainer/HabitabilityContainer/HaveWaterLabel").add_theme_color_override("font_color", Color(0.0, 1.0, 0.0, 1.0))
 		else:
