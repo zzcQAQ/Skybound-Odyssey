@@ -1,15 +1,15 @@
 class_name PlanetType
 extends CelestialBody
 
-var planet_name: String = "Unnamed Planet"
-var faction = 0
+#var planet_name: String = "Unnamed Planet"
+#var faction = 0
 
 #用于选中箭头
 @export var radius = 16
 
 #自转
 @export var rotate_speed: float = -0.3
-@export var rotate_rand: float = randf() * 2 * PI * 0.05
+@export var rotate_rand: float = randf() * TAU * 0.05
 
 #行星属性
 @export var population: float = 0.1
@@ -26,7 +26,6 @@ var faction = 0
 @export var orbit_radius: float
 @export var orbit_AU: float
 @export var orbit_period: float
-@export var clockwise: bool = true
 
 #获取父级恒星
 @export var star_luminosity: float
@@ -48,11 +47,10 @@ func send_selected_signal():
 
 
 #初始化行星
-func planet_setup(radius, period, clockwise, star, h_w):
-	orbit_radius = radius
-	orbit_AU = radius / 200
-	orbit_period = period
-	clockwise = clockwise
+func planet_setup(o_r, o_p, star, h_w):
+	orbit_radius = o_r
+	orbit_AU = o_r / 200
+	orbit_period = o_p
 	star_luminosity = star.luminosity #恒星光度，算气温用的
 	star_size = star.size
 	have_water = h_w

@@ -80,4 +80,4 @@ func _generate_planets():
 		orbit.orbit_period = orbit_period
 		orbit.clockwise = clockwise
 		
-		planet.planet_setup(r, orbit_period, clockwise, giant_star, have_water)
+		planet.planet_setup(r, orbit_period, giant_star, have_water)
