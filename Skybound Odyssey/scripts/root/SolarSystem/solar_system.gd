@@ -12,6 +12,7 @@ var have_water: bool
 #生成恒星数值
 var luminosity: float
 var star_size: float
+var system_id: int
 
 #子节点
 @onready var giant_star = $GiantStar
@@ -33,10 +34,11 @@ func _ready():
 
 #=====生成恒星=====
 func _generate_giant_star():
-	star_size = rng.randf_range(0.5, 2)
+	star_size = exp(rng.randf_range(log(0.5), log(2.0)))
+	
 	luminosity = rng.randf_range(1, 1.5) * star_size
 	
-	giant_star.star_setup(star_size, luminosity)
+	giant_star.star_setup(star_size, luminosity, system_id)
 
 
 #=====生成行星=====

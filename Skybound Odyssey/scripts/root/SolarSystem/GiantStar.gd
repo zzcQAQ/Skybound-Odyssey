@@ -2,12 +2,12 @@ class_name GiantStar
 extends CelestialBody 
 
 #恒星属性
+@export var id: String
 @export var size: float
 @export var radius: float
 @export var luminosity: float
-
 @export var rotateSpeed = 0.1
-
+@export var system_id: int
 #加载贴图
 var MType = preload("res://accests/sprites/units/star/MType.png")
 var GType = preload("res://accests/sprites/units/star/GType.png")
@@ -19,7 +19,8 @@ func send_selected_signal():
 	Global.emit_signal("giant_star_selected", self)
 
 #接收恒星初始化
-func star_setup(s, l):
+
+func star_setup(s, l, id_in):
 	#半径
 	size = s
 	radius = 64 * s
@@ -31,6 +32,9 @@ func star_setup(s, l):
 	#贴图匹配
 	sprite.scale = Vector2(s, s)
 	collision.scale = Vector2(s, s)
+	
+	#ID
+	system_id = id_in
 	
 	if l <= 1:
 		sprite.texture = MType

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://mib2gs63qtwr" path="res://scenes/back_ground.tscn" id="2_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cqn7101tyv52c" path="res://scenes/ui/ui.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://bhan07y0snix4" path="res://scripts/ui/camera_2d.gd" id="5_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://hajoe6cslyb3" path="res://scenes/SolarSystem/solar_system.tscn" id="6_tefeu"]
+[ext_resource type="Script" uid="uid://dfem633vhh8sl" path="res://scripts/root/SolarSystem/galaxy_generator.gd" id="5_tefeu"]
 
 [sub_resource type="Environment" id="Environment_sugp2"]
 background_mode = 3
@@ -33,34 +33,6 @@ layer = 0
 
 [node name="UI" parent="CanvasLayer" unique_id=1116135926 instance=ExtResource("4_jyhfs")]
 
-[node name="Node2D" type="Node2D" parent="." unique_id=891424732]
+[node name="Galaxys" type="Node2D" parent="." unique_id=891424732]
 position = Vector2(0, 23)
-
-[node name="SolarSystem0" parent="Node2D" unique_id=673866124 instance=ExtResource("6_tefeu")]
-
-[node name="SolarSystem1" parent="Node2D" unique_id=1176847484 instance=ExtResource("6_tefeu")]
-position = Vector2(1982, -33)
-
-[node name="SolarSystem2" parent="Node2D" unique_id=820171748 instance=ExtResource("6_tefeu")]
-position = Vector2(4124, -14)
-
-[node name="SolarSystem3" parent="Node2D" unique_id=950350730 instance=ExtResource("6_tefeu")]
-position = Vector2(6326, -24)
-
-[node name="SolarSystem4" parent="Node2D" unique_id=1633791699 instance=ExtResource("6_tefeu")]
-position = Vector2(1007, 1766)
-
-[node name="SolarSystem5" parent="Node2D" unique_id=224388551 instance=ExtResource("6_tefeu")]
-position = Vector2(3115, 1823)
-
-[node name="SolarSystem6" parent="Node2D" unique_id=1004279078 instance=ExtResource("6_tefeu")]
-position = Vector2(5416, 1789)
-
-[node name="SolarSystem7" parent="Node2D" unique_id=1376210057 instance=ExtResource("6_tefeu")]
-position = Vector2(2053, 3613)
-
-[node name="SolarSystem8" parent="Node2D" unique_id=1327920723 instance=ExtResource("6_tefeu")]
-position = Vector2(4300, 3552)
-
-[node name="SolarSystem9" parent="Node2D" unique_id=924955071 instance=ExtResource("6_tefeu")]
-position = Vector2(3217, 5335)
+script = ExtResource("5_tefeu")
