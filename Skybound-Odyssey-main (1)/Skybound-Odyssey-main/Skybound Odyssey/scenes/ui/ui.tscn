@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://cqn7101tyv52c"]
+
+[ext_resource type="Texture2D" uid="uid://dtpoiwhyhqjur" path="res://accests/sprites/ui/uiframe.png" id="1_u7n8c"]
+[ext_resource type="Script" uid="uid://dmkcetde1mcny" path="res://scripts/ui/nine_patch_rect.gd" id="2_f5cxw"]
+
+[node name="UI" type="Control" unique_id=1116135926]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1676295867]
+layout_mode = 0
+offset_left = 1472.0
+offset_right = 2008.0
+offset_bottom = 1080.0
+texture = ExtResource("1_u7n8c")
+region_rect = Rect2(0, 0, 128, 128)
+patch_margin_left = 58
+patch_margin_top = 58
+patch_margin_right = 58
+patch_margin_bottom = 58
+script = ExtResource("2_f5cxw")
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=383700769]
+layout_mode = 0
+offset_right = 448.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 64
+
+[node name="DataList" type="VBoxContainer" parent="NinePatchRect/MarginContainer" unique_id=1953336517]
+layout_mode = 2
+
+[node name="GiantStarPannel" type="VBoxContainer" parent="NinePatchRect/MarginContainer/DataList" unique_id=293275548]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=829908313]
+layout_mode = 2
+text = "GiantStar"
+
+[node name="IdLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=78661247]
+visible = false
+layout_mode = 2
+text = "id: S0-P1"
+
+[node name="BlankLine" type="Control" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=248879863]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="RadiusLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=1517563006]
+layout_mode = 2
+
+[node name="LuminosityLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=962839838]
+layout_mode = 2
+
+[node name="PlanetPanel" type="VBoxContainer" parent="NinePatchRect/MarginContainer/DataList" unique_id=1492053920]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1990570440]
+layout_mode = 2
+text = "Earth"
+
+[node name="IdLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1065624150]
+layout_mode = 2
+text = "id: S2-P1"
+
+[node name="BlankLine" type="Control" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=122454778]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="OrbitRadiusLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1669565660]
+layout_mode = 2
+
+[node name="OrbitPeriodLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1027363078]
+layout_mode = 2
+
+[node name="BlankLine2" type="Control" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=564253665]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="PopulationLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1819195229]
+layout_mode = 2
+
+[node name="MaterialsLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1573381095]
+layout_mode = 2
+
+[node name="HabitabilityLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=615628273]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=2022764869]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="HabitabilityContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel/MarginContainer" unique_id=263747403]
+layout_mode = 2
+
+[node name="HabitabilityRateLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel/MarginContainer/HabitabilityContainer" unique_id=2120076348]
+layout_mode = 2
+
+[node name="HaveWaterLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel/MarginContainer/HabitabilityContainer" unique_id=2107814554]
+layout_mode = 2
+
+[node name="TemperatureLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=309437230]
+layout_mode = 2

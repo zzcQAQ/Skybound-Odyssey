@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://dwm3l0aeeri3x"]
+
+[ext_resource type="Script" uid="uid://c5evwercmrg56" path="res://scripts/ui/home.gd" id="1_cps5c"]
+[ext_resource type="PackedScene" uid="uid://mib2gs63qtwr" path="res://scenes/back_ground.tscn" id="2_1wv05"]
+[ext_resource type="Texture2D" uid="uid://d6om5gbg35s3" path="res://accests/sprites/background/title.png" id="2_sdvdx"]
+[ext_resource type="PackedScene" uid="uid://hajoe6cslyb3" path="res://scenes/SolarSystem/solar_system.tscn" id="3_1wv05"]
+
+[sub_resource type="Environment" id="Environment_sdvdx"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 1.25
+
+[node name="home" type="Control" unique_id=1349073246]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cps5c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1224909482]
+
+[node name="homePage" type="Node2D" parent="CanvasLayer" unique_id=1433431355]
+
+[node name="title" type="Sprite2D" parent="CanvasLayer/homePage" unique_id=681158923]
+position = Vector2(222, 191)
+scale = Vector2(0.45999998, 0.45999998)
+texture = ExtResource("2_sdvdx")
+centered = false
+
+[node name="buttons" type="Node2D" parent="CanvasLayer/homePage" unique_id=690078250]
+position = Vector2(1500, 300)
+
+[node name="Campaign Mode" type="Button" parent="CanvasLayer/homePage/buttons" unique_id=212439639]
+visible = false
+offset_right = 150.0
+offset_bottom = 50.0
+text = "Campaign Mode"
+
+[node name="continue" type="Button" parent="CanvasLayer/homePage/buttons" unique_id=1275016148]
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 110.0
+text = "continue"
+
+[node name="newGame" type="Button" parent="CanvasLayer/homePage/buttons" unique_id=167546579]
+visible = false
+offset_top = 120.0
+offset_right = 150.0
+offset_bottom = 170.0
+text = "new game"
+
+[node name="settings" type="Button" parent="CanvasLayer/homePage/buttons" unique_id=201408218]
+visible = false
+offset_top = 180.0
+offset_right = 150.0
+offset_bottom = 230.0
+text = "settings"
+
+[node name="quit" type="Button" parent="CanvasLayer/homePage/buttons" unique_id=1485024538]
+offset_top = 240.0
+offset_right = 150.0
+offset_bottom = 290.0
+text = "quit"
+
+[node name="factionSelect" type="Node2D" parent="CanvasLayer" unique_id=83979835]
+
+[node name="title" type="Node2D" parent="CanvasLayer/factionSelect" unique_id=2127621537]
+position = Vector2(-900, 200)
+
+[node name="Label" type="Label" parent="CanvasLayer/factionSelect/title" unique_id=1879528142]
+offset_left = -6.10352e-05
+offset_top = 1.52588e-05
+offset_right = 153.0
+offset_bottom = 23.0
+scale = Vector2(3.5, 3.5)
+tooltip_text = "choose your faction"
+text = "choose your faction"
+
+[node name="buttons" type="Node2D" parent="CanvasLayer/factionSelect" unique_id=1951725710]
+position = Vector2(1997, 302)
+
+[node name="human" type="Button" parent="CanvasLayer/factionSelect/buttons" unique_id=2053220706]
+offset_right = 150.0
+offset_bottom = 50.0
+text = "human"
+
+[node name="flesh" type="Button" parent="CanvasLayer/factionSelect/buttons" unique_id=967198484]
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 110.0
+text = "flesh"
+
+[node name="back" type="Button" parent="CanvasLayer/factionSelect/buttons" unique_id=1934484716]
+offset_top = 120.0
+offset_right = 150.0
+offset_bottom = 170.0
+text = "back"
+
+[node name="Confirm" type="Button" parent="CanvasLayer/factionSelect/buttons" unique_id=186113995]
+offset_top = 180.0
+offset_right = 150.0
+offset_bottom = 230.0
+text = "Confirm"
+
+[node name="preview" type="Node2D" parent="CanvasLayer/factionSelect" unique_id=1432453827]
+
+[node name="human" type="Node2D" parent="CanvasLayer/factionSelect/preview" unique_id=499760242]
+position = Vector2(-900, 350)
+
+[node name="Label" type="Label" parent="CanvasLayer/factionSelect/preview/human" unique_id=525109531]
+offset_right = 113.0
+offset_bottom = 23.0
+text = "human faction"
+
+[node name="flesh" type="Node2D" parent="CanvasLayer/factionSelect/preview" unique_id=543970101]
+position = Vector2(-900, 350)
+
+[node name="Label" type="Label" parent="CanvasLayer/factionSelect/preview/flesh" unique_id=1245387709]
+offset_right = 113.0
+offset_bottom = 23.0
+text = "flesh faction"
+
+[node name="settings" type="Node2D" parent="CanvasLayer" unique_id=666325724]
+
+[node name="title" type="Node2D" parent="CanvasLayer/settings" unique_id=2087533053]
+position = Vector2(-900, 200)
+
+[node name="Label" type="Label" parent="CanvasLayer/settings/title" unique_id=869708238]
+offset_left = -6.10352e-05
+offset_top = 1.52588e-05
+offset_right = 153.0
+offset_bottom = 23.0
+scale = Vector2(3.5, 3.5)
+tooltip_text = "choose your faction"
+text = "settings"
+
+[node name="buttons" type="Node2D" parent="CanvasLayer/settings" unique_id=1021243606]
+position = Vector2(1997, 300)
+
+[node name="glow" type="CheckButton" parent="CanvasLayer/settings/buttons" unique_id=81501098]
+offset_right = 150.0
+offset_bottom = 50.0
+text = "glow"
+alignment = 1
+
+[node name="back" type="Button" parent="CanvasLayer/settings/buttons" unique_id=826564916]
+offset_top = 62.0
+offset_right = 150.0
+offset_bottom = 112.0
+text = "back"
+
+[node name="backGround" parent="." unique_id=878166922 instance=ExtResource("2_1wv05")]
+position = Vector2(914, 559)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1865871818]
+position = Vector2(960, 540)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1236856713]
+environment = SubResource("Environment_sdvdx")
+
+[node name="SolarSystem1" parent="." unique_id=1176847484 instance=ExtResource("3_1wv05")]
+position = Vector2(574, 763)
+
+[connection signal="pressed" from="CanvasLayer/homePage/buttons/Campaign Mode" to="." method="CampaignMode"]
+[connection signal="pressed" from="CanvasLayer/homePage/buttons/continue" to="." method="Continue"]
+[connection signal="pressed" from="CanvasLayer/homePage/buttons/newGame" to="." method="NewGame"]
+[connection signal="pressed" from="CanvasLayer/homePage/buttons/settings" to="." method="Settings"]
+[connection signal="pressed" from="CanvasLayer/homePage/buttons/quit" to="." method="Quit"]
+[connection signal="pressed" from="CanvasLayer/factionSelect/buttons/human" to="." method="Human"]
+[connection signal="pressed" from="CanvasLayer/factionSelect/buttons/flesh" to="." method="Flesh"]
+[connection signal="pressed" from="CanvasLayer/factionSelect/buttons/back" to="." method="Back"]
+[connection signal="pressed" from="CanvasLayer/factionSelect/buttons/Confirm" to="." method="Confirm"]
+[connection signal="pressed" from="CanvasLayer/settings/buttons/back" to="." method="Back"]

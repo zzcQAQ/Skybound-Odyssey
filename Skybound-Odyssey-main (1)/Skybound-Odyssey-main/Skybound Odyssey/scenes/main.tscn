@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c0rlhcraao3l3"]
+
+[ext_resource type="Script" uid="uid://dep0netc0tred" path="res://scripts/main.gd" id="1_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://mib2gs63qtwr" path="res://scenes/back_ground.tscn" id="2_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://cqn7101tyv52c" path="res://scenes/ui/ui.tscn" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://bhan07y0snix4" path="res://scripts/ui/camera_2d.gd" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://dfem633vhh8sl" path="res://scripts/root/SolarSystem/galaxy_generator.gd" id="5_tefeu"]
+
+[sub_resource type="Environment" id="Environment_sugp2"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 1.25
+glow_hdr_threshold = 0.9
+
+[node name="main" type="Node2D" unique_id=693652064]
+script = ExtResource("1_tbgi4")
+
+[node name="backGround" parent="." unique_id=2053455515 instance=ExtResource("2_o6xl0")]
+z_index = -1
+script = null
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=46029540]
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+script = ExtResource("5_tbgi4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=885232914]
+environment = SubResource("Environment_sugp2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=650917478]
+layer = 0
+
+[node name="UI" parent="CanvasLayer" unique_id=1116135926 instance=ExtResource("4_jyhfs")]
+
+[node name="Galaxys" type="Node2D" parent="." unique_id=891424732]
+position = Vector2(0, 23)
+script = ExtResource("5_tefeu")
