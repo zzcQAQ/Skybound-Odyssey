@@ -31,7 +31,12 @@ func _ready():
 	get_planet_count()
 	_generate_planets()
 
-
+#=====星系初始化=====
+func system_setup(pos, id):
+	self.position = pos
+	self.system_id = id
+	
+	giant_star.system_id = id
 #=====生成恒星=====
 func _generate_giant_star():
 	star_size = exp(rng.randf_range(log(0.5), log(2.0)))
@@ -39,7 +44,6 @@ func _generate_giant_star():
 	luminosity = rng.randf_range(1, 1.5) * star_size
 	
 	giant_star.star_setup(star_size, luminosity, system_id)
-
 
 #=====生成行星=====
 

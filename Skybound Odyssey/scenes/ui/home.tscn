@@ -161,7 +161,7 @@ position = Vector2(960, 540)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1236856713]
 environment = SubResource("Environment_sdvdx")
 
-[node name="SolarSystem1" parent="." unique_id=1176847484 instance=ExtResource("3_1wv05")]
+[node name="SolarSystem0" parent="." unique_id=1176847484 instance=ExtResource("3_1wv05")]
 position = Vector2(574, 763)
 
 [connection signal="pressed" from="CanvasLayer/homePage/buttons/Campaign Mode" to="." method="CampaignMode"]

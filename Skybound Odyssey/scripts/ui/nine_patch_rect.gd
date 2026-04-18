@@ -56,6 +56,7 @@ func update_display(a):
 	if a == 1:
 		planet_panel.visible = false
 		giant_star_panel.visible = true
+		giant_star_panel.get_node("IdLabel").text = "Id: " + str(current_selected_body.system_id)
 		giant_star_panel.get_node("RadiusLabel").text = "Radius: " + str("%.2f R☉" % (current_selected_body.radius / 72))
 		giant_star_panel.get_node("LuminosityLabel").text = "Luminosity: " + str("%.2f L☉" % current_selected_body.luminosity)
 	if a == 2:

@@ -4,10 +4,10 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 
 # 生成范围
-@export var map_size = Vector2(30000, 20000)
+@export var map_size = Vector2(160000, 90000)
 @export var solar_system_count := 50
-@export var min_distance := 3000
-@export var max_attempts_per_system: int = 5
+@export var min_distance := 5000
+@export var max_attempts_per_system: int = 3
 
 # 获取节点
 @onready var solar_system = preload("res://scenes/SolarSystem/solar_system.tscn")
@@ -25,12 +25,12 @@ func _ready():
 
 # ==========生成星系========== #
 
-#总生成函数
+#总生成函数  # 星系越多，星系越少
 func generate_solar_systems():
 	var success: int = 0
 	for i in solar_system_count:
 		var pos = find_valid_position()
-		if pos != null:
+		if pos != null: 
 			systems_positions.append(pos)
 			spawn_system(pos, i)
 			success += 1
@@ -63,5 +63,4 @@ func is_valid_position(pos: Vector2) -> bool:
 func spawn_system(pos: Vector2, id):
 	var system = solar_system.instantiate()
 	self.add_child(system)
-	system.position = pos
-	system.system_id = id
+	system.system_setup(pos, id)

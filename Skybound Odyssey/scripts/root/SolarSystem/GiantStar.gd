@@ -8,6 +8,7 @@ extends CelestialBody
 @export var luminosity: float
 @export var rotateSpeed = 0.1
 @export var system_id: int
+
 #加载贴图
 var MType = preload("res://accests/sprites/units/star/MType.png")
 var GType = preload("res://accests/sprites/units/star/GType.png")
@@ -35,6 +36,7 @@ func star_setup(s, l, id_in):
 	
 	#ID
 	system_id = id_in
+	#print(id_in)
 	
 	if l <= 1:
 		sprite.texture = MType

@@ -44,7 +44,6 @@ layout_mode = 2
 text = "GiantStar"
 
 [node name="IdLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/GiantStarPannel" unique_id=78661247]
-visible = false
 layout_mode = 2
 text = "id: S0-P1"
 
