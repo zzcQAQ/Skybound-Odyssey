@@ -1,14 +1,18 @@
+class_name seedManager
 extends Node
 
-class_name seedManager
+var seed: int = 0
+var rng := RandomNumberGenerator.new()
 
-@export var world_seed: int = 114514
+func set_seed(new_seed: int):
+	seed = new_seed
+	rng.seed = seed
 
-func set_seed(seed: int):
-	world_seed = seed
+func randf():
+	return rng.randf()
 
+func randi():
+	return rng.randi()
 
-func get_rng(offset: int = 0) -> RandomNumberGenerator:
-	var rng = RandomNumberGenerator.new()
-	rng.seed = world_seed + offset
-	return rng
+func randf_range(a, b):
+	return rng.randf_range(a, b)

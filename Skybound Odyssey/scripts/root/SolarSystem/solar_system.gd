@@ -26,17 +26,18 @@ func _ready():
 	#恶臭种子
 	rng.seed = hash(name) % 114514 * base_rng.randi()
 	
-	_generate_giant_star()
-	
-	get_planet_count()
-	_generate_planets()
+
 
 #=====星系初始化=====
 func system_setup(pos, id):
 	self.position = pos
 	self.system_id = id
 	
-	giant_star.system_id = id
+	_generate_giant_star()
+	
+	get_planet_count()
+	_generate_planets()
+
 #=====生成恒星=====
 func _generate_giant_star():
 	star_size = exp(rng.randf_range(log(0.5), log(2.0)))

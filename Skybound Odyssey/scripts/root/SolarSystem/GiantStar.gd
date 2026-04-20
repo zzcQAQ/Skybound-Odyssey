@@ -7,7 +7,7 @@ extends CelestialBody
 @export var radius: float
 @export var luminosity: float
 @export var rotateSpeed = 0.1
-@export var system_id: int
+@export var system_id: String
 
 #加载贴图
 var MType = preload("res://accests/sprites/units/star/MType.png")
@@ -35,7 +35,7 @@ func star_setup(s, l, id_in):
 	collision.scale = Vector2(s, s)
 	
 	#ID
-	system_id = id_in
+	system_id = "S%03d" % id_in
 	#print(id_in)
 	
 	if l <= 1:

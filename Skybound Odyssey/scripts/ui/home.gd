@@ -18,6 +18,7 @@ var mainScene = preload("res://scenes/main.tscn")
 
 func _ready():
 	solar_system.rng = RandomNumberGenerator.new()
+	solar_system.system_setup(Vector2(540, 730), randi() % 100 + 1)
 
 # homePage
 func CampaignMode() -> void:

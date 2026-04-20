@@ -13,8 +13,8 @@ grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1676295867]
 layout_mode = 0
-offset_left = 1472.0
-offset_right = 2008.0
+offset_left = 1672.0
+offset_right = 2024.0
 offset_bottom = 1080.0
 texture = ExtResource("1_u7n8c")
 region_rect = Rect2(0, 0, 128, 128)
@@ -26,7 +26,7 @@ script = ExtResource("2_f5cxw")
 
 [node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=383700769]
 layout_mode = 0
-offset_right = 448.0
+offset_right = 352.0
 offset_bottom = 1080.0
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 64
