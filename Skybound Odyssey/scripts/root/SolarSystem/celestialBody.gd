@@ -8,11 +8,11 @@ extends Node2D
 
 @onready var selection_root = $SelectionRoot
 
-var rng = RandomNumberGenerator.new()
+#var rng = RandomNumberGenerator.new()
 
 func _ready():
 	selection_root.visible = false
-	rng.seed = 1
+	#rng.seed = 1
 
 #鼠标点击判定  #纯屎
 func _input(event):

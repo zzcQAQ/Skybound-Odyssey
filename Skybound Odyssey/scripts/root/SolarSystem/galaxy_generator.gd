@@ -1,7 +1,7 @@
 extends Node2D
 
 # 种子随机
-var rng = RandomNumberGenerator.new()
+var rng = SeedManager.get_rng("galaxy_generator")
 
 # 生成范围
 @export var map_size = Vector2(160000, 90000)
@@ -18,7 +18,7 @@ var systems_positions = []
 # 立即执行
 func _ready():
 	
-	rng.seed = 114514
+	#rng.seed = 114514
 	generate_solar_systems()
 
 

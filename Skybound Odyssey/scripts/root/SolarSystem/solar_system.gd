@@ -1,5 +1,8 @@
 extends Node2D
 
+# 种子随机
+var rng = RandomNumberGenerator.new()
+
 #生成行星数据
 var orbit_radius: float
 var min_gap: float = 75
@@ -18,20 +21,15 @@ var system_id: int
 @onready var giant_star = $GiantStar
 @onready var PlanetOrbits = $PlanetOrbits
 
-var rng = RandomNumberGenerator.new()
-
-var base_rng = SeedManager.get_rng(0)
-
 func _ready():
-	#恶臭种子
-	rng.seed = hash(name) % 114514 * base_rng.randi()
-	
-
+	pass
 
 #=====星系初始化=====
 func system_setup(pos, id):
 	self.position = pos
 	self.system_id = id
+	
+	rng = SeedManager.get_rng("solar_system_" + name)
 	
 	_generate_giant_star()
 	
