@@ -7,6 +7,9 @@ extends CelestialBody
 #用于选中箭头
 @export var radius = 16
 
+#混合ID
+@export var planet_ID: String
+
 #自转
 @export var rotate_speed: float = -0.3
 @export var rotate_rand: float = randf() * TAU * 0.05
@@ -20,7 +23,6 @@ extends CelestialBody
 #宜居度
 @export var habitability: float = 50
 @export var habitability_temp: float = 0
-
 
 @export var have_water: bool
 @export var orbit_radius: float
@@ -47,7 +49,7 @@ func send_selected_signal():
 
 
 #初始化行星
-func planet_setup(o_r, o_p, star, h_w):
+func planet_setup(o_r, o_p, star, h_w, id):
 	orbit_radius = o_r
 	orbit_AU = o_r / 200
 	orbit_period = o_p
@@ -55,6 +57,7 @@ func planet_setup(o_r, o_p, star, h_w):
 	star_size = star.size
 	have_water = h_w
 	
+	planet_ID = id
 	update_temperature()
 	update_water()
 	update_habitability()

@@ -70,6 +70,8 @@ func _generate_planets():
 			radii[i] = radii[i-1] + min_gap
 
 	#实例化行星
+	var id := 0
+	
 	for r in radii:
 		var orbit = preload("res://scenes/SolarSystem/orbit.tscn").instantiate()
 		var planet = preload("res://scenes/SolarSystem/PlanetType.tscn").instantiate()
@@ -85,4 +87,10 @@ func _generate_planets():
 		orbit.orbit_period = orbit_period
 		orbit.clockwise = clockwise
 		
-		planet.planet_setup(r, orbit_period, giant_star, have_water)
+		
+		id += 1
+		var pid: String = system_id + "-P%03d" % id
+		
+		planet.planet_setup(r, orbit_period, giant_star, have_water, pid)
+		
+		
