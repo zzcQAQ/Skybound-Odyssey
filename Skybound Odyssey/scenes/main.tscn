@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://mib2gs63qtwr" path="res://scenes/back_ground.tscn" id="2_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cqn7101tyv52c" path="res://scenes/ui/ui.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://bhan07y0snix4" path="res://scripts/ui/camera_2d.gd" id="5_tbgi4"]
-[ext_resource type="Script" uid="uid://dfem633vhh8sl" path="res://scripts/root/SolarSystem/galaxy_generator.gd" id="5_tefeu"]
+[ext_resource type="Script" uid="uid://dfem633vhh8sl" path="res://scripts/SolarSystem/galaxy_generator.gd" id="5_tefeu"]
 
 [sub_resource type="Environment" id="Environment_sugp2"]
 background_mode = 3

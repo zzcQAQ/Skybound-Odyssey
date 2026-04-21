@@ -66,7 +66,7 @@ func update_display(a):
 		planet_panel.get_node("OrbitRadiusLabel").text = "OrbitRadius: " + str("%.2f AU" % current_selected_body.orbit_AU)
 		planet_panel.get_node("OrbitPeriodLabel").text = "OrbitPeriod: " + str("%.0f d" % current_selected_body.orbit_period)
 		planet_panel.get_node("PopulationLabel").text = "Population: " + str(current_selected_body.population)
-		planet_panel.get_node("MaterialsLabel").text = "Materials: " + str(current_selected_body.materials)
+		planet_panel.get_node("ResourcesLabel").text = "Resources: " + str(current_selected_body.resources)
 		planet_panel.get_node("HabitabilityLabel").text = "Habitability: " + str("%.2f " % current_selected_body.habitability) + "%"
 		if current_selected_body.habitability_temp > 0:
 			planet_panel.get_node("MarginContainer/HabitabilityContainer/HabitabilityRateLabel").text = "temperature: +" + str("%.2f " % current_selected_body.habitability_temp) + "%"

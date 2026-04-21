@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c84741wwjs0xb"]
 
-[ext_resource type="Script" uid="uid://cn60ak78pvcdu" path="res://scripts/root/SolarSystem/planets/PlanetType.gd" id="1_wsebg"]
+[ext_resource type="Script" uid="uid://cn60ak78pvcdu" path="res://scripts/SolarSystem/planets/PlanetType.gd" id="1_wsebg"]
 [ext_resource type="Texture2D" uid="uid://d1d4q0v2ni8ux" path="res://accests/sprites/units/planets/planet-body.png" id="2_0bpx1"]
 [ext_resource type="Texture2D" uid="uid://c68nmdvul3wet" path="res://accests/sprites/units/planets/BarrenPlanet.png" id="3_0bpx1"]
 [ext_resource type="Texture2D" uid="uid://d078ixqsruujt" path="res://accests/sprites/units/planets/LavaPlanet-body.png" id="3_80ml5"]

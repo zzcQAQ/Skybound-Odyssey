@@ -85,7 +85,7 @@ layout_mode = 2
 [node name="PopulationLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1819195229]
 layout_mode = 2
 
-[node name="MaterialsLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1573381095]
+[node name="ResourcesLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=1573381095]
 layout_mode = 2
 
 [node name="HabitabilityLabel" type="Label" parent="NinePatchRect/MarginContainer/DataList/PlanetPanel" unique_id=615628273]

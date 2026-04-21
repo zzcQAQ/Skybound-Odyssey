@@ -16,7 +16,7 @@ extends CelestialBody
 
 #行星属性
 @export var population: float = 0.1
-@export var materials: float = 100
+@export var resources: float = 100
 @export var power_generation: float = 0
 @export var power_consumption: float = 0
 @export var temperature: float #开氏温度
@@ -35,8 +35,8 @@ extends CelestialBody
 
 #属性增量(每秒)
 @export var population_rate: float = 0
-@export var materials_production_rate: float = 0
-@export var materials_consumption_rate: float = 0
+@export var resources_production_rate: float = 0
+@export var resources_consumption_rate: float = 0
 
 
 func _ready():
@@ -131,9 +131,9 @@ func update_population(delta: float) -> void:
 		population = 0
 
 func update_materials(delta: float) -> void:
-	materials += (materials_production_rate - materials_consumption_rate) * delta
-	if materials < 0:
-		materials = 0
+	resources += (resources_production_rate - resources_consumption_rate) * delta
+	if resources < 0:
+		resources = 0
 	
 func update_habitability():
 	habitability_temp = -pow((temperature - 288.0) / 10.0, 2) + 50.0
