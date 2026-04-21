@@ -15,7 +15,7 @@ var have_water: bool
 #生成恒星数值
 var luminosity: float
 var star_size: float
-var system_id: int
+var system_id: String
 
 #子节点
 @onready var giant_star = $GiantStar

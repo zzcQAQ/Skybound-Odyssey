@@ -35,8 +35,7 @@ func star_setup(s, l, id_in):
 	collision.scale = Vector2(s, s)
 	
 	#ID
-	system_id = "S%03d" % id_in
-	#print(id_in)
+	system_id = id_in
 	
 	if l <= 1:
 		sprite.texture = MType

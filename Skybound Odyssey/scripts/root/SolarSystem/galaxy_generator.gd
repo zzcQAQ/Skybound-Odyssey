@@ -4,9 +4,9 @@ extends Node2D
 var rng = SeedManager.get_rng("galaxy_generator")
 
 # 生成范围
-@export var map_size = Vector2(160000, 90000)
+@export var map_size = Vector2(10000, 10000)
 @export var solar_system_count := 50
-@export var min_distance := 5000
+@export var min_distance := 1500
 @export var max_attempts_per_system: int = 3
 
 # 获取节点
@@ -62,5 +62,7 @@ func is_valid_position(pos: Vector2) -> bool:
 #实例化星系
 func spawn_system(pos: Vector2, id):
 	var system = solar_system.instantiate()
+	var sys_id: String = "S%03d" % id
 	self.add_child(system)
-	system.system_setup(pos, id)
+	
+	system.system_setup(pos, sys_id)

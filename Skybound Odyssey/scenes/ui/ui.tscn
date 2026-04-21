@@ -13,8 +13,8 @@ grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1676295867]
 layout_mode = 0
-offset_left = 1672.0
-offset_right = 2024.0
+offset_left = 1568.0
+offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_u7n8c")
 region_rect = Rect2(0, 0, 128, 128)
