@@ -5,6 +5,9 @@ var tween: Tween
 var open_ui_size = size
 var close_ui_size = Vector2(size.x, patch_margin_left * 2)
 
+var open_ui_x = position.x
+var close_ui_x = position.x + size.x * 1.1
+
 var current_selected = 0
 var current_selected_body = null
 
@@ -14,7 +17,8 @@ var current_selected_body = null
 func _ready() -> void:
 	#初始化动画
 	modulate.a = 0
-	size = close_ui_size
+	#size = close_ui_size
+	close_UI()
 	#接收信号
 	
 	Global.giant_star_selected.connect(_on_selected_giant_star)
@@ -82,19 +86,22 @@ func update_display(a):
 			planet_panel.get_node("MarginContainer/HabitabilityContainer/HaveWaterLabel").visible = false
 		planet_panel.get_node("TemperatureLabel").text = "temperature: " + str("%.0f K" % (current_selected_body.temperature))
 
+
 #UI动画
 func open_UI():
 	if tween:
 		tween.kill()
 	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	
-	tween.tween_property(self, "modulate:a", 1.0, 0.5)
-	tween.parallel().tween_property(self, "size", open_ui_size, 0.5)
+	tween.tween_property(self, "position", Vector2(open_ui_x, position.y), 0.5)
+	tween.parallel().tween_property(self, "modulate:a", 1.0, 0.5)
+	#tween.parallel().tween_property(self, "size", open_ui_size, 0.5)
 	
 func close_UI():
 	if tween:
 		tween.kill()
 	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	
-	tween.tween_property(self, "modulate:a", 0.0, 0.5)
-	tween.parallel().tween_property(self, "size", close_ui_size, 0.5)
+	tween.tween_property(self, "position", Vector2(close_ui_x, position.y), 0.5)
+	tween.parallel().tween_property(self, "modulate:a", 0.0, 0.5)
+	#tween.parallel().tween_property(self, "size", close_ui_size, 0.5)
