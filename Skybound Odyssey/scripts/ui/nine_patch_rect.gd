@@ -81,6 +81,7 @@ func update_display(a):
 		else:
 			planet_panel.get_node("MarginContainer/HabitabilityContainer/HaveWaterLabel").visible = false
 		planet_panel.get_node("TemperatureLabel").text = "temperature: " + str("%.0f K" % (current_selected_body.temperature))
+
 #UI动画
 func open_UI():
 	if tween:
