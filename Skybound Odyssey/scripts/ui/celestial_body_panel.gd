@@ -18,12 +18,10 @@ func _on_selected(body):
 	open_UI()
 
 func _on_deselected():
-	print(2)
 	close_UI()
 
 #UI动画
 func open_UI():
-	print(1)
 	if tween:
 		tween.kill()
 	tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
@@ -32,7 +30,6 @@ func open_UI():
 	tween.parallel().tween_property(self, "modulate:a", 1.0, 0.3)
 	
 func close_UI():
-	
 	if tween:
 		tween.kill()
 	tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
