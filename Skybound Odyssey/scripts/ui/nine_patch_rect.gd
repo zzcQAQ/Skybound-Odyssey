@@ -2,25 +2,19 @@ extends NinePatchRect
 
 var tween: Tween
 
-var open_ui_size = size
-var close_ui_size = Vector2(size.x, patch_margin_left * 2)
-
-var open_ui_x = position.x
-var close_ui_x = position.x + size.x * 1.1
-
 var current_selected = 0
 var current_selected_body = null
 
 @onready var giant_star_panel = $MarginContainer/DataList/GiantStarPannel
 @onready var planet_panel = $MarginContainer/DataList/PlanetPanel
+@onready var main_UI: Control
 
 func _ready() -> void:
-	#初始化动画
-	modulate.a = 0
-	#size = close_ui_size
-	close_UI()
-	#接收信号
 	
+	#初始化动画
+	
+	
+	#接收信号
 	Global.giant_star_selected.connect(_on_selected_giant_star)
 	Global.planet_selected.connect(_on_selected_planet)
 	Global.deselected.connect(_on_deselected)
@@ -30,17 +24,14 @@ func _on_selected_giant_star(body):
 	current_selected = 1
 	current_selected_body = body
 	update_display(current_selected)
-	open_UI()
 
 func _on_selected_planet(body):
 	current_selected = 2
 	current_selected_body = body
 	update_display(current_selected)
-	open_UI()
 
-func _on_deselected(_body):
+func _on_deselected():
 	current_selected = 0
-	close_UI()
 
 var ui_timer := 0.0
 var ui_interval := 1.0 / 1.0 #一秒1刀
@@ -56,7 +47,6 @@ func _process(delta):
 		ui_timer = 0.0
 
 func update_display(a):
-	print(a)
 	if a == 1:
 		planet_panel.visible = false
 		giant_star_panel.visible = true
@@ -85,23 +75,3 @@ func update_display(a):
 		else:
 			planet_panel.get_node("MarginContainer/HabitabilityContainer/HaveWaterLabel").visible = false
 		planet_panel.get_node("TemperatureLabel").text = "temperature: " + str("%.0f K" % (current_selected_body.temperature))
-
-
-#UI动画
-func open_UI():
-	if tween:
-		tween.kill()
-	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-	
-	tween.tween_property(self, "position", Vector2(open_ui_x, position.y), 0.5)
-	tween.parallel().tween_property(self, "modulate:a", 1.0, 0.5)
-	#tween.parallel().tween_property(self, "size", open_ui_size, 0.5)
-	
-func close_UI():
-	if tween:
-		tween.kill()
-	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-	
-	tween.tween_property(self, "position", Vector2(close_ui_x, position.y), 0.5)
-	tween.parallel().tween_property(self, "modulate:a", 0.0, 0.5)
-	#tween.parallel().tween_property(self, "size", close_ui_size, 0.5)

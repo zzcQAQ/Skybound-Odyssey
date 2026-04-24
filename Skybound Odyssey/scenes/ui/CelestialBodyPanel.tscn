@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cqn7101tyv52c"]
 
-[ext_resource type="Texture2D" uid="uid://dtpoiwhyhqjur" path="res://accests/sprites/ui/uiframe.png" id="1_u7n8c"]
-[ext_resource type="Script" uid="uid://dmkcetde1mcny" path="res://scripts/ui/nine_patch_rect.gd" id="2_f5cxw"]
+[ext_resource type="Script" uid="uid://d18kpgsk6hibd" path="res://scripts/ui/celestial_body_panel.gd" id="1_3wo7s"]
+[ext_resource type="Texture2D" uid="uid://dtpoiwhyhqjur" path="res://accests/sprites/ui/uiframe.png" id="2_p0bjm"]
+[ext_resource type="Script" uid="uid://dmkcetde1mcny" path="res://scripts/ui/nine_patch_rect.gd" id="3_bja80"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_f5cxw"]
 color = Color(0.52, 0.776, 1, 0.59607846)
@@ -9,26 +10,27 @@ grow_begin = 20.0
 grow_end = 20.0
 thickness = 4
 
-[node name="UI" type="Control" unique_id=1116135926]
+[node name="CelestialBodyPanel" type="Control" unique_id=1116135926]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1568.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3wo7s")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1676295867]
 layout_mode = 0
-offset_left = 1568.0
-offset_right = 1920.0
+offset_right = 352.0
 offset_bottom = 1080.0
-texture = ExtResource("1_u7n8c")
+texture = ExtResource("2_p0bjm")
 region_rect = Rect2(0, 0, 128, 128)
 patch_margin_left = 58
 patch_margin_top = 58
 patch_margin_right = 58
 patch_margin_bottom = 58
-script = ExtResource("2_f5cxw")
+script = ExtResource("3_bja80")
 
 [node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=383700769]
 layout_mode = 0

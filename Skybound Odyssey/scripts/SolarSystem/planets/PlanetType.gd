@@ -1,9 +1,6 @@
 class_name PlanetType
 extends CelestialBody
 
-#var planet_name: String = "Unnamed Planet"
-#var faction = 0
-
 #用于选中箭头
 @export var radius = 16
 
