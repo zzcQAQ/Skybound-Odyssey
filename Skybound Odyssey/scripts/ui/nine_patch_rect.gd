@@ -5,8 +5,8 @@ var tween: Tween
 var current_selected = 0
 var current_selected_body = null
 
-@onready var giant_star_panel = $MarginContainer/DataList/GiantStarPannel
-@onready var planet_panel = $MarginContainer/DataList/PlanetPanel
+@onready var giant_star_panel = $MarginContainer/VBoxContainer/DataList/GiantStarPannel
+@onready var planet_panel = $MarginContainer/VBoxContainer/DataList/PlanetPanel
 @onready var main_UI: Control
 
 func _ready() -> void:

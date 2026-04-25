@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var rotate_speed = 0.1
+@export var rotate_speed = 0.3
 
 @onready var arrow_scene = $SelectArrow
 @onready var camera = get_viewport().get_camera_2d()
@@ -18,7 +18,6 @@ var tween: Tween
 func _ready():
 	arrow_scene.queue_free()
 	radius = get_parent().radius + 5
-	Global.connect("deselected", Callable(self, "hide_arrow"))
 
 	# 创建4个箭头
 	for i in range(4):
@@ -57,7 +56,6 @@ func _process(delta):
 # =====动画=====
 
 func show_arrow():
-	print(1)
 	if tween:
 		tween.kill()
 

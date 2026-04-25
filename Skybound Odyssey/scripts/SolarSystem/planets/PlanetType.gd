@@ -40,11 +40,6 @@ func _ready():
 	#隐藏箭头
 	selection_root.visible = false
 
-#显示UI
-func send_selected_signal():
-	Global.emit_signal("planet_selected", self)
-
-
 #初始化行星
 func planet_setup(o_r, o_p, star, h_w, id):
 	orbit_radius = o_r

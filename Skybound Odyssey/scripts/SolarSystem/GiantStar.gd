@@ -16,11 +16,7 @@ var OType = preload("res://accests/sprites/units/star/OType.png")
 @onready var sprite = $Sprite2D
 @onready var collision = $CollisionShape2D
 
-func send_selected_signal():
-	Global.emit_signal("giant_star_selected", self)
-
 #接收恒星初始化
-
 func star_setup(s, l, id_in):
 	#半径
 	size = s

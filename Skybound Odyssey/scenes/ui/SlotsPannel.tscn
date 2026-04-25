@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bad33gcnbvfbw"]
+
+[ext_resource type="Texture2D" uid="uid://djd6bfhtmhkcl" path="res://accests/sprites/ui/slot.png" id="1_6l3qt"]
+
+[node name="SlotsPannel" type="NinePatchRect" unique_id=864264852]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 18.0
+offset_bottom = 18.0
+texture = ExtResource("1_6l3qt")
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 9

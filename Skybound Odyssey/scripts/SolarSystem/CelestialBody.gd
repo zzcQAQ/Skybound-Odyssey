@@ -11,5 +11,23 @@ extends Node2D
 func _ready():
 	selection_root.visible = false
 
+#更新UI
 func on_selected():
+	
+	var node_name = get_script().get_global_name()
+	
 	selection_root.show_arrow()
+	
+	if node_name == "GiantStar":
+		Global.emit_signal("giant_star_selected", self)
+		print("G")
+	elif node_name == "PlanetType":
+		Global.emit_signal("planet_selected", self)
+		print("p")
+	else:
+		print(name)
+
+func on_deselected():
+	
+	selection_root.hide_arrow()
+	Global.deselected.emit()
