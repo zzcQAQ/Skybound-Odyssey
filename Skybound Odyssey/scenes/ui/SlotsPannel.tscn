@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bad33gcnbvfbw"]
 
 [ext_resource type="Texture2D" uid="uid://djd6bfhtmhkcl" path="res://accests/sprites/ui/slot.png" id="1_6l3qt"]
+[ext_resource type="Texture2D" uid="uid://dbtnp1607bgmb" path="res://accests/sprites/ohno.png" id="2_byp0q"]
 
 [node name="SlotsPannel" type="NinePatchRect" unique_id=864264852]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(304, 64)
 offset_right = 18.0
 offset_bottom = 18.0
 texture = ExtResource("1_6l3qt")
@@ -11,3 +12,44 @@ patch_margin_left = 9
 patch_margin_top = 9
 patch_margin_right = 9
 patch_margin_bottom = 9
+
+[node name="Button" type="Button" parent="." unique_id=771762547]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2076389956]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1141429107]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1962056870]
+layout_mode = 2
+texture = ExtResource("2_byp0q")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1613128945]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1581638633]
+layout_mode = 2
+text = "Building Name"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=831956941]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Building Description"
