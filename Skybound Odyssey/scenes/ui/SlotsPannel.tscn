@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bad33gcnbvfbw"]
 
 [ext_resource type="Texture2D" uid="uid://djd6bfhtmhkcl" path="res://accests/sprites/ui/slot.png" id="1_6l3qt"]
+[ext_resource type="Script" uid="uid://dthejxfropea0" path="res://scripts/ui/slots_pannel.gd" id="2_7b018"]
 [ext_resource type="Texture2D" uid="uid://dbtnp1607bgmb" path="res://accests/sprites/ohno.png" id="2_byp0q"]
 
 [node name="SlotsPannel" type="NinePatchRect" unique_id=864264852]
@@ -12,14 +13,7 @@ patch_margin_left = 9
 patch_margin_top = 9
 patch_margin_right = 9
 patch_margin_bottom = 9
-
-[node name="Button" type="Button" parent="." unique_id=771762547]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+script = ExtResource("2_7b018")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2076389956]
 layout_mode = 1
@@ -33,23 +27,44 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1141429107]
+[node name="HaveBuildingsContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1141429107]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1962056870]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HaveBuildingsContainer" unique_id=1962056870]
 layout_mode = 2
 texture = ExtResource("2_byp0q")
 expand_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1613128945]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HaveBuildingsContainer" unique_id=1613128945]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1581638633]
+[node name="Label" type="Label" parent="MarginContainer/HaveBuildingsContainer/VBoxContainer" unique_id=1581638633]
 layout_mode = 2
 text = "Building Name"
 
-[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=831956941]
+[node name="Label2" type="Label" parent="MarginContainer/HaveBuildingsContainer/VBoxContainer" unique_id=831956941]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Building Description"
+
+[node name="NoBuildingsContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1302319495]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/NoBuildingsContainer" unique_id=93815216]
+layout_mode = 2
+text = "No buildings"
+
+[node name="Label2" type="Label" parent="MarginContainer/NoBuildingsContainer" unique_id=1964072657]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Click to select a building."
+
+[node name="Button" type="Button" parent="." unique_id=771762547]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
