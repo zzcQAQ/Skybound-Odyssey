@@ -3,16 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://djd6bfhtmhkcl" path="res://accests/sprites/ui/slot.png" id="1_6l3qt"]
 [ext_resource type="Script" uid="uid://dthejxfropea0" path="res://scripts/ui/slots_pannel.gd" id="2_7b018"]
 [ext_resource type="Texture2D" uid="uid://dbtnp1607bgmb" path="res://accests/sprites/ohno.png" id="2_byp0q"]
+[ext_resource type="PackedScene" uid="uid://3tcdtoe8s5ar" path="res://scenes/ui/BuildingPicker.tscn" id="4_mywvt"]
 
 [node name="SlotsPannel" type="NinePatchRect" unique_id=864264852]
 custom_minimum_size = Vector2(304, 64)
-offset_right = 18.0
-offset_bottom = 18.0
+offset_right = 304.0
+offset_bottom = 64.0
+pivot_offset = Vector2(0, 32)
 texture = ExtResource("1_6l3qt")
-patch_margin_left = 9
-patch_margin_top = 9
-patch_margin_right = 9
-patch_margin_bottom = 9
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 script = ExtResource("2_7b018")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2076389956]
@@ -61,10 +63,18 @@ theme_override_font_sizes/font_size = 12
 text = "Click to select a building."
 
 [node name="Button" type="Button" parent="." unique_id=771762547]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="BuildingPicker" parent="." unique_id=269460796 instance=ExtResource("4_mywvt")]
+layout_mode = 0
+offset_left = -352.0
+offset_top = -128.0
+offset_right = -32.0
+offset_bottom = 192.0
+
+[connection signal="button_down" from="Button" to="." method="_on_pressed"]

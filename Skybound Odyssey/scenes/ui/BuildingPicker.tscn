@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://3tcdtoe8s5ar"]
+
+[ext_resource type="Texture2D" uid="uid://cgeohd5s7ujrq" path="res://accests/sprites/ui/BuildingPicker.png" id="1_t5w00"]
+
+[node name="BuildingPicker" type="NinePatchRect" unique_id=269460796]
+offset_right = 320.0
+offset_bottom = 320.0
+texture = ExtResource("1_t5w00")
+region_rect = Rect2(0, 0, 18, 18)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
