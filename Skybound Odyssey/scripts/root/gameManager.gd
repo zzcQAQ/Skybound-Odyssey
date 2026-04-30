@@ -10,7 +10,7 @@ func _unhandled_input(event):
 		return
 	var mouse_pos = get_global_mouse_position()
 	var space = get_world_2d().direct_space_state
-
+	
 	var query = PhysicsPointQueryParameters2D.new()
 	query.position = mouse_pos
 	query.collide_with_areas = true

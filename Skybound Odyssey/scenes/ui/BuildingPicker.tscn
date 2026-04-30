@@ -2,7 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://cgeohd5s7ujrq" path="res://accests/sprites/ui/BuildingPicker.png" id="1_t5w00"]
 
-[node name="BuildingPicker" type="NinePatchRect" unique_id=269460796]
+[node name="BuildingPicker" type="Control" unique_id=671718411]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 320.0
+
+[node name="BuildingPicker" type="NinePatchRect" parent="." unique_id=269460796]
+layout_mode = 0
 offset_right = 320.0
 offset_bottom = 320.0
 texture = ExtResource("1_t5w00")
