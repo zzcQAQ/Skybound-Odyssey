@@ -2,6 +2,7 @@
 .godot/
 .import/
 .export/
+addons/
 
 # 临时文件
 *.tmp
