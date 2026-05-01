@@ -6,9 +6,21 @@ extends NinePatchRect
 @onready var NoBuildingsContainer = $MarginContainer/NoBuildingsContainer
 @onready var BuildingPicker = $BuildingPicker
 
+# 约束建筑选择框位置
+var global_pos: Vector2
+var viewport_size: Vector2
+var picker_size: Vector2
+
+# 选择框动画
+var tween: Tween
+var show_pos: Vector2
+var hide_pos: Vector2
+
 func _ready() -> void:
 	
 	BuildingPicker.visible = false
+	BuildingPicker.modulate.a = 0.0
+	
 	Global.deselected.connect(_on_deselected)
 	Global.deselected_slot.connect(_on_deselected)
 	
@@ -19,21 +31,17 @@ func _ready() -> void:
 		NoBuildingsContainer.visible = false
 		HaveBuildingsContainer.visible = true
 	
-	#延迟执行 约束建筑选择框位置
+	#延迟执行
 	await get_tree().process_frame
 	_clamp_building_picker_position()
+	get_movement_pos()
 
 func _on_pressed() -> void:
 	Global.deselected_slot.emit()
-	BuildingPicker.visible = true
+	show_building_picker()
 
 func _on_deselected():
-	BuildingPicker.visible = false
-
-#约束建筑选择框位置
-var global_pos: Vector2
-var viewport_size: Vector2
-var picker_size: Vector2
+	hide_building_picker()
 
 func _clamp_building_picker_position() -> void:
 	global_pos = global_position + Vector2(-352, -128)
@@ -44,22 +52,27 @@ func _clamp_building_picker_position() -> void:
 	
 	BuildingPicker.position = global_pos - global_position
 
-#选择框动画
+func get_movement_pos():
+	show_pos = BuildingPicker.position
+	hide_pos = BuildingPicker.position + Vector2(32, 0)
 
-var tween: Tween
+func show_building_picker():
+	if tween:
+		tween.kill()
+	
+	BuildingPicker.position = hide_pos
+	BuildingPicker.modulate.a = 0.0
+	BuildingPicker.visible = true
+	
+	tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(BuildingPicker, "position", show_pos, 0.3)
+	tween.parallel().tween_property(BuildingPicker, "modulate:a", 1.0, 0.3)
 
-#func open_building_picker():
-	#if tween:
-		#tween.kill()
-	#tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	#
-	#tween.tween_property(self, "position", Vector2(open_ui_x, position.y), 0.3)
-	#tween.parallel().tween_property(self, "modulate:a", 1.0, 0.3)
-	#
-#func close_building_picker():
-	#if tween:
-		#tween.kill()
-	#tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
-	#
-	#tween.tween_property(self, "position", Vector2(close_ui_x, position.y), 0.3)
-	#tween.parallel().tween_property(self, "modulate:a", 0.0, 0.3)
+func hide_building_picker():
+	if tween:
+		tween.kill()
+	
+	tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tween.tween_property(BuildingPicker, "position", hide_pos, 0.3)
+	tween.parallel().tween_property(BuildingPicker, "modulate:a", 0.0, 0.3)
+	tween.tween_callback(func(): BuildingPicker.visible = false)

@@ -69,12 +69,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+flat = true
 
 [node name="BuildingPicker" parent="." unique_id=671718411 instance=ExtResource("4_mywvt")]
 layout_mode = 0
-offset_left = -352.0
+offset_left = -368.0
 offset_top = -128.0
-offset_right = -32.0
+offset_right = -48.0
 offset_bottom = 192.0
 
 [connection signal="button_down" from="Button" to="." method="_on_pressed"]

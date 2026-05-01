@@ -1,6 +1,22 @@
 [gd_scene format=3 uid="uid://3tcdtoe8s5ar"]
 
 [ext_resource type="Texture2D" uid="uid://cgeohd5s7ujrq" path="res://accests/sprites/ui/BuildingPicker.png" id="1_t5w00"]
+[ext_resource type="Texture2D" uid="uid://b74n48u551lgx" path="res://accests/sprites/ui/power.png" id="2_46p3e"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rqm33"]
+color = Color(0.52, 0.776, 1, 0.59607846)
+grow_begin = 4.0
+grow_end = 4.0
+thickness = 4
+
+[sub_resource type="Theme" id="Theme_t5w00"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6j5rh"]
+color = Color(0.52, 0.776, 1, 0.59607846)
+grow_begin = 4.0
+grow_end = 4.0
+thickness = 4
+vertical = true
 
 [node name="BuildingPicker" type="Control" unique_id=671718411]
 layout_mode = 3
@@ -18,3 +34,29 @@ patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildingPicker" unique_id=852325646]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 314.0
+offset_bottom = 314.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BuildingPicker/MarginContainer" unique_id=1414532356]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildingPicker/MarginContainer/HBoxContainer" unique_id=2042242354]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1448629291]
+layout_mode = 2
+texture = ExtResource("2_46p3e")
+
+[node name="HSeparator" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=408947849]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_rqm33")
+
+[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer" unique_id=1962271490]
+layout_mode = 2
+theme = SubResource("Theme_t5w00")
+theme_override_styles/separator = SubResource("StyleBoxLine_6j5rh")
