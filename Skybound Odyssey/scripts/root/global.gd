@@ -4,5 +4,6 @@ extends Node
 signal planet_selected(body)
 signal giant_star_selected(body)
 signal deselected()
+signal deselected_slot()
 
 var current_selected_body = null

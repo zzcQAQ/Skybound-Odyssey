@@ -1,7 +1,5 @@
 extends Control
 
-var tween: Tween
-
 var open_ui_x = 1568.0
 var close_ui_x = 1920
 
@@ -21,6 +19,8 @@ func _on_deselected():
 	close_UI()
 
 #UI动画
+var tween: Tween
+
 func open_UI():
 	if tween:
 		tween.kill()
