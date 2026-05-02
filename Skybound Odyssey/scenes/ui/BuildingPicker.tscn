@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cgeohd5s7ujrq" path="res://accests/sprites/ui/BuildingPicker.png" id="1_t5w00"]
 [ext_resource type="Texture2D" uid="uid://b74n48u551lgx" path="res://accests/sprites/ui/power.png" id="2_46p3e"]
+[ext_resource type="Texture2D" uid="uid://bft600h0v7kx2" path="res://accests/sprites/ui/miner.png" id="3_6j5rh"]
+[ext_resource type="Texture2D" uid="uid://ccfmlgtf0ey42" path="res://accests/sprites/ui/research.png" id="4_tkfyv"]
+[ext_resource type="Texture2D" uid="uid://0ser71vweun6" path="res://accests/sprites/ui/habitat.png" id="5_r5inf"]
+[ext_resource type="Texture2D" uid="uid://cv8fr7ntnrhw8" path="res://accests/sprites/ui/spaceport.png" id="6_fwopf"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_rqm33"]
 color = Color(0.52, 0.776, 1, 0.59607846)
@@ -39,14 +43,16 @@ patch_margin_bottom = 12
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 314.0
-offset_bottom = 314.0
+offset_right = 310.0
+offset_bottom = 310.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BuildingPicker/MarginContainer" unique_id=1414532356]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BuildingPicker/MarginContainer/HBoxContainer" unique_id=2042242354]
 layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1448629291]
 layout_mode = 2
@@ -55,6 +61,34 @@ texture = ExtResource("2_46p3e")
 [node name="HSeparator" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=408947849]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_rqm33")
+
+[node name="TextureRect2" type="TextureRect" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=465453984]
+layout_mode = 2
+texture = ExtResource("3_6j5rh")
+
+[node name="HSeparator2" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1721149908]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_rqm33")
+
+[node name="TextureRect3" type="TextureRect" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1732447838]
+layout_mode = 2
+texture = ExtResource("4_tkfyv")
+
+[node name="HSeparator4" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=910396596]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_rqm33")
+
+[node name="TextureRect4" type="TextureRect" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=971707277]
+layout_mode = 2
+texture = ExtResource("5_r5inf")
+
+[node name="HSeparator3" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1462193284]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_rqm33")
+
+[node name="TextureRect5" type="TextureRect" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1371395955]
+layout_mode = 2
+texture = ExtResource("6_fwopf")
 
 [node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer" unique_id=1962271490]
 layout_mode = 2

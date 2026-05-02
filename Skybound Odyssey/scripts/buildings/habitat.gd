@@ -1,4 +1,4 @@
-class_name Habitat 
+class_name Habitat #聚居地类
 extends BaseBuilding
 
 var power_consume: float

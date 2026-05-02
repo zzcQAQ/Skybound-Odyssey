@@ -10,7 +10,7 @@ class CoalFiredGenerator extends PowerPlant:
 		
 		power_produce = 10
 
-class SmallMine extends MiningStation:
+class SmallMine extends Miner:
 	func _init() -> void:
 		building_cost = 5
 		level = 0

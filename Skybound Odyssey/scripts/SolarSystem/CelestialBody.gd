@@ -20,12 +20,8 @@ func on_selected():
 	
 	if node_name == "GiantStar":
 		Global.emit_signal("giant_star_selected", self)
-		print("G")
 	elif node_name == "PlanetType":
 		Global.emit_signal("planet_selected", self)
-		print("p")
-	else:
-		print(name)
 
 func on_deselected():
 	
