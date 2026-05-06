@@ -60,6 +60,8 @@ func show_building_picker():
 	if tween:
 		tween.kill()
 	
+	if BuildingPicker.visible == true:
+		return
 	BuildingPicker.position = hide_pos
 	BuildingPicker.modulate.a = 0.0
 	BuildingPicker.visible = true
