@@ -73,9 +73,9 @@ flat = true
 
 [node name="BuildingPicker" parent="." unique_id=671718411 instance=ExtResource("4_mywvt")]
 layout_mode = 0
-offset_left = -368.0
-offset_top = -128.0
-offset_right = -48.0
-offset_bottom = 192.0
+offset_left = -552.0
+offset_top = -224.0
+offset_right = -40.0
+offset_bottom = 288.0
 
 [connection signal="button_down" from="Button" to="." method="_on_pressed"]

@@ -6,32 +6,38 @@
 [ext_resource type="Texture2D" uid="uid://ccfmlgtf0ey42" path="res://accests/sprites/ui/research.png" id="4_tkfyv"]
 [ext_resource type="Texture2D" uid="uid://0ser71vweun6" path="res://accests/sprites/ui/habitat.png" id="5_r5inf"]
 [ext_resource type="Texture2D" uid="uid://cv8fr7ntnrhw8" path="res://accests/sprites/ui/spaceport.png" id="6_fwopf"]
+[ext_resource type="PackedScene" uid="uid://cfqf5e80tokpp" path="res://scenes/ui/building_button.tscn" id="7_fwopf"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_rqm33"]
 color = Color(0.52, 0.776, 1, 0.59607846)
-grow_begin = 4.0
-grow_end = 4.0
+grow_begin = 3.0
+grow_end = 3.0
 thickness = 4
 
 [sub_resource type="Theme" id="Theme_t5w00"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_6j5rh"]
 color = Color(0.52, 0.776, 1, 0.59607846)
-grow_begin = 4.0
-grow_end = 4.0
+grow_begin = 3.0
+grow_end = 3.0
 thickness = 4
 vertical = true
 
 [node name="BuildingPicker" type="Control" unique_id=671718411]
+custom_minimum_size = Vector2(512, 512)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 320.0
-offset_bottom = 320.0
+offset_right = 512.0
+offset_bottom = 512.0
+pivot_offset_ratio = Vector2(1, 0.5)
 
 [node name="BuildingPicker" type="NinePatchRect" parent="." unique_id=269460796]
-layout_mode = 0
-offset_right = 320.0
-offset_bottom = 320.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_t5w00")
 region_rect = Rect2(0, 0, 18, 18)
 patch_margin_left = 12
@@ -40,18 +46,22 @@ patch_margin_right = 12
 patch_margin_bottom = 12
 
 [node name="MarginContainer" type="MarginContainer" parent="BuildingPicker" unique_id=852325646]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 310.0
-offset_bottom = 310.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.017
+anchor_right = 0.984
+anchor_bottom = 0.984
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BuildingPicker/MarginContainer" unique_id=1414532356]
 layout_mode = 2
+theme_override_constants/separation = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BuildingPicker/MarginContainer/HBoxContainer" unique_id=2042242354]
 layout_mode = 2
-theme_override_constants/separation = 13
+theme_override_constants/separation = 32
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1448629291]
@@ -94,3 +104,45 @@ texture = ExtResource("6_fwopf")
 layout_mode = 2
 theme = SubResource("Theme_t5w00")
 theme_override_styles/separator = SubResource("StyleBoxLine_6j5rh")
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildingPicker/MarginContainer/HBoxContainer" unique_id=544668783]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="FlowContainer" type="FlowContainer" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer" unique_id=1695105438]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 18
+
+[node name="BuildingButton" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/FlowContainer" unique_id=1737881177 instance=ExtResource("7_fwopf")]
+layout_mode = 2
+
+[node name="BuildingButton2" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/FlowContainer" unique_id=602216189 instance=ExtResource("7_fwopf")]
+layout_mode = 2
+
+[node name="BuildingButton3" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/FlowContainer" unique_id=1743905191 instance=ExtResource("7_fwopf")]
+layout_mode = 2
+
+[node name="BuildingButton4" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/FlowContainer" unique_id=311478650 instance=ExtResource("7_fwopf")]
+layout_mode = 2
+
+[node name="BuildingButton5" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/FlowContainer" unique_id=1539740711 instance=ExtResource("7_fwopf")]
+layout_mode = 2
+
+[node name="BuildingButton6" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/FlowContainer" unique_id=3404747 instance=ExtResource("7_fwopf")]
+layout_mode = 2
+
+[node name="BuildingButton7" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/FlowContainer" unique_id=1317125134 instance=ExtResource("7_fwopf")]
+layout_mode = 2
+
+[node name="BuildingButton8" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/FlowContainer" unique_id=332583204 instance=ExtResource("7_fwopf")]
+layout_mode = 2
+
+[node name="BuildingButton9" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/FlowContainer" unique_id=1765479197 instance=ExtResource("7_fwopf")]
+layout_mode = 2
