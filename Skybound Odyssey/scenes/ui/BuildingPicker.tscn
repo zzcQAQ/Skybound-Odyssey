@@ -2,17 +2,40 @@
 
 [ext_resource type="Texture2D" uid="uid://cgeohd5s7ujrq" path="res://accests/sprites/ui/BuildingPicker.png" id="1_t5w00"]
 [ext_resource type="Texture2D" uid="uid://b74n48u551lgx" path="res://accests/sprites/ui/power.png" id="2_46p3e"]
+[ext_resource type="Script" uid="uid://de4lq6g8ymsrk" path="res://scripts/building_button_controler.gd" id="2_nqk38"]
+[ext_resource type="Script" uid="uid://chejfua3iioxw" path="res://scripts/ui/building_category_button.gd" id="3_0k71b"]
 [ext_resource type="Texture2D" uid="uid://bft600h0v7kx2" path="res://accests/sprites/ui/miner.png" id="3_6j5rh"]
 [ext_resource type="Texture2D" uid="uid://ccfmlgtf0ey42" path="res://accests/sprites/ui/research.png" id="4_tkfyv"]
 [ext_resource type="Texture2D" uid="uid://0ser71vweun6" path="res://accests/sprites/ui/habitat.png" id="5_r5inf"]
 [ext_resource type="Texture2D" uid="uid://cv8fr7ntnrhw8" path="res://accests/sprites/ui/spaceport.png" id="6_fwopf"]
 [ext_resource type="PackedScene" uid="uid://cfqf5e80tokpp" path="res://scenes/ui/building_button.tscn" id="7_fwopf"]
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_rqm33"]
-color = Color(0.52, 0.776, 1, 0.59607846)
-grow_begin = 3.0
-grow_end = 3.0
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0k71b"]
+color = Color(0.52156866, 0.7764706, 1, 0.59607846)
+grow_begin = 34.0
+grow_end = 61.0
 thickness = 4
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fwopf"]
+color = Color(0.52156866, 0.7764706, 1, 0.59607846)
+grow_begin = 3.0
+grow_end = 7.0
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nqk38"]
+color = Color(0.52156866, 0.7764706, 1, 0.59607846)
+grow_begin = 32.0
+grow_end = 62.0
+thickness = 4
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jd254"]
+color = Color(0.52156866, 0.7764706, 1, 0.59607846)
+grow_begin = 32.0
+grow_end = 62.0
+thickness = 4
+vertical = true
 
 [sub_resource type="Theme" id="Theme_t5w00"]
 
@@ -20,7 +43,7 @@ thickness = 4
 color = Color(0.52, 0.776, 1, 0.59607846)
 grow_begin = 3.0
 grow_end = 3.0
-thickness = 4
+thickness = 0
 vertical = true
 
 [node name="BuildingPicker" type="Control" unique_id=671718411]
@@ -50,8 +73,8 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.017
 anchor_top = 0.017
-anchor_right = 0.984
-anchor_bottom = 0.984
+anchor_right = 0.983
+anchor_bottom = 0.983
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -61,44 +84,100 @@ theme_override_constants/separation = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BuildingPicker/MarginContainer/HBoxContainer" unique_id=2042242354]
 layout_mode = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 4
 alignment = 1
+script = ExtResource("2_nqk38")
 
-[node name="TextureRect" type="TextureRect" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1448629291]
+[node name="TextureButton" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=390542837]
 layout_mode = 2
-texture = ExtResource("2_46p3e")
+size_flags_vertical = 3
+texture_normal = ExtResource("2_46p3e")
+stretch_mode = 3
+script = ExtResource("3_0k71b")
+
+[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureButton" unique_id=2141204789]
+layout_mode = 0
+offset_left = 35.295998
+offset_top = 29.296
+offset_right = 39.295998
+offset_bottom = 32.295998
+theme_override_styles/separator = SubResource("StyleBoxLine_0k71b")
 
 [node name="HSeparator" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=408947849]
 layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_rqm33")
+theme_override_styles/separator = SubResource("StyleBoxLine_fwopf")
 
-[node name="TextureRect2" type="TextureRect" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=465453984]
+[node name="TextureRect2" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1231372121]
 layout_mode = 2
-texture = ExtResource("3_6j5rh")
+size_flags_vertical = 3
+texture_normal = ExtResource("3_6j5rh")
+stretch_mode = 3
+script = ExtResource("3_0k71b")
 
-[node name="HSeparator2" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1721149908]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_rqm33")
+[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureRect2" unique_id=1596699160]
+layout_mode = 0
+offset_left = 35.295998
+offset_top = 28.295998
+offset_right = 39.295998
+offset_bottom = 31.295998
+theme_override_styles/separator = SubResource("StyleBoxLine_nqk38")
 
-[node name="TextureRect3" type="TextureRect" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1732447838]
+[node name="HSeparator2" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2062112786]
 layout_mode = 2
-texture = ExtResource("4_tkfyv")
+theme_override_styles/separator = SubResource("StyleBoxLine_fwopf")
 
-[node name="HSeparator4" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=910396596]
+[node name="TextureRect3" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1338000044]
 layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_rqm33")
+size_flags_vertical = 3
+texture_normal = ExtResource("4_tkfyv")
+stretch_mode = 3
+script = ExtResource("3_0k71b")
 
-[node name="TextureRect4" type="TextureRect" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=971707277]
-layout_mode = 2
-texture = ExtResource("5_r5inf")
+[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureRect3" unique_id=1614771638]
+layout_mode = 0
+offset_left = 35.295998
+offset_top = 28.295998
+offset_right = 39.295998
+offset_bottom = 31.295998
+theme_override_styles/separator = SubResource("StyleBoxLine_nqk38")
 
-[node name="HSeparator3" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1462193284]
+[node name="HSeparator3" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=757985461]
 layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_rqm33")
+theme_override_styles/separator = SubResource("StyleBoxLine_fwopf")
 
-[node name="TextureRect5" type="TextureRect" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1371395955]
+[node name="TextureRect4" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=943178692]
 layout_mode = 2
-texture = ExtResource("6_fwopf")
+size_flags_vertical = 3
+texture_normal = ExtResource("5_r5inf")
+stretch_mode = 3
+script = ExtResource("3_0k71b")
+
+[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureRect4" unique_id=1320964188]
+layout_mode = 0
+offset_left = 35.295998
+offset_top = 28.295998
+offset_right = 39.295998
+offset_bottom = 31.295998
+theme_override_styles/separator = SubResource("StyleBoxLine_nqk38")
+
+[node name="HSeparator4" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=817231979]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_fwopf")
+
+[node name="TextureRect5" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=605664653]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("6_fwopf")
+stretch_mode = 3
+script = ExtResource("3_0k71b")
+
+[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureRect5" unique_id=843865674]
+layout_mode = 0
+offset_left = 35.295998
+offset_top = 28.295998
+offset_right = 39.295998
+offset_bottom = 31.295998
+theme_override_styles/separator = SubResource("StyleBoxLine_jd254")
 
 [node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer" unique_id=1962271490]
 layout_mode = 2
@@ -146,3 +225,9 @@ layout_mode = 2
 
 [node name="BuildingButton9" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/FlowContainer" unique_id=1765479197 instance=ExtResource("7_fwopf")]
 layout_mode = 2
+
+[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureButton" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureRect2" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureRect2" method="_on_pressed"]
+[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureRect3" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureRect3" method="_on_pressed"]
+[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureRect4" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureRect4" method="_on_pressed"]
+[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureRect5" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/TextureRect5" method="_on_pressed"]

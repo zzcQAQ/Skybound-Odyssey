@@ -44,7 +44,7 @@ func _on_deselected():
 	hide_building_picker()
 
 func _clamp_building_picker_position() -> void:
-	global_pos = global_position + Vector2(-352, -128)
+	global_pos = global_position + BuildingPicker.position
 	viewport_size = get_viewport_rect().size
 	picker_size = BuildingPicker.size
 	
