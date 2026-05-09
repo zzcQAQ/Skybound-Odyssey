@@ -1,6 +1,6 @@
 #一大坨建筑
 
-class CoalFiredGenerator extends PowerPlant:
+class thermalPowerPlant extends PowerPlant:
 	func _init() -> void:
 		building_cost = 10
 		level = 0
