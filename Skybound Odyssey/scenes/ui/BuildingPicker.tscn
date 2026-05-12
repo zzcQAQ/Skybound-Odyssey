@@ -198,10 +198,7 @@ theme_override_constants/margin_bottom = 8
 layout_mode = 2
 theme_override_constants/separation = 10
 script = ExtResource("8_nqk38")
-building_button_scene = ExtResource("7_fwopf")
-
-[node name="BuildingButton" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/ButtonsManager" unique_id=1024359799 instance=ExtResource("7_fwopf")]
-layout_mode = 2
+button_scene = ExtResource("7_fwopf")
 
 [connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Power" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" method="change_select" binds= ["Power"]]
 [connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Miner" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" method="change_select" binds= ["Miner"]]
