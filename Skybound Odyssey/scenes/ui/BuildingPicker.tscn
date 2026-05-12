@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://0ser71vweun6" path="res://accests/sprites/ui/habitat.png" id="5_r5inf"]
 [ext_resource type="Texture2D" uid="uid://cv8fr7ntnrhw8" path="res://accests/sprites/ui/spaceport.png" id="6_fwopf"]
 [ext_resource type="PackedScene" uid="uid://cfqf5e80tokpp" path="res://scenes/ui/BuildingButton.tscn" id="7_fwopf"]
+[ext_resource type="Script" uid="uid://m4vq6n6ivqjw" path="res://scripts/ui/buttons_manager.gd" id="8_nqk38"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_0k71b"]
 color = Color(0.43137255, 0.7647059, 1, 1)
@@ -193,23 +194,13 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer" unique_id=1630858300]
+[node name="ButtonsManager" type="VBoxContainer" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer" unique_id=1630858300]
 layout_mode = 2
 theme_override_constants/separation = 10
+script = ExtResource("8_nqk38")
+building_button_scene = ExtResource("7_fwopf")
 
-[node name="BuildingButton" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1024359799 instance=ExtResource("7_fwopf")]
-layout_mode = 2
-
-[node name="BuildingButton2" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=879214006 instance=ExtResource("7_fwopf")]
-layout_mode = 2
-
-[node name="BuildingButton3" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1210097217 instance=ExtResource("7_fwopf")]
-layout_mode = 2
-
-[node name="BuildingButton4" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1080874617 instance=ExtResource("7_fwopf")]
-layout_mode = 2
-
-[node name="BuildingButton5" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=948163500 instance=ExtResource("7_fwopf")]
+[node name="BuildingButton" parent="BuildingPicker/MarginContainer/HBoxContainer/MarginContainer/ButtonsManager" unique_id=1024359799 instance=ExtResource("7_fwopf")]
 layout_mode = 2
 
 [connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Power" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" method="change_select" binds= ["Power"]]
