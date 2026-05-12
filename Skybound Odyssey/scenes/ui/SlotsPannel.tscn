@@ -72,11 +72,15 @@ grow_vertical = 2
 flat = true
 
 [node name="BuildingPicker" parent="." unique_id=671718411 instance=ExtResource("4_mywvt")]
-custom_minimum_size = Vector2(384, 512)
 layout_mode = 0
 offset_left = -424.0
 offset_top = -224.0
 offset_right = -40.0
 offset_bottom = 288.0
+
+[node name="Line2D" type="Line2D" parent="." unique_id=584916677]
+points = PackedVector2Array(0, 32, -40, 32)
+width = 4.0
+default_color = Color(0.38, 0.7623333, 1, 1)
 
 [connection signal="button_down" from="Button" to="." method="_on_pressed"]

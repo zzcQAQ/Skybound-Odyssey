@@ -6,11 +6,14 @@ func _ready():
 
 #更改当前选中的分类
 func change_select(i: String):
-	#显示其他分割线
+	
 	for button in get_children():
 		if button is TextureButton:
-			button.get_child(0).visible = true
-	#隐藏当前选中的分割线
+			var vseparator = button.get_child(0)
+			button.modulate.a = 0.3
+			vseparator.visible = true
+			vseparator.modulate.a = 10
+	
 	get_node(i).get_child(0).visible = false
-
+	get_node(i).modulate.a = 1.0
 	

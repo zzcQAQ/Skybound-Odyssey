@@ -5,6 +5,7 @@ extends NinePatchRect
 @onready var HaveBuildingsContainer = $MarginContainer/HaveBuildingsContainer
 @onready var NoBuildingsContainer = $MarginContainer/NoBuildingsContainer
 @onready var BuildingPicker = $BuildingPicker
+@onready var line = $Line2D
 
 # 约束建筑选择框位置
 var global_pos: Vector2
@@ -20,6 +21,8 @@ func _ready() -> void:
 	
 	BuildingPicker.visible = false
 	BuildingPicker.modulate.a = 0.0
+	
+	line.visible = false
 	
 	Global.deselected.connect(_on_deselected)
 	Global.deselected_slot.connect(_on_deselected)
@@ -43,6 +46,7 @@ func _on_pressed() -> void:
 func _on_deselected():
 	hide_building_picker()
 
+# 限制建筑选择器位置
 func _clamp_building_picker_position() -> void:
 	global_pos = global_position + BuildingPicker.position
 	viewport_size = get_viewport_rect().size
@@ -52,10 +56,12 @@ func _clamp_building_picker_position() -> void:
 	
 	BuildingPicker.position = global_pos - global_position
 
+# 获取动画初末位置
 func get_movement_pos():
 	show_pos = BuildingPicker.position
 	hide_pos = BuildingPicker.position + Vector2(32, 0)
 
+# 动画部分，包括选择器和指示线
 func show_building_picker():
 	if tween:
 		tween.kill()
@@ -66,9 +72,14 @@ func show_building_picker():
 	BuildingPicker.modulate.a = 0.0
 	BuildingPicker.visible = true
 	
+	line.modulate.a = 0.0
+	line.visible = true
+	
 	tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property(BuildingPicker, "position", show_pos, 0.3)
 	tween.parallel().tween_property(BuildingPicker, "modulate:a", 1.0, 0.3)
+	tween.parallel().tween_property(line, "modulate:a", 1.0, 0.3)
+	
 
 func hide_building_picker():
 	if tween:
@@ -77,4 +88,9 @@ func hide_building_picker():
 	tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	tween.tween_property(BuildingPicker, "position", hide_pos, 0.3)
 	tween.parallel().tween_property(BuildingPicker, "modulate:a", 0.0, 0.3)
-	tween.tween_callback(func(): BuildingPicker.visible = false)
+	tween.parallel().tween_property(line, "modulate:a", 0.0, 0.3)
+	tween.tween_callback(
+		func(): 
+			BuildingPicker.visible = false
+			line.visible = false
+			)

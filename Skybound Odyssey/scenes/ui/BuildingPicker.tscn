@@ -10,34 +10,34 @@
 [ext_resource type="PackedScene" uid="uid://cfqf5e80tokpp" path="res://scenes/ui/BuildingButton.tscn" id="7_fwopf"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_0k71b"]
-color = Color(0.52156866, 0.7764706, 1, 0.59607846)
+color = Color(0.43137255, 0.7647059, 1, 1)
 grow_begin = 32.0
 grow_end = 61.0
 thickness = 4
 vertical = true
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_fwopf"]
-color = Color(0.52156866, 0.7764706, 1, 0.59607846)
+color = Color(0.43137255, 0.7647059, 1, 1)
 grow_begin = 3.0
 grow_end = 7.0
 thickness = 4
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_nqk38"]
-color = Color(0.52156866, 0.7764706, 1, 0.59607846)
+color = Color(0.43137255, 0.7647059, 1, 1)
 grow_begin = 32.0
 grow_end = 62.0
 thickness = 4
 vertical = true
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_q0n6w"]
-color = Color(0.52156866, 0.7764706, 1, 0.59607846)
+color = Color(0.43137255, 0.7647059, 1, 1)
 grow_begin = 32.0
 grow_end = 62.0
 thickness = 4
 vertical = true
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_jd254"]
-color = Color(0.52156866, 0.7764706, 1, 0.59607846)
+color = Color(0.43137255, 0.7647059, 1, 1)
 grow_begin = 32.0
 grow_end = 62.0
 thickness = 4
