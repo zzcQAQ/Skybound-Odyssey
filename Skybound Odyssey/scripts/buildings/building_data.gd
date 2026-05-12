@@ -7,3 +7,4 @@ var icon : Texture2D
 
 var cost := 0
 var power := 0
+var consume := 0
