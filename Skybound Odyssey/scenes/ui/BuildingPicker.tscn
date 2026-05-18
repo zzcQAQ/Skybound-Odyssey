@@ -2,18 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://cgeohd5s7ujrq" path="res://accests/sprites/ui/BuildingPicker.png" id="1_t5w00"]
 [ext_resource type="Texture2D" uid="uid://b74n48u551lgx" path="res://accests/sprites/ui/power.png" id="2_46p3e"]
-[ext_resource type="Script" uid="uid://de4lq6g8ymsrk" path="res://scripts/building_button_controler.gd" id="2_nqk38"]
+[ext_resource type="Script" uid="uid://de4lq6g8ymsrk" path="res://scripts/ui/category_button_controler.gd" id="2_nqk38"]
 [ext_resource type="Texture2D" uid="uid://bft600h0v7kx2" path="res://accests/sprites/ui/miner.png" id="3_6j5rh"]
-[ext_resource type="Texture2D" uid="uid://ccfmlgtf0ey42" path="res://accests/sprites/ui/research.png" id="4_tkfyv"]
+[ext_resource type="Script" uid="uid://dlk2nphbf1npf" path="res://scripts/ui/v_separator.gd" id="4_nqk38"]
 [ext_resource type="Texture2D" uid="uid://0ser71vweun6" path="res://accests/sprites/ui/habitat.png" id="5_r5inf"]
-[ext_resource type="Texture2D" uid="uid://cv8fr7ntnrhw8" path="res://accests/sprites/ui/spaceport.png" id="6_fwopf"]
+[ext_resource type="Texture2D" uid="uid://d0aybjxmtejll" path="res://accests/sprites/ui/strategic.png" id="6_0k71b"]
 [ext_resource type="PackedScene" uid="uid://cfqf5e80tokpp" path="res://scenes/ui/BuildingButton.tscn" id="7_fwopf"]
 [ext_resource type="Script" uid="uid://m4vq6n6ivqjw" path="res://scripts/ui/buttons_manager.gd" id="8_nqk38"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_0k71b"]
 color = Color(0.43137255, 0.7647059, 1, 1)
-grow_begin = 32.0
-grow_end = 61.0
 thickness = 4
 vertical = true
 
@@ -22,27 +20,6 @@ color = Color(0.43137255, 0.7647059, 1, 1)
 grow_begin = 3.0
 grow_end = 7.0
 thickness = 4
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_nqk38"]
-color = Color(0.43137255, 0.7647059, 1, 1)
-grow_begin = 32.0
-grow_end = 62.0
-thickness = 4
-vertical = true
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_q0n6w"]
-color = Color(0.43137255, 0.7647059, 1, 1)
-grow_begin = 32.0
-grow_end = 62.0
-thickness = 4
-vertical = true
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_jd254"]
-color = Color(0.43137255, 0.7647059, 1, 1)
-grow_begin = 32.0
-grow_end = 62.0
-thickness = 4
-vertical = true
 
 [sub_resource type="Theme" id="Theme_t5w00"]
 
@@ -54,7 +31,6 @@ thickness = 0
 vertical = true
 
 [node name="BuildingPicker" type="Control" unique_id=671718411]
-custom_minimum_size = Vector2(384, 512)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 384.0
@@ -89,97 +65,83 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BuildingPicker/MarginContainer/HBoxContainer" unique_id=2042242354]
+[node name="CategoryButtonControler" type="VBoxContainer" parent="BuildingPicker/MarginContainer/HBoxContainer" unique_id=2042242354]
 layout_mode = 2
 theme_override_constants/separation = 4
 alignment = 1
 script = ExtResource("2_nqk38")
 
-[node name="Power" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=585154853]
+[node name="power" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler" unique_id=585154853]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("2_46p3e")
 stretch_mode = 3
 
-[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Power" unique_id=2141204789]
+[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler/power" unique_id=2141204789]
 layout_mode = 0
-offset_left = 35.295998
-offset_top = 29.296
-offset_right = 39.295998
-offset_bottom = 32.295998
+offset_left = 35.0
+offset_top = -3.0
+offset_right = 39.0
+offset_bottom = 119.0
 theme_override_styles/separator = SubResource("StyleBoxLine_0k71b")
+script = ExtResource("4_nqk38")
 
-[node name="HSeparator" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=408947849]
+[node name="HSeparator" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler" unique_id=408947849]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_fwopf")
 
-[node name="Miner" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1231372121]
+[node name="miner" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler" unique_id=1231372121]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("3_6j5rh")
 stretch_mode = 3
 
-[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Miner" unique_id=1596699160]
+[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler/miner" unique_id=181545840]
 layout_mode = 0
-offset_left = 35.295998
-offset_top = 28.295998
-offset_right = 39.295998
-offset_bottom = 31.295998
-theme_override_styles/separator = SubResource("StyleBoxLine_nqk38")
+offset_left = 35.0
+offset_top = -3.0
+offset_right = 39.0
+offset_bottom = 119.0
+theme_override_styles/separator = SubResource("StyleBoxLine_0k71b")
+script = ExtResource("4_nqk38")
 
-[node name="HSeparator2" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2062112786]
+[node name="HSeparator2" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler" unique_id=2062112786]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_fwopf")
 
-[node name="Research" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1338000044]
-layout_mode = 2
-size_flags_vertical = 3
-texture_normal = ExtResource("4_tkfyv")
-stretch_mode = 3
-
-[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Research" unique_id=1614771638]
-layout_mode = 0
-offset_left = 35.295998
-offset_top = 28.295998
-offset_right = 39.295998
-offset_bottom = 31.295998
-theme_override_styles/separator = SubResource("StyleBoxLine_q0n6w")
-
-[node name="HSeparator3" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=757985461]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_fwopf")
-
-[node name="Habitat" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=943178692]
+[node name="habitat" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler" unique_id=943178692]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("5_r5inf")
 stretch_mode = 3
 
-[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Habitat" unique_id=1320964188]
+[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler/habitat" unique_id=91525319]
 layout_mode = 0
-offset_left = 35.295998
-offset_top = 28.295998
-offset_right = 39.295998
-offset_bottom = 31.295998
-theme_override_styles/separator = SubResource("StyleBoxLine_nqk38")
+offset_left = 35.0
+offset_top = -3.0
+offset_right = 39.0
+offset_bottom = 119.0
+theme_override_styles/separator = SubResource("StyleBoxLine_0k71b")
+script = ExtResource("4_nqk38")
 
-[node name="HSeparator4" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=817231979]
+[node name="HSeparator3" type="HSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler" unique_id=757985461]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_fwopf")
 
-[node name="Spaceport" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" unique_id=605664653]
+[node name="strategic" type="TextureButton" parent="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler" unique_id=605664653]
 layout_mode = 2
 size_flags_vertical = 3
-texture_normal = ExtResource("6_fwopf")
+texture_normal = ExtResource("6_0k71b")
 stretch_mode = 3
 
-[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Spaceport" unique_id=843865674]
+[node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler/strategic" unique_id=1845187563]
 layout_mode = 0
-offset_left = 35.295998
-offset_top = 28.295998
-offset_right = 39.295998
-offset_bottom = 31.295998
-theme_override_styles/separator = SubResource("StyleBoxLine_jd254")
+offset_left = 35.0
+offset_top = -3.0
+offset_right = 39.0
+offset_bottom = 119.0
+theme_override_styles/separator = SubResource("StyleBoxLine_0k71b")
+script = ExtResource("4_nqk38")
 
 [node name="VSeparator" type="VSeparator" parent="BuildingPicker/MarginContainer/HBoxContainer" unique_id=1962271490]
 layout_mode = 2
@@ -200,8 +162,7 @@ theme_override_constants/separation = 10
 script = ExtResource("8_nqk38")
 button_scene = ExtResource("7_fwopf")
 
-[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Power" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" method="change_select" binds= ["Power"]]
-[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Miner" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" method="change_select" binds= ["Miner"]]
-[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Research" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" method="change_select" binds= ["Research"]]
-[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Habitat" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" method="change_select" binds= ["Habitat"]]
-[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer/Spaceport" to="BuildingPicker/MarginContainer/HBoxContainer/VBoxContainer" method="change_select" binds= ["Spaceport"]]
+[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler/power" to="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler" method="change_select" binds= ["power"]]
+[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler/miner" to="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler" method="change_select" binds= ["miner"]]
+[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler/habitat" to="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler" method="change_select" binds= ["habitat"]]
+[connection signal="pressed" from="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler/strategic" to="BuildingPicker/MarginContainer/HBoxContainer/CategoryButtonControler" method="change_select" binds= ["strategic"]]

@@ -12,3 +12,13 @@ func _ready():
 		add_child(button)
 		
 		button.set_building(data)
+		
+		change_category("power")
+		
+		
+func change_category(c: String):
+	for button in get_children():
+		if button.category == c:
+			button.visible = true
+		else:
+			button.visible = false
