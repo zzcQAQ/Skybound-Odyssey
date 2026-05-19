@@ -1,7 +1,7 @@
 extends Node
 class_name Buildings
 
-
+# mdt后遗症
 static var ALL := {
 
 	"thermalPowerPlant": {
@@ -10,7 +10,8 @@ static var ALL := {
 		"description": "Consume little resources to provide energy. Will slightly pollute the environment.",
 		"cost": 50,
 		"consume": 1,
-		"power": 50
+		"power": 50,
+		"habitability": -10
 	},
 
 	"windFarm": {
@@ -37,7 +38,17 @@ static var ALL := {
 		"description": "Consume a small amount of energy to obtain planetary resources.",
 		"cost": 30,
 		"consume": 10,
-		"Production": 3
+		"Production": 5
+	},
+	
+	"colonyHabitat": {
+		"display_name": "Colony Habitat",
+		"category": "habitat",
+		"description": "Provides housing capacity and slightly improves habitability.",
+		"cost": 30,
+		"consume": 1,
+		"power": 10,
+		"habitability": 5
 	},
 	
 	"researchLab": {
@@ -45,7 +56,7 @@ static var ALL := {
 		"category": "strategic",
 		"description": "Uses power and resources to accelerate technological research.",
 		"cost": 120,
-		"consume": 10,
+		"consume": 3,
 		"power": 30,
 		"researchSpeed": 10
 	}
@@ -60,6 +71,12 @@ static func get_building(id: String) -> Dictionary:
 
 	return building
 
-
+# 自动寻找对应贴图
 static func load_icon(id: String) -> Texture2D:
-	return load("res://accests/sprites/buildings/%s.png" % id)
+	
+	var path = "res://accests/sprites/buildings/%s.png" % id
+	
+	if ResourceLoader.exists(path):
+		return load(path)
+	else:
+		return load("res://accests/sprites/ohno.png")
