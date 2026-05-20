@@ -7,7 +7,7 @@ script = ExtResource("1_2gwc5")
 
 [node name="SelectArrow" type="Polygon2D" parent="." unique_id=1606852333]
 position = Vector2(0, -1.8179417e-06)
-scale = Vector2(0.53124964, 0.53124964)
+scale = Vector2(0.7485293, 0.75)
 color = Color(0, 0.9166665, 1, 1)
 polygon = PackedVector2Array(1.5258789e-05, -9.536743e-07, 32.000015, -16, 24.000015, -9.536743e-07, 32.000015, 15.999999)
 uv = PackedVector2Array(-183.99998, -8, -151.99998, -24, -159.99998, -8, -151.99998, 8)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn5oia080u7v5"
-path="res://.godot/imported/power.png-6d450ef4fe470efe5bc294bfefbd381d.ctex"
+uid="uid://cdr47rsrp3xxj"
+path="res://.godot/imported/rightArrow_disabled.png-0eb3aa2decd397577c2c22825da8c270.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://accests/sprites/items/power.png"
-dest_files=["res://.godot/imported/power.png-6d450ef4fe470efe5bc294bfefbd381d.ctex"]
+source_file="res://accests/sprites/ui/rightArrow_disabled.png"
+dest_files=["res://.godot/imported/rightArrow_disabled.png-0eb3aa2decd397577c2c22825da8c270.ctex"]
 
 [params]
 

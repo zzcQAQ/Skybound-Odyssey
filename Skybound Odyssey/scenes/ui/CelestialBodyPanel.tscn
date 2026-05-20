@@ -3,7 +3,12 @@
 [ext_resource type="Script" uid="uid://d18kpgsk6hibd" path="res://scripts/ui/celestial_body_panel.gd" id="1_3wo7s"]
 [ext_resource type="Texture2D" uid="uid://dtpoiwhyhqjur" path="res://accests/sprites/ui/uiframe.png" id="2_p0bjm"]
 [ext_resource type="Script" uid="uid://dmkcetde1mcny" path="res://scripts/ui/nine_patch_rect.gd" id="3_bja80"]
+[ext_resource type="Script" uid="uid://bcrpvm0rw7d" path="res://scripts/ui/building_slots.gd" id="4_5uip8"]
+[ext_resource type="Texture2D" uid="uid://dxnyqqqvyb1qb" path="res://accests/sprites/ui/leftArrow.png" id="4_364yo"]
 [ext_resource type="PackedScene" uid="uid://bad33gcnbvfbw" path="res://scenes/ui/SlotsPannel.tscn" id="4_p0bjm"]
+[ext_resource type="Texture2D" uid="uid://b11tyf7mtcgaj" path="res://accests/sprites/ui/leftArrow_disabled.png" id="5_5uip8"]
+[ext_resource type="Texture2D" uid="uid://dsk6425oilq2i" path="res://accests/sprites/ui/rightArrow.png" id="6_k28dp"]
+[ext_resource type="Texture2D" uid="uid://cdr47rsrp3xxj" path="res://accests/sprites/ui/rightArrow_disabled.png" id="7_71437"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_f5cxw"]
 color = Color(0.52, 0.776, 1, 0.59607846)
@@ -124,30 +129,86 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 10
 theme_override_constants/separation = 24
+script = ExtResource("4_5uip8")
 
 [node name="HSeparator" type="HSeparator" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" unique_id=1094019409]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_f5cxw")
 
-[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" unique_id=1031104450]
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" unique_id=1034646257]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 48
+
+[node name="leftButton" type="TextureButton" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/HBoxContainer" unique_id=672560330]
+layout_mode = 2
+texture_normal = ExtResource("4_364yo")
+texture_disabled = ExtResource("5_5uip8")
+
+[node name="surfaceBuildingLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/HBoxContainer" unique_id=1031104450]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "Surface Building"
 horizontal_alignment = 1
 
-[node name="SlotsPannel" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" unique_id=1791845232 instance=ExtResource("4_p0bjm")]
+[node name="orbitalBuildingLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/HBoxContainer" unique_id=451234972]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Orbital Building"
+horizontal_alignment = 1
+
+[node name="rightButton" type="TextureButton" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/HBoxContainer" unique_id=2068555516]
+layout_mode = 2
+texture_normal = ExtResource("6_k28dp")
+texture_disabled = ExtResource("7_71437")
+
+[node name="surfaceSlots" type="VBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" unique_id=843940383]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 24
+
+[node name="SlotsPannel" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/surfaceSlots" unique_id=1791845232 instance=ExtResource("4_p0bjm")]
 layout_mode = 2
 
-[node name="SlotsPannel2" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" unique_id=1320438873 instance=ExtResource("4_p0bjm")]
+[node name="SlotsPannel2" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/surfaceSlots" unique_id=1320438873 instance=ExtResource("4_p0bjm")]
 layout_mode = 2
 
-[node name="SlotsPannel3" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" unique_id=1045742184 instance=ExtResource("4_p0bjm")]
+[node name="SlotsPannel3" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/surfaceSlots" unique_id=1045742184 instance=ExtResource("4_p0bjm")]
 layout_mode = 2
 
-[node name="SlotsPannel4" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" unique_id=1856870076 instance=ExtResource("4_p0bjm")]
+[node name="SlotsPannel4" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/surfaceSlots" unique_id=1856870076 instance=ExtResource("4_p0bjm")]
 layout_mode = 2
 
-[node name="SlotsPannel5" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" unique_id=188455282 instance=ExtResource("4_p0bjm")]
+[node name="SlotsPannel5" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/surfaceSlots" unique_id=188455282 instance=ExtResource("4_p0bjm")]
 layout_mode = 2
 
-[node name="SlotsPannel6" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" unique_id=737027891 instance=ExtResource("4_p0bjm")]
+[node name="SlotsPannel6" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/surfaceSlots" unique_id=737027891 instance=ExtResource("4_p0bjm")]
 layout_mode = 2
+
+[node name="orbitalSlots" type="VBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" unique_id=1088081973]
+visible = false
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 24
+
+[node name="SlotsPannel" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/orbitalSlots" unique_id=864264852 instance=ExtResource("4_p0bjm")]
+layout_mode = 2
+
+[node name="SlotsPannel2" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/orbitalSlots" unique_id=801312104 instance=ExtResource("4_p0bjm")]
+layout_mode = 2
+
+[node name="SlotsPannel3" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/orbitalSlots" unique_id=294767038 instance=ExtResource("4_p0bjm")]
+layout_mode = 2
+
+[node name="SlotsPannel4" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/orbitalSlots" unique_id=460151974 instance=ExtResource("4_p0bjm")]
+layout_mode = 2
+
+[node name="SlotsPannel5" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/orbitalSlots" unique_id=1001902764 instance=ExtResource("4_p0bjm")]
+layout_mode = 2
+
+[node name="SlotsPannel6" parent="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/orbitalSlots" unique_id=934539907 instance=ExtResource("4_p0bjm")]
+layout_mode = 2
+
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/HBoxContainer/leftButton" to="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" method="_on_left_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots/HBoxContainer/rightButton" to="NinePatchRect/MarginContainer/VBoxContainer/BuildingSlots" method="_on_right_button_pressed"]

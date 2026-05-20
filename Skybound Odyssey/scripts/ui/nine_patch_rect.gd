@@ -7,6 +7,7 @@ var current_selected_body = null
 
 @onready var giant_star_panel = $MarginContainer/VBoxContainer/DataList/GiantStarPannel
 @onready var planet_panel = $MarginContainer/VBoxContainer/DataList/PlanetPanel
+@onready var building_slots = $MarginContainer/VBoxContainer/BuildingSlots
 @onready var main_UI: Control
 
 func _ready() -> void:
@@ -50,12 +51,14 @@ func update_display(a):
 	if a == 1:
 		planet_panel.visible = false
 		giant_star_panel.visible = true
+		building_slots.visible = false
 		giant_star_panel.get_node("IdLabel").text = "Id: " + str(current_selected_body.system_id)
 		giant_star_panel.get_node("RadiusLabel").text = "Radius: " + str("%.2f R☉" % (current_selected_body.radius / 72))
 		giant_star_panel.get_node("LuminosityLabel").text = "Luminosity: " + str("%.2f L☉" % current_selected_body.luminosity)
 	if a == 2:
 		giant_star_panel.visible = false
 		planet_panel.visible = true
+		building_slots.visible = true
 		planet_panel.get_node("IdLabel").text = "ID: " + str(current_selected_body.planet_ID)
 		planet_panel.get_node("OrbitRadiusLabel").text = "OrbitRadius: " + str("%.2f AU" % current_selected_body.orbit_AU)
 		planet_panel.get_node("OrbitPeriodLabel").text = "OrbitPeriod: " + str("%.0f d" % current_selected_body.orbit_period)
@@ -67,7 +70,7 @@ func update_display(a):
 			planet_panel.get_node("MarginContainer/HabitabilityContainer/HabitabilityRateLabel").add_theme_color_override("font_color", Color(0.0, 1.0, 0.0, 1.0))
 		else:
 			planet_panel.get_node("MarginContainer/HabitabilityContainer/HabitabilityRateLabel").text = "temperature: " + str("%.2f " % current_selected_body.habitability_temp) + "%"
-			planet_panel.get_node("MarginContainer/HabitabilityContainer/HabitabilityRateLabel").add_theme_color_override("font_color", Color(1.0, 0.0, 0.0, 1.0))
+			planet_panel.get_node("MarginContainer/HabitabilityContainer/HabitabilityRateLabel").add_theme_color_override("font_color", Color(1.0, 0.227, 0.141, 1.0))
 		if current_selected_body.have_water == true:
 			planet_panel.get_node("MarginContainer/HabitabilityContainer/HaveWaterLabel").visible = true
 			planet_panel.get_node("MarginContainer/HabitabilityContainer/HaveWaterLabel").text = "Have Water: +30%"

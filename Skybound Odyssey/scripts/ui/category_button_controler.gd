@@ -10,7 +10,7 @@ func change_select(i: String):
 	for button in get_children():
 		if button is TextureButton:
 			var vseparator = button.get_child(0)
-			button.modulate.a = 0.3
+			button.modulate.a = 0.5
 			vseparator.visible = true
 			vseparator.modulate.a = 10
 	
