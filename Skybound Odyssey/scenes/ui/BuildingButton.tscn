@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bq6mce4n2toj" path="res://scripts/ui/building_button.gd" id="1_it7tk"]
 [ext_resource type="Texture2D" uid="uid://djd6bfhtmhkcl" path="res://accests/sprites/ui/slot.png" id="1_seydi"]
+[ext_resource type="Texture2D" uid="uid://ckv58laedkjod" path="res://accests/sprites/ui/slot_on_select.png" id="3_it7tk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_seydi"]
 content_margin_left = 0.0
@@ -27,13 +28,22 @@ offset_bottom = 32.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_seydi")
 script = ExtResource("1_it7tk")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=490880751]
+[node name="outline" type="NinePatchRect" parent="." unique_id=490880751]
 layout_mode = 2
 texture = ExtResource("1_seydi")
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
+
+[node name="outlineOnSelect" type="NinePatchRect" parent="." unique_id=685879959]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_it7tk")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=344449568]
 layout_mode = 2
@@ -66,3 +76,5 @@ label_settings = SubResource("LabelSettings_4e26u")
 [node name="Button" type="Button" parent="." unique_id=296048524]
 layout_mode = 2
 flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

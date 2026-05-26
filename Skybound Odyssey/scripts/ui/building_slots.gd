@@ -15,9 +15,11 @@ func _ready() -> void:
 	show_surface_buildings()
 
 func _on_left_button_pressed() -> void:
+	Global.deselected_slot.emit()
 	show_surface_buildings()
 
 func _on_right_button_pressed() -> void:
+	Global.deselected_slot.emit()
 	show_orbital_buildings()
 
 func show_surface_buildings():

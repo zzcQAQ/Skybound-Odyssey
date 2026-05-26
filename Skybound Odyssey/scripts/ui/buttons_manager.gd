@@ -22,3 +22,7 @@ func change_category(c: String):
 			button.visible = true
 		else:
 			button.visible = false
+
+func button_on_deselected():
+	for button in get_children():
+		button.hide_outline()
