@@ -4,6 +4,9 @@ extends CelestialBody
 #用于选中箭头
 @export var radius = 16
 
+#阵营归属
+@export var owner_id: String = "none"
+
 #混合ID
 @export var planet_ID: String
 
